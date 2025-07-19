@@ -108,7 +108,7 @@ export default function Home() {
                   </div>
                 }
               >
-                Se supne que muestra llegadas
+                Se supone que muestra llegadas
               </Tab>
               <Tab
                 key="departures"
@@ -118,7 +118,7 @@ export default function Home() {
                   </div>
                 }
               >
-                Se supne que muestra salidas
+                Se supone que muestra salidas
               </Tab>
             </Tabs>
           </div>
