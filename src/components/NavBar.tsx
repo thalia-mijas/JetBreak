@@ -1,5 +1,16 @@
-import { Button, Link } from "@heroui/react";
+import {
+  Button,
+  Link,
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle,
+} from "@heroui/react";
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 export const Logo = () => {
   return (
@@ -12,9 +23,9 @@ export const Logo = () => {
     />
   );
 };
-
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const { pathname } = useLocation();
 
   const menuItems = [
     { label: "Vuelos", href: "/" },
@@ -24,31 +35,57 @@ export default function NavBar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-[#EAEFEF]">
-      <div className="container mx-auto flex h-16 items-center justify-between">
-        <div className="flex items-center">
+    <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+      <NavbarContent className="sm:hidden" justify="start">
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        />
+      </NavbarContent>
+
+      <NavbarContent className="sm:hidden pr-3" justify="center">
+        <NavbarBrand>
           <Logo />
-          <span className="text-xl font-bold text-gray-900">JetBreak</span>
-        </div>
-        <nav className="hidden items-center space-x-6 sm:flex">
-          {menuItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="hover:text-primary text-sm font-medium text-gray-700 transition-colors"
-            >
+          <p className="font-bold text-inherit">JetBreak</p>
+        </NavbarBrand>
+      </NavbarContent>
+
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarBrand>
+          <Logo />
+          <p className="font-bold text-inherit">JetBreak</p>
+        </NavbarBrand>
+        {menuItems.map((item) => (
+          <NavbarItem key={item.label} isActive={pathname === item.href}>
+            <Link className="w-full" href={item.href} size="lg">
               {item.label}
             </Link>
-          ))}
-        </nav>
-        <Button
-          variant="bordered"
-          size="sm"
-          className="border-primary hover:bg-primary rounded-[10px] border-2 p-2 transition-colors hover:text-black"
-        >
-          Iniciar Sesión
-        </Button>
-      </div>
-    </header>
+          </NavbarItem>
+        ))}
+      </NavbarContent>
+
+      <NavbarContent justify="end">
+        <NavbarItem>
+          <Button
+            as={Link}
+            color="primary"
+            href="/login"
+            variant="flat"
+            className="text-black"
+          >
+            Login
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+
+      <NavbarMenu>
+        {menuItems.map((item) => (
+          <NavbarMenuItem key={item.label}>
+            <Link className="w-full" href={item.href} size="lg">
+              {item.label}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
   );
 }
