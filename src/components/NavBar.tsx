@@ -24,18 +24,18 @@ export default function NavBar() {
   ];
 
   return (
-    <header className="border-b bg-[#EAEFEF] sticky top-0 z-50">
-      <div className="container mx-auto h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-50 border-b bg-[#EAEFEF]">
+      <div className="container mx-auto flex h-16 items-center justify-between">
         <div className="flex items-center">
           <Logo />
           <span className="text-xl font-bold text-gray-900">JetBreak</span>
         </div>
-        <nav className="hidden sm:flex items-center space-x-6">
+        <nav className="hidden items-center space-x-6 sm:flex">
           {menuItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-gray-700 hover:text-[#56DFCF] transition-colors"
+              className="hover:text-primary text-sm font-medium text-gray-700 transition-colors"
             >
               {item.label}
             </Link>
@@ -44,7 +44,7 @@ export default function NavBar() {
         <Button
           variant="bordered"
           size="sm"
-          className="border-[#56DFCF] border-2 hover:bg-[#56DFCF] hover:text-black transition-colors rounded-[10px] p-2"
+          className="border-primary hover:bg-primary rounded-[10px] border-2 p-2 transition-colors hover:text-black"
         >
           Iniciar Sesión
         </Button>

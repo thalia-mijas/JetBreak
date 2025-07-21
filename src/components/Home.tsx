@@ -13,27 +13,27 @@ export default function Home() {
   return (
     <>
       <section>
-        <div className="bg-gradient-to-br from-[#56DFCF]/10 to-[#56DFCF]/20 py-12 md:py-20">
+        <div className="from-primary/10 to-primary/20 bg-gradient-to-br py-12 md:py-20">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-8">
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+            <div className="mb-8 text-center">
+              <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-6xl">
                 Encuentra tu aeropuerto
               </h1>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="mx-auto max-w-2xl text-xl text-gray-600">
                 Busca tu aeropuerto para consultar información de vuelos.
               </p>
             </div>
 
             {/* Search Bar */}
-            <div className="max-w-2xl mx-auto">
-              <div className="flex gap-2 p-2 bg-white rounded-lg shadow-lg">
-                <div className="flex-1 relative">
+            <div className="mx-auto max-w-2xl">
+              <div className="flex gap-2 rounded-lg bg-white p-2 shadow-lg">
+                <div className="relative flex-1">
                   <Input
                     placeholder="(ej: Madrid, MAD, Barajas)"
-                    className="pl-2 pt-2 border-0 focus-visible:ring-0 align-self-center"
+                    className="align-self-center border-0 pt-2 pl-2 focus-visible:ring-0"
                   />
                 </div>
-                <Button className="bg-[#56DFCF] hover:bg-[#4BC5B5] rounded-[10px] pl-4 pr-4 pt-2 pb-2 flex">
+                <Button className="bg-primary flex rounded-[10px] pt-2 pr-4 pb-2 pl-4 hover:bg-[#4BC5B5]">
                   <Search className="h-5 w-5" />
                   Buscar
                 </Button>
@@ -41,8 +41,8 @@ export default function Home() {
             </div>
 
             {/* Use location */}
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <Button className="border-[#56DFCF] border-2 hover:bg-[#56DFCF] hover:text-black transition-colors rounded-[10px] pl-4 pr-4 pt-2 pb-2 flex">
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Button className="border-primary hover:bg-primary flex rounded-[10px] border-2 pt-2 pr-4 pb-2 pl-4 transition-colors hover:text-black">
                 <MapPin className="h-5 w-5" />
                 Utilizar mi ubicación
               </Button>
@@ -50,18 +50,18 @@ export default function Home() {
           </div>
         </div>
 
-        <div id="vuelos" className="py-16 bg-[#EAEFEF]">
+        <div id="vuelos" className="bg-[#EAEFEF] py-16">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
                 Información de vuelos
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="mx-auto max-w-2xl text-lg text-gray-600">
                 Consulta llegadas, salidas y estado de vuelos en tiempo real
               </p>
             </div>
 
-            <div className="mb-6 flex flex-col sm:flex-row gap-4 items-center justify-between">
+            <div className="mb-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
               <div className="flex items-center gap-2">
                 <label className="text-sm font-medium">Aeropuerto:</label>
                 <label className="text-sm font-medium">{selectedAirport}</label>
@@ -78,7 +78,7 @@ export default function Home() {
                   size="sm"
                   onClick={refetch}
                   disabled={loading}
-                  className="border-[#56DFCF] border-2 hover:bg-[#56DFCF] hover:text-black transition-colors rounded-[10px] flex items-center p-2 bg-transparent"
+                  className="border-primary hover:bg-primary flex items-center rounded-[10px] border-2 bg-transparent p-2 transition-colors hover:text-black"
                 >
                   <RefreshCw
                     className={`h-4 w-4 ${loading ? "animate-spin" : ""}`}
@@ -93,9 +93,9 @@ export default function Home() {
               classNames={{
                 tabList:
                   "gap-6 w-full relative rounded-none p-0 border-b border-divider",
-                cursor: "w-full bg-[#56DFCF]",
+                cursor: "w-full bg-primary",
                 tab: "max-w-fit px-0 h-12",
-                tabContent: "group-data-[selected=true]:text-[#56DFCF]",
+                tabContent: "group-data-[selected=true]:text-primary",
               }}
               color="primary"
               variant="underlined"
