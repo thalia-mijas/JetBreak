@@ -1,10 +1,62 @@
-import { Button, Input, Tab, Tabs } from "@heroui/react";
+import {
+  Button,
+  Input,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  RadioGroup,
+  Tab,
+  Tabs,
+  useDisclosure,
+} from "@heroui/react";
 import { MapPin, RefreshCw, Search } from "lucide-react";
+import { useState } from "react";
+import { CustomRadio } from "./CustomRadio";
 
 export default function Home() {
-  const selectedAirport = "Madrid, MAD, Barajas"; // Example selected airport
+  const airports = [
+    {
+      name: "Adolfo Suárez Madrid-Barajas Airport",
+      iataCode: "MAD",
+      city: "Madrid",
+    },
+    {
+      name: "Barcelona-El Prat Airport",
+      iataCode: "BCN",
+      city: "Barcelona",
+    },
+    {
+      name: "Málaga-Costa del Sol Airport",
+      iataCode: "AGP",
+      city: "Málaga",
+    },
+    {
+      name: "Mariscal Sucre International Airport",
+      iataCode: "UIO",
+      city: "Quito",
+    },
+    {
+      name: "José Joaquín de Olmedo International Airport",
+      iataCode: "GYE",
+      city: "Guayaquil",
+    },
+    {
+      name: "Catamayo Airport",
+      iataCode: "LOH",
+      city: "Loja",
+    },
+  ];
+
+  const [selectedAirport, setSelectedAirport] = useState(""); // Example selected airport
+  const [valueInput, setValueInput] = useState(""); // Example input value
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [choiceAirport, setChoiceAirport] = useState("");
+
   const lastUpdated = new Date(); // Example last updated time
   const loading = false; // Example loading state
+
   const refetch = () => {
     // Logic to refetch flight information
     console.log("Refetching flight information...");
@@ -30,11 +82,32 @@ export default function Home() {
                 <div className="relative flex-1">
                   <Input
                     placeholder="(ej: Madrid, MAD, Barajas)"
-                    className="align-self-center border-0 pt-2 pl-2 focus-visible:ring-0"
+                    value={valueInput}
+                    onChange={(e) => setValueInput(e.target.value)}
+                    list="airport-suggestions"
                   />
+                  <datalist id="airport-suggestions">
+                    {airports.map((airport) => (
+                      <option
+                        key={airport.iataCode}
+                        value={`${airport.name} (${airport.iataCode})`}
+                      />
+                    ))}
+                  </datalist>
                 </div>
-                <Button className="bg-primary flex rounded-[10px] pt-2 pr-4 pb-2 pl-4 hover:bg-[#4BC5B5]">
-                  <Search className="h-5 w-5" />
+                <Button
+                  color="primary"
+                  startContent={<Search className="h-5 w-5" />}
+                  variant="solid"
+                  className="text-black"
+                  onPress={() => {
+                    if (valueInput) {
+                      setSelectedAirport(valueInput);
+                    } else {
+                      alert("Por favor, ingresa un aeropuerto para buscar.");
+                    }
+                  }}
+                >
                   Buscar
                 </Button>
               </div>
@@ -42,10 +115,75 @@ export default function Home() {
 
             {/* Use location */}
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button className="border-primary hover:bg-primary flex rounded-[10px] border-2 pt-2 pr-4 pb-2 pl-4 transition-colors hover:text-black">
-                <MapPin className="h-5 w-5" />
+              <Button
+                color="primary"
+                startContent={<MapPin className="h-5 w-5" />}
+                variant="shadow"
+                className="text-black"
+                onPress={onOpen}
+              >
                 Utilizar mi ubicación
               </Button>
+              <Modal
+                isOpen={isOpen}
+                placement="center"
+                onOpenChange={onOpenChange}
+                backdrop="blur"
+                scrollBehavior="inside"
+              >
+                <ModalContent>
+                  {(onClose) => (
+                    <>
+                      <ModalHeader className="flex flex-col gap-1">
+                        Obteniendo ubicación de tu dispositivo
+                        <p className="text-gray-500 text-sm">
+                          Escoge un aeropuerto de la lista
+                        </p>
+                      </ModalHeader>
+                      <ModalBody>
+                        <RadioGroup
+                          value={choiceAirport}
+                          onValueChange={setChoiceAirport}
+                        >
+                          {airports.map((airport) => (
+                            <CustomRadio
+                              key={airport.iataCode}
+                              description={`Airport code: ${airport.iataCode}`}
+                              value={airport.name}
+                            >
+                              {airport.name}
+                            </CustomRadio>
+                          ))}
+                        </RadioGroup>
+                      </ModalBody>
+                      <ModalFooter>
+                        <Button
+                          color="danger"
+                          variant="light"
+                          onPress={onClose}
+                        >
+                          Cancelar
+                        </Button>
+                        <Button
+                          color="primary"
+                          onPress={() => {
+                            if (!choiceAirport) {
+                              alert("Por favor, selecciona un aeropuerto.");
+                              return;
+                            }
+                            setSelectedAirport(choiceAirport);
+                            setValueInput(choiceAirport);
+                            setSelectedAirport(choiceAirport);
+                            onClose();
+                          }}
+                        >
+                          Aceptar
+                        </Button>
+                      </ModalFooter>
+                    </>
+                  )}
+                </ModalContent>
+              </Modal>
             </div>
           </div>
         </div>
@@ -75,14 +213,16 @@ export default function Home() {
                 )}
                 <Button
                   variant="bordered"
+                  color="primary"
+                  startContent={
+                    <RefreshCw
+                      className={`h-4 w-4 ${loading ? "animate-spin" : ""}`}
+                    />
+                  }
                   size="sm"
-                  onClick={refetch}
+                  onPress={refetch}
                   disabled={loading}
-                  className="border-primary hover:bg-primary flex items-center rounded-[10px] border-2 bg-transparent p-2 transition-colors hover:text-black"
                 >
-                  <RefreshCw
-                    className={`h-4 w-4 ${loading ? "animate-spin" : ""}`}
-                  />
                   Actualizar
                 </Button>
               </div>

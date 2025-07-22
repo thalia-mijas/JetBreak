@@ -75,9 +75,13 @@ export default function Offers() {
                       <Star className="h-4 w-4" />
                     </div>
                   </div>
-                  <Button className="w-full">
-                    Reservar Ahora
-                    <ArrowRight className="h-4 w-4 ml-2" />
+                  <Button
+                    color="primary"
+                    endContent={<ArrowRight className="h-4 w-4 ml-2" />}
+                    variant="light"
+                    className="w-full"
+                  >
+                    Ver itinerario
                   </Button>
                 </div>
               </Card>
