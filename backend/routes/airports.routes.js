@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const airportController = require("../controllers/airport.controller");
+const airportsController = require("../controllers/airports.controller");
 // const authMiddleware = require("../middlewares/auth.middleware"); aqui se agregar si se necesita middlewares
 
-router.get("/", airportController.getAirports);
-router.get("/:airportCode", airportController.getAirport);
+router.get("/", airportsController.getAirports);
+router.get("/:airportCode", airportsController.getAirport);
 router.get(
   "/gps/:latitude/:longitude",
-  airportController.getAirportsByUbication
+  airportsController.getAirportsByUbication
 );
 
 module.exports = router;

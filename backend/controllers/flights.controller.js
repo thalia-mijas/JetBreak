@@ -24,7 +24,7 @@ exports.getArrivals = async (req, res) => {
     const response = await fetch(url, options);
     const flights = await response.json();
     await redisClient.set(cachedKey, JSON.stringify(flights.data), {
-      EX: 1800, // Cache for 30 minutes
+      EX: 86400, // Cache for 1 day
     });
     res.status(200).json(flights.data);
   } catch (error) {
@@ -56,7 +56,7 @@ exports.getDepartures = async (req, res) => {
     const response = await fetch(url, options);
     const flights = await response.json();
     await redisClient.set(cachedKey, JSON.stringify(flights.data), {
-      EX: 1800, // Cache for 30 minutes
+      EX: 86400, // Cache for 1 day
     });
     res.status(200).json(flights.data);
   } catch (error) {

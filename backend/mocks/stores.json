@@ -1,0 +1,519 @@
+{
+  "results": [
+    {
+      "fsq_place_id": "4d7d729279c4b1f767e30df3",
+      "latitude": -2.1483163632058497,
+      "longitude": -79.88463914625984,
+      "categories": [
+        {
+          "fsq_category_id": "4bf58dd8d48988d16d941735",
+          "name": "Café",
+          "short_name": "Café",
+          "plural_name": "Cafés",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/cafe_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "date_created": "2011-03-14",
+      "date_refreshed": "2025-06-14",
+      "distance": 33,
+      "extended_location": {},
+      "link": "/places/4d7d729279c4b1f767e30df3",
+      "location": {
+        "address": "Aeropuerto Jose Joaquin de Olmedo",
+        "locality": "Guayaquil",
+        "region": "Guayas",
+        "country": "EC",
+        "formatted_address": "Aeropuerto Jose Joaquin de Olmedo (Av. America), Guayaquil"
+      },
+      "name": "Juan Valdez",
+      "placemaker_url": "https://foursquare.com/placemakers/review-place/4d7d729279c4b1f767e30df3",
+      "related_places": {
+        "parent": {
+          "fsq_place_id": "4b602d15f964a52096d829e3",
+          "categories": [
+            {
+              "fsq_category_id": "4bf58dd8d48988d1ed931735",
+              "name": "Aeropuerto",
+              "short_name": "Aeropuerto",
+              "plural_name": "Aeropuertos",
+              "icon": {
+                "prefix": "https://ss3.4sqi.net/img/categories_v2/travel/airport_",
+                "suffix": ".png"
+              }
+            }
+          ],
+          "name": "Aeropuerto Internacional José Joaquín de Olmedo (GYE)"
+        }
+      },
+      "social_media": {}
+    },
+    {
+      "fsq_place_id": "4f4998a7e4b030691a8f7d79",
+      "latitude": -2.1479103501189076,
+      "longitude": -79.88362632997796,
+      "categories": [
+        {
+          "fsq_category_id": "589ddde98ae3635c072819ee",
+          "name": "Tienda duty free",
+          "short_name": "Libre de impuestos",
+          "plural_name": "Tiendas libres de impuestos",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/default_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "date_created": "2012-02-26",
+      "date_refreshed": "2025-07-03",
+      "distance": 88,
+      "extended_location": {},
+      "link": "/places/4f4998a7e4b030691a8f7d79",
+      "location": {
+        "postcode": "",
+        "country": "EC",
+        "formatted_address": ""
+      },
+      "name": "Duty Free Aereopuerto Jose Joaquin De Olmedo",
+      "placemaker_url": "https://foursquare.com/placemakers/review-place/4f4998a7e4b030691a8f7d79",
+      "related_places": {
+        "parent": {
+          "fsq_place_id": "4b602d15f964a52096d829e3",
+          "categories": [
+            {
+              "fsq_category_id": "4bf58dd8d48988d1ed931735",
+              "name": "Aeropuerto",
+              "short_name": "Aeropuerto",
+              "plural_name": "Aeropuertos",
+              "icon": {
+                "prefix": "https://ss3.4sqi.net/img/categories_v2/travel/airport_",
+                "suffix": ".png"
+              }
+            }
+          ],
+          "name": "Aeropuerto Internacional José Joaquín de Olmedo (GYE)"
+        }
+      },
+      "social_media": {
+        "twitter": ""
+      }
+    },
+    {
+      "fsq_place_id": "5c51eef9c58ed7002c3694a8",
+      "latitude": -2.148169,
+      "longitude": -79.884476,
+      "categories": [
+        {
+          "fsq_category_id": "4bf58dd8d48988d16e941735",
+          "name": "Restaurante de comida rápida",
+          "short_name": "Comida rápida",
+          "plural_name": "Restaurantes de comida rápida",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/fastfood_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [
+        {
+          "fsq_chain_id": "556f7a12bd6a75a9903bddb2",
+          "name": "McDonald's"
+        }
+      ],
+      "date_created": "2019-01-30",
+      "date_refreshed": "2025-01-06",
+      "distance": 9,
+      "extended_location": {},
+      "link": "/places/5c51eef9c58ed7002c3694a8",
+      "location": {
+        "locality": "Guayaquil",
+        "region": "Guayas",
+        "postcode": "",
+        "country": "EC",
+        "formatted_address": "Guayaquil"
+      },
+      "name": "McDonald's",
+      "placemaker_url": "https://foursquare.com/placemakers/review-place/5c51eef9c58ed7002c3694a8",
+      "related_places": {
+        "parent": {
+          "fsq_place_id": "4b602d15f964a52096d829e3",
+          "categories": [
+            {
+              "fsq_category_id": "4bf58dd8d48988d1ed931735",
+              "name": "Aeropuerto",
+              "short_name": "Aeropuerto",
+              "plural_name": "Aeropuertos",
+              "icon": {
+                "prefix": "https://ss3.4sqi.net/img/categories_v2/travel/airport_",
+                "suffix": ".png"
+              }
+            }
+          ],
+          "name": "Aeropuerto Internacional José Joaquín de Olmedo (GYE)"
+        }
+      },
+      "social_media": {
+        "twitter": ""
+      }
+    },
+    {
+      "fsq_place_id": "4dbb3acb4b222080d372d7a8",
+      "latitude": -2.1484779947476116,
+      "longitude": -79.88388289882171,
+      "categories": [
+        {
+          "fsq_category_id": "4bf58dd8d48988d155941735",
+          "name": "Gastropub",
+          "short_name": "Gastropub",
+          "plural_name": "Pubs gourmet",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/gastropub_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "date_created": "2011-04-29",
+      "date_refreshed": "2025-02-24",
+      "distance": 68,
+      "extended_location": {},
+      "link": "/places/4dbb3acb4b222080d372d7a8",
+      "location": {
+        "address": "at Aeropuerto GYE",
+        "locality": "Mapasingue",
+        "region": "Guayas",
+        "country": "EC",
+        "formatted_address": "at Aeropuerto GYE, Mapasingue"
+      },
+      "name": "City Bistro",
+      "placemaker_url": "https://foursquare.com/placemakers/review-place/4dbb3acb4b222080d372d7a8",
+      "related_places": {
+        "parent": {
+          "fsq_place_id": "4b602d15f964a52096d829e3",
+          "categories": [
+            {
+              "fsq_category_id": "4bf58dd8d48988d1ed931735",
+              "name": "Aeropuerto",
+              "short_name": "Aeropuerto",
+              "plural_name": "Aeropuertos",
+              "icon": {
+                "prefix": "https://ss3.4sqi.net/img/categories_v2/travel/airport_",
+                "suffix": ".png"
+              }
+            }
+          ],
+          "name": "Aeropuerto Internacional José Joaquín de Olmedo (GYE)"
+        }
+      },
+      "social_media": {}
+    },
+    {
+      "fsq_place_id": "4efb660777c8e88f4b44e793",
+      "latitude": -2.1479056633802807,
+      "longitude": -79.88362648185937,
+      "categories": [
+        {
+          "fsq_category_id": "4bf58dd8d48988d117951735",
+          "name": "Tienda de golosinas",
+          "short_name": "Tienda de golosinas",
+          "plural_name": "Tiendas de dulces",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/candystore_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "date_created": "2011-12-28",
+      "date_refreshed": "2025-01-07",
+      "distance": 88,
+      "extended_location": {},
+      "link": "/places/4efb660777c8e88f4b44e793",
+      "location": {
+        "locality": "Guayaquil",
+        "region": "Guayas",
+        "postcode": "",
+        "country": "EC",
+        "formatted_address": "Guayaquil"
+      },
+      "name": "República Del Cacao",
+      "placemaker_url": "https://foursquare.com/placemakers/review-place/4efb660777c8e88f4b44e793",
+      "related_places": {
+        "parent": {
+          "fsq_place_id": "4b602d15f964a52096d829e3",
+          "categories": [
+            {
+              "fsq_category_id": "4bf58dd8d48988d1ed931735",
+              "name": "Aeropuerto",
+              "short_name": "Aeropuerto",
+              "plural_name": "Aeropuertos",
+              "icon": {
+                "prefix": "https://ss3.4sqi.net/img/categories_v2/travel/airport_",
+                "suffix": ".png"
+              }
+            }
+          ],
+          "name": "Aeropuerto Internacional José Joaquín de Olmedo (GYE)"
+        }
+      },
+      "social_media": {
+        "twitter": ""
+      }
+    },
+    {
+      "fsq_place_id": "4e65199c1495676d56df3e8d",
+      "latitude": -2.1479044097452378,
+      "longitude": -79.88441739441899,
+      "categories": [
+        {
+          "fsq_category_id": "4d4b7105d754a06374d81259",
+          "name": "Restaurante",
+          "short_name": "Restaurante",
+          "plural_name": "Restaurantes",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/default_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "date_created": "2011-09-05",
+      "date_refreshed": "2023-03-20",
+      "distance": 25,
+      "extended_location": {},
+      "link": "/places/4e65199c1495676d56df3e8d",
+      "location": {
+        "address": "Aeropuerto José Joaquín de Olmedo",
+        "locality": "Guayaquil",
+        "region": "Guayas",
+        "postcode": "",
+        "country": "EC",
+        "formatted_address": "Aeropuerto José Joaquín de Olmedo, Guayaquil"
+      },
+      "name": "Arrecife Bar Restaurant",
+      "placemaker_url": "https://foursquare.com/placemakers/review-place/4e65199c1495676d56df3e8d",
+      "related_places": {
+        "parent": {
+          "fsq_place_id": "4b602d15f964a52096d829e3",
+          "categories": [
+            {
+              "fsq_category_id": "4bf58dd8d48988d1ed931735",
+              "name": "Aeropuerto",
+              "short_name": "Aeropuerto",
+              "plural_name": "Aeropuertos",
+              "icon": {
+                "prefix": "https://ss3.4sqi.net/img/categories_v2/travel/airport_",
+                "suffix": ".png"
+              }
+            }
+          ],
+          "name": "Aeropuerto Internacional José Joaquín de Olmedo (GYE)"
+        }
+      },
+      "social_media": {
+        "twitter": ""
+      }
+    },
+    {
+      "fsq_place_id": "4f75f41de4b0ca03a3808a86",
+      "latitude": -2.15036226593455,
+      "longitude": -79.88742792084534,
+      "categories": [
+        {
+          "fsq_category_id": "4bf58dd8d48988d1ce941735",
+          "name": "Marisquería",
+          "short_name": "Mariscos",
+          "plural_name": "Marisquerías",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/seafood_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "date_created": "2012-03-30",
+      "date_refreshed": "2025-05-07",
+      "distance": 418,
+      "extended_location": {},
+      "link": "/places/4f75f41de4b0ca03a3808a86",
+      "location": {
+        "postcode": "",
+        "country": "EC",
+        "formatted_address": ""
+      },
+      "name": "El Puerto",
+      "placemaker_url": "https://foursquare.com/placemakers/review-place/4f75f41de4b0ca03a3808a86",
+      "related_places": {},
+      "social_media": {
+        "twitter": ""
+      }
+    },
+    {
+      "fsq_place_id": "4e89a7819a52f9bbd0e982a7",
+      "latitude": -2.148208690125725,
+      "longitude": -79.88456775891733,
+      "categories": [
+        {
+          "fsq_category_id": "4bf58dd8d48988d143941735",
+          "name": "Café",
+          "short_name": "Desayuno",
+          "plural_name": "Cafés",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/breakfast_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "fsq_category_id": "4bf58dd8d48988d16d941735",
+          "name": "Café",
+          "short_name": "Café",
+          "plural_name": "Cafés",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/cafe_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "date_created": "2011-10-03",
+      "date_refreshed": "2024-08-18",
+      "distance": 21,
+      "extended_location": {},
+      "link": "/places/4e89a7819a52f9bbd0e982a7",
+      "location": {
+        "address": "Aeropuerto Jose Joaquín de Olmedo",
+        "locality": "Guayaquil",
+        "region": "Guayas",
+        "postcode": "",
+        "country": "EC",
+        "formatted_address": "Aeropuerto Jose Joaquín de Olmedo, Guayaquil"
+      },
+      "name": "Cafe Du Port",
+      "placemaker_url": "https://foursquare.com/placemakers/review-place/4e89a7819a52f9bbd0e982a7",
+      "related_places": {},
+      "social_media": {
+        "twitter": ""
+      }
+    },
+    {
+      "fsq_place_id": "56f72980498e11dd5b8e560f",
+      "latitude": -2.143267430873204,
+      "longitude": -79.88446661328295,
+      "categories": [
+        {
+          "fsq_category_id": "4bf58dd8d48988d1e0931735",
+          "name": "Cafetería",
+          "short_name": "Cafetería",
+          "plural_name": "Cafeterías",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "date_created": "2016-03-27",
+      "date_refreshed": "2025-04-13",
+      "distance": 540,
+      "extended_location": {},
+      "link": "/places/56f72980498e11dd5b8e560f",
+      "location": {
+        "address": "Primax",
+        "locality": "Guayaquil",
+        "region": "Guayas",
+        "postcode": "",
+        "country": "EC",
+        "formatted_address": "Primax (Av. De Las Américas), Guayaquil"
+      },
+      "name": "Sweet & Coffee",
+      "placemaker_url": "https://foursquare.com/placemakers/review-place/56f72980498e11dd5b8e560f",
+      "related_places": {
+        "parent": {
+          "fsq_place_id": "4ea80629b8034ce4bd0f620f",
+          "categories": [
+            {
+              "fsq_category_id": "4bf58dd8d48988d113951735",
+              "name": "Gasolinera",
+              "short_name": "Gasolinera",
+              "plural_name": "Gasolineras",
+              "icon": {
+                "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/gas_",
+                "suffix": ".png"
+              }
+            }
+          ],
+          "name": "Primax"
+        }
+      },
+      "social_media": {
+        "twitter": ""
+      }
+    },
+    {
+      "fsq_place_id": "4e9b7c865503cfce74a76f0a",
+      "latitude": -2.148690051453953,
+      "longitude": -79.88465134898955,
+      "categories": [
+        {
+          "fsq_category_id": "4d4ae6fc7a7b7dea34424761",
+          "name": "Local de pollo frito",
+          "short_name": "Pollo frito",
+          "plural_name": "Locales de pollo frito",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/friedchicken_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [
+        {
+          "fsq_chain_id": "556e40c7bd6a82902e2671cb",
+          "name": "KFC"
+        }
+      ],
+      "date_created": "2011-10-17",
+      "date_refreshed": "2024-12-10",
+      "distance": 68,
+      "extended_location": {},
+      "link": "/places/4e9b7c865503cfce74a76f0a",
+      "location": {
+        "address": "GYE Airport",
+        "locality": "Guayaquil",
+        "region": "Guayas",
+        "postcode": "",
+        "country": "EC",
+        "formatted_address": "GYE Airport, Guayaquil"
+      },
+      "name": "KFC",
+      "placemaker_url": "https://foursquare.com/placemakers/review-place/4e9b7c865503cfce74a76f0a",
+      "related_places": {
+        "parent": {
+          "fsq_place_id": "4b602d15f964a52096d829e3",
+          "categories": [
+            {
+              "fsq_category_id": "4bf58dd8d48988d1ed931735",
+              "name": "Aeropuerto",
+              "short_name": "Aeropuerto",
+              "plural_name": "Aeropuertos",
+              "icon": {
+                "prefix": "https://ss3.4sqi.net/img/categories_v2/travel/airport_",
+                "suffix": ".png"
+              }
+            }
+          ],
+          "name": "Aeropuerto Internacional José Joaquín de Olmedo (GYE)"
+        }
+      },
+      "social_media": {
+        "twitter": ""
+      }
+    }
+  ],
+  "context": {
+    "geo_bounds": {
+      "circle": {
+        "center": {
+          "latitude": -2.1481341,
+          "longitude": -79.884394
+        },
+        "radius": 1927
+      }
+    }
+  }
+}
