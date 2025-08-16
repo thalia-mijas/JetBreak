@@ -1,8 +1,17 @@
 const fs = require("fs");
 const path = require("path");
+const CACHE_TIME = process.env.CACHE_TIME;
 
 exports.getOffers = async (req, res) => {
   try {
+    const cachedKey = `offers`;
+    const cachedData = await redisClient.get(cachedKey);
+    if (cachedData) {
+      console.log("Cache offers from Redis");
+      return res.json(JSON.parse(cachedData));
+    }
+    console.log("Cache miss, fetching from API");
+
     const offersFilePath = path.join(__dirname, "../mocks/offers.json");
     const offersData = fs.readFileSync(offersFilePath, "utf8");
     const offers = JSON.parse(offersData).data;
@@ -20,31 +29,14 @@ exports.getOffers = async (req, res) => {
       duration: offer.slices[0].segments[0].duration,
       total: `£${offer.total_amount} ${offer.total_currency} for ${offer.passengers[0].type}`,
     }));
+
+    await redisClient.set(cachedKey, JSON.stringify(filteredOffers), {
+      EX: CACHE_TIME,
+    });
+
     res.status(200).json(filteredOffers);
   } catch (error) {
     console.error("Error fetching offers:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
-
-// exports.getAirline = async (req, res) => {
-//   const { airlineCode } = req.params;
-
-//   console.log("Fetching airline with code:", airlineCode);
-
-//   try {
-//     const airlinesFilePath = path.join(__dirname, "../mocks/airlines.json");
-//     const airlinesData = fs.readFileSync(airlinesFilePath, "utf8");
-//     const airlines = JSON.parse(airlinesData);
-//     const airline = airlines.find((a) => a.iata_code === airlineCode);
-
-//     if (!airline) {
-//       return res.status(404).json({ message: "Airline not found" });
-//     }
-
-//     res.status(200).json(airline);
-//   } catch (error) {
-//     console.error("Error fetching airline:", error);
-//     res.status(500).json({ message: "Internal server error" });
-//   }
-// };

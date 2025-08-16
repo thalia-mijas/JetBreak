@@ -1,5 +1,6 @@
 const redisClient = require("../redis");
 const API_KEY = process.env.AVIATION_STACK_API_KEY;
+const CACHE_TIME = process.env.CACHE_TIME;
 
 exports.getArrivals = async (req, res) => {
   try {
@@ -17,14 +18,14 @@ exports.getArrivals = async (req, res) => {
     const cachedKey = `arrivals:${iataCode}`;
     const cachedData = await redisClient.get(cachedKey);
     if (cachedData) {
-      console.log("Cache hit from Redis");
+      console.log("Cache arrivals from Redis");
       return res.json(JSON.parse(cachedData));
     }
     console.log("Cache miss, fetching from API");
     const response = await fetch(url, options);
     const flights = await response.json();
     await redisClient.set(cachedKey, JSON.stringify(flights.data), {
-      EX: 86400, // Cache for 1 day
+      EX: CACHE_TIME,
     });
     res.status(200).json(flights.data);
   } catch (error) {
@@ -49,14 +50,14 @@ exports.getDepartures = async (req, res) => {
     const cachedKey = `departures:${iataCode}`;
     const cachedData = await redisClient.get(cachedKey);
     if (cachedData) {
-      console.log("Cache hit from Redis");
+      console.log("Cache departures from Redis");
       return res.json(JSON.parse(cachedData));
     }
     console.log("Cache miss, fetching from API");
     const response = await fetch(url, options);
     const flights = await response.json();
     await redisClient.set(cachedKey, JSON.stringify(flights.data), {
-      EX: 86400, // Cache for 1 day
+      EX: CACHE_TIME,
     });
     res.status(200).json(flights.data);
   } catch (error) {
