@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const claimsController = require("../controllers/claims.controller");
-// const authMiddleware = require("../middlewares/auth.middleware"); aqui se agregar si se necesita middlewares
 
 router.post("/", claimsController.createClaim);
+router.get("/", claimsController.getClaims);
 
 module.exports = router;

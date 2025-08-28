@@ -89,8 +89,7 @@ export default function Stores() {
               Tiendas y Servicios
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Explora las tiendas, restaurantes y servicios disponibles en el
-              aeropuerto
+              Explora las tiendas y restaurantes disponibles en el aeropuerto
             </p>
           </div>
 
