@@ -41,10 +41,12 @@ export default function Login() {
                         placeholder="Ingresa tu contraseña"
                         type="password"
                       />
-                      <p className="text-center text-small">
-                        Necesitas crear una cuenta?{" "}
-                        <Link size="sm" onPress={() => setSelected("sign-up")}>
-                          Regístrate
+                      <p className="text-right text-small">
+                        <Link
+                          size="sm"
+                          onPress={() => setSelected("forgot-password")}
+                        >
+                          Olvide mi contraseña
                         </Link>
                       </p>
                       <div className="flex gap-2 justify-end">
@@ -52,6 +54,12 @@ export default function Login() {
                           Iniciar sesión
                         </Button>
                       </div>
+                      <p className="text-center text-small">
+                        Necesitas crear una cuenta?{" "}
+                        <Link size="sm" onPress={() => setSelected("sign-up")}>
+                          Regístrate
+                        </Link>
+                      </p>
                     </form>
                   </Tab>
                   <Tab key="sign-up" title="Registro">

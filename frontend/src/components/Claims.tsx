@@ -1,7 +1,16 @@
-import { Button, Card, CardHeader, Input } from "@heroui/react";
+import { Button, Card, CardHeader, DateInput, Input } from "@heroui/react";
+import { CalendarDate, getLocalTimeZone } from "@internationalized/date";
+import { I18nProvider } from "@react-aria/i18n";
 import { MessageSquare } from "lucide-react";
+import { useState } from "react";
 
 export default function Claims() {
+  const [value, setValue] = useState<CalendarDate | null>(null);
+
+  const formatter = new Intl.DateTimeFormat("es-ES", {
+    dateStyle: "full", // Puedes usar 'medium', 'short', etc.
+  });
+
   return (
     <>
       <section id="reclamos" className="py-16 bg-gray-50">
@@ -30,15 +39,25 @@ export default function Claims() {
                   <label className="text-sm font-medium">Tipo de Reclamo</label>
                   <select className="w-full p-2 border rounded-md">
                     <option>Retraso de vuelo</option>
-                    <option>Cancelación</option>
+                    <option>Cancelación de vuelo</option>
                     <option>Equipaje perdido</option>
-                    <option>Servicio al cliente</option>
-                    <option>Otro</option>
                   </select>
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Número de Vuelo</label>
                   <Input placeholder="Ej: IB6254" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Fecha de Vuelo</label>
+                  <I18nProvider locale="es-ES">
+                    <DateInput onChange={setValue} />
+                    <p className="text-default-500 text-sm">
+                      Fecha seleccionada:{" "}
+                      {value
+                        ? formatter.format(value.toDate(getLocalTimeZone()))
+                        : "--"}
+                    </p>
+                  </I18nProvider>
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Descripción</label>
