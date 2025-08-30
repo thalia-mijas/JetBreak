@@ -10,6 +10,7 @@ const airlinesRoutes = require("./routes/airlines.routes");
 const flightsRoutes = require("./routes/flights.routes");
 const storesRoutes = require("./routes/stores.routes");
 const offersRoutes = require("./routes/offers.routes");
+const usersRoutes = require("./routes/users.routes");
 
 app.use(express.json());
 app.use("/api", authRoutes);
@@ -19,6 +20,7 @@ app.use("/api/stores", storesRoutes);
 app.use("/api/airlines", airlinesRoutes);
 app.use("/api/flights", flightsRoutes);
 app.use("/api/offers", offersRoutes);
+app.use("/api/users", usersRoutes);
 
 sequelize.sync();
 
