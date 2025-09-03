@@ -15,48 +15,40 @@ exports.createClaim = async (req, res) => {
     }
 
     try {
-      const url = `https://api.aviationstack.com/v1/timetable?access_key=${API_KEY}&flight_iata=${flight_iata}`;
+      const url = `https://api.aviationstack.com/v1/flights?access_key=${API_KEY}&flight_iata=${flight_iata}`;
       const options = {
         method: "GET",
       };
 
-      const cachedKey = `flight:${flight_iata}`;
-      const cachedData = await redisClient.get(cachedKey);
-      if (cachedData) {
-        console.log("Cache flight from Redis");
-        return res.json(JSON.parse(cachedData));
-      }
-      console.log("Cache miss, fetching from API");
       const response = await fetch(url, options);
       const flight = await response.json();
 
-      console.log("Flight founded:", flight);
-
-      if (!flight.data || flight.data.length === 0) {
+      if (flight.data.length === 0) {
         return res.status(404).json({ message: "Flight not found" });
       }
 
-      await redisClient.set(cachedKey, JSON.stringify(flight.data), {
-        EX: CACHE_TIME,
-      });
+      const match = flight.data.find((f) => f.flight_date === date);
 
-      console.log("Flight founded:", flight);
+      if (match) {
+        console.log("Vuelo encontrado:", match);
+        const claim = await Claim.create({
+          user_id,
+          type,
+          flight_iata,
+          date,
+          description,
+        });
+
+        res
+          .status(201)
+          .json({ message: "Claim created successfully", claim: claim });
+      } else {
+        return res.status(404).json({ message: "No existen coincidencias" });
+      }
     } catch (error) {
-      console.error("Error founding flight:", error);
-      return res.status(404).json({ message: "Flight not found" });
+      console.error("Error finding flight:", error);
+      return res.status(404).json({ message: "Error finding flight" });
     }
-
-    const claim = await Claim.create({
-      user_id,
-      type,
-      flight_iata,
-      date,
-      description,
-    });
-
-    res
-      .status(201)
-      .json({ message: "Claim created successfully", claim: claim });
   } catch (error) {
     console.error("Error creating claim:", error);
     res.status(500).json({ message: "Internal server error" });

@@ -11,6 +11,8 @@ const flightsRoutes = require("./routes/flights.routes");
 const storesRoutes = require("./routes/stores.routes");
 const offersRoutes = require("./routes/offers.routes");
 const usersRoutes = require("./routes/users.routes");
+const User = require("./models/user.model");
+const Claim = require("./models/claim.model");
 
 app.use(express.json());
 app.use("/api", authRoutes);
@@ -22,6 +24,14 @@ app.use("/api/flights", flightsRoutes);
 app.use("/api/offers", offersRoutes);
 app.use("/api/users", usersRoutes);
 
-sequelize.sync();
+// Define la relación
+User.hasMany(Claim, { foreignKey: "user_id" });
+Claim.belongsTo(User, { foreignKey: "user_id" });
+
+// Sincroniza
+sequelize
+  .sync({ force: false }) // Usa `force: true` solo si quieres borrar y recrear las tablas
+  .then(() => console.log("Tablas sincronizadas"))
+  .catch((err) => console.error("Error al sincronizar:", err));
 
 module.exports = app;

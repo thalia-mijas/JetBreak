@@ -5,20 +5,15 @@ const CACHE_TIME = process.env.CACHE_TIME;
 // Create a new user
 exports.createUser = async (req, res) => {
   try {
-    const { document_type, country, identity_card, name, email, password } =
-      req.body;
+    const { name, email, password } = req.body;
 
-    if (!document_type || !identity_card || !name || !email || !password) {
+    if (!name || !email || !password) {
       return res.status(400).json({
-        message:
-          "document_type, identity_card, name, email, and password are required",
+        message: "name, email, and password are required",
       });
     }
 
     const user = await User.create({
-      document_type,
-      country,
-      identity_card,
       name,
       email,
       password,

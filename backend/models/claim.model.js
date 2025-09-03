@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/db");
+const User = require("./user.model");
 
 const Claim = sequelize.define("Claim", {
   id: {
@@ -7,18 +8,11 @@ const Claim = sequelize.define("Claim", {
     primaryKey: true,
     autoIncrement: true,
   },
-  user_identity_card: {
-    type: DataTypes.STRING,
+  user_id: {
+    type: DataTypes.INTEGER,
     references: {
-      model: "User",
-      key: "identity_card",
-    },
-  },
-  airline_iata: {
-    type: DataTypes.STRING(2),
-    references: {
-      model: "Airline",
-      key: "iata_code",
+      model: User,
+      key: "id",
     },
   },
   type: {
