@@ -1,21 +1,43 @@
-const jwt = require("jsonwebtoken");
-const Claim = require("../models/claim.model");
-const createIPMiddleware = require("../middlewares/createIP.middleware");
 const fs = require("fs");
 const path = require("path");
 
+async function seedAirports() {
+  const filePath = path.join(__dirname, "../mocks/airports.json");
+  const rawData = fs.readFileSync(filePath);
+  const fullAirports = JSON.parse(rawData);
+
+  // Extraer solo iata_code y airport_name
+  const minimalAirports = fullAirports.map((a) => ({
+    iata_code: a.iata_code,
+    city_iata: a.city_iata_code,
+    latitude: a.latitude,
+    longitude: a.longitude,
+    name: a.airport_name,
+  }));
+
+  for (const data of minimalAirports) {
+    try {
+      await Airport.findOrCreate({
+        where: { iata_code: data.iata_code },
+        defaults: {
+          name: data.name,
+          city_iata: data.city_iata,
+          latitude: data.latitude,
+          longitude: data.longitude,
+        },
+      });
+      console.log(`✅ Insertada: ${data.name}`);
+    } catch (error) {
+      console.error(`❌ Error con ${data.name}:`, error.message);
+    }
+  }
+}
+
+seedAirports();
+
 exports.getAirports = async (req, res) => {
   try {
-    const airportsFilePath = path.join(__dirname, "../mocks/airports.json");
-    const airportsData = fs.readFileSync(airportsFilePath, "utf8");
-    const airports = JSON.parse(airportsData).map((airport) => ({
-      airport_id: airport.airport_id,
-      iata_code: airport.iata_code,
-      latitude: airport.latitude,
-      longitude: airport.longitude,
-      airport_name: airport.airport_name.replace(/\n/g, "").replace(/\r/g, ""),
-      country_name: airport.country_name,
-    }));
+    const airports = await Airport.findAll();
     res.status(200).json(airports);
   } catch (error) {
     console.error("Error fetching airports:", error);
@@ -29,10 +51,9 @@ exports.getAirport = async (req, res) => {
   console.log("Fetching airport with code:", airportCode);
 
   try {
-    const airportsFilePath = path.join(__dirname, "../mocks/airports.json");
-    const airportsData = fs.readFileSync(airportsFilePath, "utf8");
-    const airports = JSON.parse(airportsData);
-    const airport = airports.find((a) => a.iata_code === airportCode);
+    const airport = await Airport.findOne({
+      where: { iata_code: airportCode },
+    });
 
     if (!airport) {
       return res.status(404).json({ message: "Airport not found" });
@@ -60,9 +81,7 @@ exports.getAirportsByUbication = async (req, res) => {
   }
 
   try {
-    const airportsFilePath = path.join(__dirname, "../mocks/airports.json");
-    const airportsData = fs.readFileSync(airportsFilePath, "utf8");
-    const airports = JSON.parse(airportsData);
+    airports = await Airport.findAll();
 
     do {
       console.log(`Searching for airports within ${radius} degrees`);
@@ -79,7 +98,7 @@ exports.getAirportsByUbication = async (req, res) => {
 
     res.status(200).json(nearbyAirports);
   } catch (error) {
-    console.error("Error fetching nearby airports:", error);
+    console.error("Error fetching airports:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };

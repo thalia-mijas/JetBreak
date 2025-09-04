@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/db");
 
-const Airline = sequelize.define("Airline", {
+const Airport = sequelize.define("Airport", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -13,10 +13,22 @@ const Airline = sequelize.define("Airline", {
       len: [2],
     },
   },
+  city_iata: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  latitude: {
+    type: DataTypes.FLOAT,
+    allowNull: false,
+  },
+  longitude: {
+    type: DataTypes.FLOAT,
+    allowNull: false,
+  },
   name: {
     type: DataTypes.STRING,
     allowNull: false,
   },
 });
 
-module.exports = Airline;
+module.exports = Airport;

@@ -13,6 +13,7 @@ const offersRoutes = require("./routes/offers.routes");
 const usersRoutes = require("./routes/users.routes");
 const User = require("./models/user.model");
 const Claim = require("./models/claim.model");
+const Airline = require("./models/airline.model");
 
 app.use(express.json());
 app.use("/api", authRoutes);
@@ -24,9 +25,12 @@ app.use("/api/flights", flightsRoutes);
 app.use("/api/offers", offersRoutes);
 app.use("/api/users", usersRoutes);
 
-// Define la relación
+// Define las relaciones
 User.hasMany(Claim, { foreignKey: "user_id" });
 Claim.belongsTo(User, { foreignKey: "user_id" });
+
+Airline.hasMany(Claim, { foreignKey: "airline_id" });
+Claim.belongsTo(Airline, { foreignKey: "airline_id" });
 
 // Sincroniza
 sequelize
