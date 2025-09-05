@@ -13,10 +13,6 @@ const Airport = sequelize.define("Airport", {
       len: [2],
     },
   },
-  city_iata: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
   latitude: {
     type: DataTypes.FLOAT,
     allowNull: false,

@@ -14,8 +14,13 @@ const usersRoutes = require("./routes/users.routes");
 const User = require("./models/user.model");
 const Claim = require("./models/claim.model");
 const Airline = require("./models/airline.model");
+const Airport = require("./models/airport.model");
+const { seedAirlines } = require("./controllers/airlines.controller");
+const { seedAirports } = require("./controllers/airports.controller");
 
 app.use(express.json());
+
+// Rutas
 app.use("/api", authRoutes);
 app.use("/api/claims", claimsRoutes);
 app.use("/api/airports", airportsRoutes);
@@ -25,7 +30,7 @@ app.use("/api/flights", flightsRoutes);
 app.use("/api/offers", offersRoutes);
 app.use("/api/users", usersRoutes);
 
-// Define las relaciones
+// Define las relaciones de BD
 User.hasMany(Claim, { foreignKey: "user_id" });
 Claim.belongsTo(User, { foreignKey: "user_id" });
 
@@ -34,8 +39,26 @@ Claim.belongsTo(Airline, { foreignKey: "airline_id" });
 
 // Sincroniza
 sequelize
-  .sync({ force: false }) // Usa `force: true` solo si quieres borrar y recrear las tablas
-  .then(() => console.log("Tablas sincronizadas"))
+  .sync({ force: false })
+  .then(async () => {
+    console.log("Tablas sincronizadas");
+    
+    // Check if we need to seed the database
+    const airlineCount = await Airline.count();
+    const airportCount = await Airport.count();
+    
+    if (airlineCount === 0) {
+      console.log("Seeding airlines...");
+      await seedAirlines();
+    }
+    
+    if (airportCount === 0) {
+      console.log("Seeding airports...");
+      await seedAirports();
+    }
+    
+    console.log("✅ Database initialization complete");
+  })
   .catch((err) => console.error("Error al sincronizar:", err));
 
 module.exports = app;

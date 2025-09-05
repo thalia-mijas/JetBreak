@@ -19,14 +19,16 @@ async function seedAirlines() {
         where: { iata_code: data.iata_code },
         defaults: { name: data.name },
       });
-      console.log(`✅ Insertada: ${data.name}`);
     } catch (error) {
       console.error(`❌ Error con ${data.name}:`, error.message);
     }
   }
+  console.log(`✅ Aerolíneas creadas`);
 }
 
-seedAirlines();
+// seedAirlines(); // Moved to app.js after sync
+
+exports.seedAirlines = seedAirlines;
 
 exports.getAirlines = async (req, res) => {
   try {

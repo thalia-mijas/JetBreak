@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const Airport = require("../models/airport.model");
 
 async function seedAirports() {
   const filePath = path.join(__dirname, "../mocks/airports.json");
@@ -9,7 +10,6 @@ async function seedAirports() {
   // Extraer solo iata_code y airport_name
   const minimalAirports = fullAirports.map((a) => ({
     iata_code: a.iata_code,
-    city_iata: a.city_iata_code,
     latitude: a.latitude,
     longitude: a.longitude,
     name: a.airport_name,
@@ -21,19 +21,20 @@ async function seedAirports() {
         where: { iata_code: data.iata_code },
         defaults: {
           name: data.name,
-          city_iata: data.city_iata,
           latitude: data.latitude,
           longitude: data.longitude,
         },
       });
-      console.log(`✅ Insertada: ${data.name}`);
     } catch (error) {
       console.error(`❌ Error con ${data.name}:`, error.message);
     }
   }
+  console.log(`✅ Aeropuertos creados`);
 }
 
-seedAirports();
+// seedAirports(); // Moved to app.js after sync
+
+exports.seedAirports = seedAirports;
 
 exports.getAirports = async (req, res) => {
   try {
