@@ -2,6 +2,6 @@ const express = require("express");
 const router = express.Router();
 const offersController = require("../controllers/offers.controller");
 
-router.get("/", offersController.getOffers);
+router.get("/:origin/:destination/:date", offersController.getOffers);
 
 module.exports = router;

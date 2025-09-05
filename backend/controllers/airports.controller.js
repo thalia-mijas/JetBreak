@@ -7,7 +7,6 @@ async function seedAirports() {
   const rawData = fs.readFileSync(filePath);
   const fullAirports = JSON.parse(rawData);
 
-  // Extraer solo iata_code y airport_name
   const minimalAirports = fullAirports.map((a) => ({
     iata_code: a.iata_code,
     latitude: a.latitude,
@@ -31,8 +30,6 @@ async function seedAirports() {
   }
   console.log(`✅ Aeropuertos creados`);
 }
-
-// seedAirports(); // Moved to app.js after sync
 
 exports.seedAirports = seedAirports;
 

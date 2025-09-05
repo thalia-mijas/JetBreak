@@ -26,8 +26,6 @@ async function seedAirlines() {
   console.log(`✅ Aerolíneas creadas`);
 }
 
-// seedAirlines(); // Moved to app.js after sync
-
 exports.seedAirlines = seedAirlines;
 
 exports.getAirlines = async (req, res) => {
