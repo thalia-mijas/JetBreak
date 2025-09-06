@@ -1,10 +1,30 @@
-const fs = require("fs");
-const path = require("path");
+const redisClient = require("../redis");
 const CACHE_TIME = process.env.CACHE_TIME;
+const API_KEY = process.env.FOURSQUARE_API_KEY;
 
 exports.getStores = async (req, res) => {
   try {
-    const cachedKey = `stores`;
+    const { latitude, longitude } = req.params;
+
+    if (!latitude || !longitude) {
+      return res.status(400).json({
+        message: "Latitude and longitude are required",
+      });
+    }
+
+    const url = `https://places-api.foursquare.com/places/search?ll=${latitude},${longitude}&tel_format=NATIONAL&limit=50`;
+    const options = {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+        Accept: "application/json",
+        "X-Places-Api-Version": "2025-06-17",
+      },
+    };
+
+    const response = await fetch(url, options);
+    const stores = await response.json();
+    const cachedKey = `stores/${latitude}/${longitude}`;
     const cachedData = await redisClient.get(cachedKey);
     if (cachedData) {
       console.log("Cache stores from Redis");
@@ -12,10 +32,7 @@ exports.getStores = async (req, res) => {
     }
     console.log("Cache miss, fetching from API");
 
-    const storesFilePath = path.join(__dirname, "../mocks/stores.json");
-    const storesData = fs.readFileSync(storesFilePath, "utf8");
-    const stores = JSON.parse(storesData).results;
-    const filteredStores = stores
+    const filteredStores = stores.results
       .filter((store) => {
         const parentName =
           store?.related_places?.parent?.name?.toLowerCase() || "";

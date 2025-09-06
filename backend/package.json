@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@api/fsq-developers-places": "file:.api/apis/fsq-developers-places",
     "@duffel/api": "^4.15.1",
     "bcrypt": "^6.0.0",
     "dotenv": "^17.2.0",
