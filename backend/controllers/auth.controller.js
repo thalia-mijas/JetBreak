@@ -5,7 +5,7 @@ const { JWT_SECRET } = process.env;
 
 // Register a new user
 exports.register = async (req, res) => {
-  const { username, email, password } = req.body;
+  const { name, email, password } = req.body;
 
   try {
     // Hash password
@@ -13,7 +13,7 @@ exports.register = async (req, res) => {
 
     // Create user
     const user = await User.create({
-      username,
+      name,
       email,
       password: hashedPassword,
     });
@@ -43,7 +43,14 @@ exports.login = async (req, res) => {
     // Generate JWT token
     const token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: "1h" });
 
-    res.status(200).json({ token });
+    //Almacenar el token en una cookie httpOnly
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "Strict",
+    });
+
+    res.status(200).json({ message: "Login exitoso", user: user });
   } catch (error) {
     console.error("Error logging in:", error);
     res.status(500).json({ message: "Internal server error" });
