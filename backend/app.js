@@ -17,8 +17,17 @@ const Airline = require("./models/airline.model");
 const Airport = require("./models/airport.model");
 const { seedAirlines } = require("./controllers/airlines.controller");
 const { seedAirports } = require("./controllers/airports.controller");
+const cors = require("cors");
 
 app.use(express.json());
+
+// Permitir solicitudes desde tu frontend
+app.use(
+  cors({
+    origin: "http://localhost:5173", // o '*' si estás en desarrollo
+    credentials: true,
+  })
+);
 
 // Rutas
 app.use("/api", authRoutes);
@@ -42,21 +51,21 @@ sequelize
   .sync({ force: false })
   .then(async () => {
     console.log("Tablas sincronizadas");
-    
+
     // Check if we need to seed the database
     const airlineCount = await Airline.count();
     const airportCount = await Airport.count();
-    
+
     if (airlineCount === 0) {
       console.log("Seeding airlines...");
       await seedAirlines();
     }
-    
+
     if (airportCount === 0) {
       console.log("Seeding airports...");
       await seedAirports();
     }
-    
+
     console.log("✅ Database initialization complete");
   })
   .catch((err) => console.error("Error al sincronizar:", err));

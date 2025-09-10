@@ -17,9 +17,9 @@ export const Logo = () => {
     <img
       src="icon.svg"
       alt="JetBrake Logo"
-      height={70}
-      width={70}
-      className="mt-2"
+      height={50}
+      width={50}
+      className="mt-2 mr-2"
     />
   );
 };
@@ -28,9 +28,8 @@ export default function NavBar() {
   const { pathname } = useLocation();
 
   const menuItems = [
-    { label: "Vuelos", href: "/" },
+    { label: "Aeropuerto", href: "/" },
     { label: "Ofertas", href: "/offers" },
-    { label: "Tiendas", href: "/stores" },
     { label: "Reclamos", href: "/claims" },
   ];
 

@@ -1,3 +1,5 @@
+import type { Airport } from "../models/airport";
+
 export async function getUbication(): Promise<{
   latitude: number;
   longitude: number;
@@ -21,10 +23,16 @@ export async function getUbication(): Promise<{
 export async function getAirportFromUbication() {
   const { latitude, longitude } = await getUbication();
 
-  const response = await fetch(`airports.json`);
+  const url = "http://localhost:3000/api/airports";
+
+  const options = {
+    method: "GET",
+  };
+
+  const response = await fetch(url, options);
   const data = await response.json();
 
-  data.map((airport) => {
+  data.map((airport: Airport) => {
     console.log("Comparando con aeropuerto: ", airport.iata_code);
     if (airport.latitude === latitude && airport.longitude === longitude) {
       console.log("Aeropuerto encontrado: ", airport);

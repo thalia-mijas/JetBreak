@@ -1,34 +1,10 @@
 import { Card } from "@heroui/react";
-import { Car, Coffee, Gift, Wifi } from "lucide-react";
 
-export default function Stores() {
-  const storesItems = [
-    {
-      category: "Duty Free",
-      icon: <Gift className="h-8 w-8" />,
-      stores: ["World Duty Free", "Dufry", "Heinemann"],
-      color: "bg-purple-100 text-purple-600",
-    },
-    {
-      category: "Restaurantes",
-      icon: <Coffee className="h-8 w-8" />,
-      stores: ["Starbucks", "McDonald's", "Burger King"],
-      color: "bg-orange-100 text-orange-600",
-    },
-    {
-      category: "Servicios",
-      icon: <Wifi className="h-8 w-8" />,
-      stores: ["WiFi Gratis", "Carga Móvil", "Información"],
-      color: "bg-[#56DFCF]/10 text-[#56DFCF]",
-    },
-    {
-      category: "Transporte",
-      icon: <Car className="h-8 w-8" />,
-      stores: ["Alquiler Coches", "Taxi", "Metro"],
-      color: "bg-green-100 text-green-600",
-    },
-  ];
-
+export default function Stores({
+  selectedAirport,
+}: {
+  selectedAirport: string;
+}) {
   const stores = [
     {
       id: "4d7d729279c4b1f767e30df3",
@@ -80,60 +56,60 @@ export default function Stores() {
     },
   ];
 
+  console.log("Imprimiedo desde stores: ", selectedAirport);
+
   return (
     <>
-      <section id="tiendas" className="py-16 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Tiendas y Servicios
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Explora las tiendas y restaurantes disponibles en el aeropuerto
-            </p>
-          </div>
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Tiendas y Servicios
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Explora las tiendas y restaurantes disponibles en el aeropuerto
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {stores.map((store) => {
-              return (
-                <Card
-                  key={store.id}
-                  className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
-                >
-                  <div className="p-6">
-                    {/* Store Icon and Category Badge */}
-                    <div className="flex items-start justify-between mb-4 gap-3">
-                      <div className="w-16 h-16 bg-white rounded-xl shadow-sm border flex items-center justify-center overflow-hidden group-hover:shadow-md transition-shadow">
-                        <img
-                          src={store.icon || "/placeholder.svg"}
-                          alt={store.name}
-                          className="w-12 h-12 object-cover rounded-lg"
-                          onError={(e) => {
-                            e.currentTarget.src = "/local-grocery-store.png";
-                          }}
-                        />
-                      </div>
-                      <div className="text-xs px-1 py-1 rounded-full bg-[#56DFCF] text-white text-center">
-                        {store.category}
-                      </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {stores.map((store) => {
+            return (
+              <Card
+                key={store.id}
+                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
+              >
+                <div className="p-6">
+                  {/* Store Icon and Category Badge */}
+                  <div className="flex items-start justify-between mb-4 gap-3">
+                    <div className="w-16 h-16 bg-white rounded-xl shadow-sm border flex items-center justify-center overflow-hidden group-hover:shadow-md transition-shadow">
+                      <img
+                        src={store.icon || "/placeholder.svg"}
+                        alt={store.name}
+                        className="w-12 h-12 object-cover rounded-lg"
+                        onError={(e) => {
+                          e.currentTarget.src = "/local-grocery-store.png";
+                        }}
+                      />
                     </div>
-
-                    {/* Store Name */}
-                    <div className="mb-3">
-                      <h3
-                        className="font-semibold text-lg text-gray-900 mb-1"
-                        title={store.name}
-                      >
-                        {store.name}
-                      </h3>
+                    <div className="text-xs px-1 py-1 rounded-full bg-[#56DFCF] text-white text-center">
+                      {store.category}
                     </div>
                   </div>
-                </Card>
-              );
-            })}
-          </div>
+
+                  {/* Store Name */}
+                  <div className="mb-3">
+                    <h3
+                      className="font-semibold text-lg text-gray-900 mb-1"
+                      title={store.name}
+                    >
+                      {store.name}
+                    </h3>
+                  </div>
+                </div>
+              </Card>
+            );
+          })}
         </div>
-      </section>
+      </div>
     </>
   );
 }
