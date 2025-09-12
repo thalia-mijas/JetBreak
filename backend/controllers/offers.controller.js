@@ -1,7 +1,3 @@
-const fs = require("fs");
-const path = require("path");
-const { head } = require("../app");
-const CACHE_TIME = process.env.CACHE_TIME;
 const API_KEY = process.env.DUFFEL_API_KEY;
 const { Duffel } = require("@duffel/api");
 
