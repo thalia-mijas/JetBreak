@@ -15,6 +15,7 @@ const User = require("./models/user.model");
 const Claim = require("./models/claim.model");
 const Airline = require("./models/airline.model");
 const Airport = require("./models/airport.model");
+const Flight = require("./models/flight.model");
 const { seedAirlines } = require("./controllers/airlines.controller");
 const { seedAirports } = require("./controllers/airports.controller");
 const cors = require("cors");
@@ -45,6 +46,20 @@ Claim.belongsTo(User, { foreignKey: "user_id" });
 
 Airline.hasMany(Claim, { foreignKey: "airline_id" });
 Claim.belongsTo(Airline, { foreignKey: "airline_id" });
+
+User.hasMany(Flight, { foreignKey: "user_id" });
+Flight.belongsTo(User, { foreignKey: "user_id" });
+
+Airline.hasMany(Flight, { foreignKey: "airline_id" });
+Flight.belongsToMany(Airline, {
+  through: "FlightAirline",
+  foreignKey: "airline_id",
+});
+
+Airport.hasMany(Flight, { foreignKey: "origin_iata" });
+Airport.hasMany(Flight, { foreignKey: "destination_iata" });
+Flight.belongsTo(Airport, { foreignKey: "origin_iata" });
+Flight.belongsTo(Airport, { foreignKey: "destination_iata" });
 
 // Sincroniza
 sequelize

@@ -15,19 +15,22 @@ exports.getArrivals = async (req, res) => {
       method: "GET",
     };
 
+    let flights = [];
+
     const cachedKey = `arrivals:${iataCode}`;
     const cachedData = await redisClient.get(cachedKey);
     if (cachedData) {
       console.log("Cache arrivals from Redis");
-      return res.json(JSON.parse(cachedData));
+      flights = JSON.parse(cachedData);
+    } else {
+      console.log("Cache miss, fetching from API");
+      const response = await fetch(url, options);
+      flights = await response.json().data;
+      await redisClient.set(cachedKey, JSON.stringify(flights), {
+        EX: CACHE_TIME,
+      });
     }
-    console.log("Cache miss, fetching from API");
-    const response = await fetch(url, options);
-    const flights = await response.json();
-    await redisClient.set(cachedKey, JSON.stringify(flights.data), {
-      EX: CACHE_TIME,
-    });
-    res.status(200).json(flights.data);
+    res.status(200).json(flights);
   } catch (error) {
     console.error("Error fetching arrivals:", error);
     res.status(500).json({ message: "Internal server error" });
@@ -47,19 +50,22 @@ exports.getDepartures = async (req, res) => {
       method: "GET",
     };
 
+    let flights = [];
+
     const cachedKey = `departures:${iataCode}`;
     const cachedData = await redisClient.get(cachedKey);
     if (cachedData) {
       console.log("Cache departures from Redis");
-      return res.json(JSON.parse(cachedData));
+      flights = JSON.parse(cachedData);
+    } else {
+      console.log("Cache miss, fetching from API");
+      const response = await fetch(url, options);
+      flights = await response.json().data;
+      await redisClient.set(cachedKey, JSON.stringify(flights), {
+        EX: CACHE_TIME,
+      });
     }
-    console.log("Cache miss, fetching from API");
-    const response = await fetch(url, options);
-    const flights = await response.json();
-    await redisClient.set(cachedKey, JSON.stringify(flights.data), {
-      EX: CACHE_TIME,
-    });
-    res.status(200).json(flights.data);
+    res.status(200).json(flights);
   } catch (error) {
     console.error("Error fetching departures:", error);
     res.status(500).json({ message: "Internal server error" });

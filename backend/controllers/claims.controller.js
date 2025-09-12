@@ -1,5 +1,6 @@
 const Airline = require("../models/airline.model");
 const Claim = require("../models/claim.model");
+const User = require("../models/user.model");
 const redisClient = require("../redis");
 const API_KEY = process.env.AVIATION_STACK_API_KEY;
 const CACHE_TIME = process.env.CACHE_TIME;
@@ -15,36 +16,40 @@ exports.createClaim = async (req, res) => {
       });
     }
 
+    const user = await User.findByPk(user_id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
     try {
       const url = `https://api.aviationstack.com/v1/flights?access_key=${API_KEY}&flight_iata=${flight_iata}`;
       const options = {
         method: "GET",
       };
 
+      let flight = [];
+
       const cachedKey = `flight:${flight_iata}`;
       const cachedData = await redisClient.get(cachedKey);
       if (cachedData) {
         console.log("Cache flight from Redis");
-        return res.json(JSON.parse(cachedData));
+        flight = JSON.parse(cachedData);
+      } else {
+        console.log("Cache miss, fetching from API");
+
+        const response = await fetch(url, options);
+        flight = await response.json().data;
+
+        await redisClient.set(cachedKey, JSON.stringify(flight), {
+          EX: CACHE_TIME,
+        });
       }
-      console.log("Cache miss, fetching from API");
 
-      const response = await fetch(url, options);
-      const flight = await response.json();
-
-      await redisClient.set(cachedKey, JSON.stringify(flight.data), {
-        EX: CACHE_TIME,
-      });
-
-      if (flight.data.length === 0) {
+      if (flight.length === 0) {
         return res.status(404).json({ message: "Flight not found" });
       }
 
-      const match = flight.data.find((f) => f.flight_date === date);
-
-      console.log("Flight data from API:", match);
-
-      console.log("Buscando aerolínea con IATA:", match.airline.iata);
+      const match = flight.find((f) => f.flight_date === date);
 
       const airline = await Airline.findOne({
         where: { iata_code: match.airline.iata },
@@ -58,6 +63,10 @@ exports.createClaim = async (req, res) => {
             name: match.airline.name,
           });
           console.log(`✅ Creando aerolínea: ${match.airline.name}`);
+
+          airline = await Airline.findOne({
+            where: { iata_code: match.airline.iata },
+          });
         } catch (error) {
           console.error(
             `❌ Error creando ${match.airline.name}:`,

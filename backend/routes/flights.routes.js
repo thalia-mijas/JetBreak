@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const flightController = require("../controllers/flights.controller");
-// const authMiddleware = require("../middlewares/auth.middleware"); aqui se agregar si se necesita middlewares
+const flightTrackingController = require("../controllers/flightTracking.controller");
 
 router.get("/arrivals/:iataCode", flightController.getArrivals);
+router.get("/departures/:iataCode", flightController.getDepartures);
+router.post("/tracking", flightTrackingController.createFlightTracking);
 
 module.exports = router;
