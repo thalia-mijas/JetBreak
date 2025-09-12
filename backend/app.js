@@ -50,16 +50,13 @@ Claim.belongsTo(Airline, { foreignKey: "airline_id" });
 User.hasMany(Flight, { foreignKey: "user_id" });
 Flight.belongsTo(User, { foreignKey: "user_id" });
 
-Airline.hasMany(Flight, { foreignKey: "airline_id" });
-Flight.belongsToMany(Airline, {
-  through: "FlightAirline",
-  foreignKey: "airline_id",
-});
+Airline.hasMany(Flight, { foreignKey: "airline_id", as: "flights" });
+Flight.belongsTo(Airline, { foreignKey: "airline_id", as: "airline" });
 
-Airport.hasMany(Flight, { foreignKey: "origin_iata" });
-Airport.hasMany(Flight, { foreignKey: "destination_iata" });
-Flight.belongsTo(Airport, { foreignKey: "origin_iata" });
-Flight.belongsTo(Airport, { foreignKey: "destination_iata" });
+Airport.hasMany(Flight, { foreignKey: "origin_iata", as: "departingFlights" });
+Airport.hasMany(Flight, { foreignKey: "destination_iata", as: "arrivingFlights" });
+Flight.belongsTo(Airport, { foreignKey: "origin_iata", as: "origin" });
+Flight.belongsTo(Airport, { foreignKey: "destination_iata", as: "destination" });
 
 // Sincroniza
 sequelize

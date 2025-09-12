@@ -7,6 +7,17 @@ const { JWT_SECRET } = process.env;
 exports.register = async (req, res) => {
   const { name, email, password } = req.body;
 
+  if (!name || !email || !password) {
+    return res
+      .status(400)
+      .json({ message: "Name, email and password are required" });
+  }
+
+  const existingUser = await User.findOne({ where: { email } });
+  if (existingUser) {
+    return res.status(409).json({ message: "Email already in use" });
+  }
+
   try {
     // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -29,6 +40,10 @@ exports.register = async (req, res) => {
 
 exports.login = async (req, res) => {
   const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ message: "Email and password are required" });
+  }
 
   try {
     // Find user by email

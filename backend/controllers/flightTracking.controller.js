@@ -102,3 +102,36 @@ exports.createFlightTracking = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
+exports.getUserFlightTrackings = async (req, res) => {
+  const { user_id } = req.params;
+
+  if (!user_id) {
+    return res.status(400).json({ message: "User ID is required" });
+  }
+
+  const user = await User.findByPk(user_id);
+  if (!user) {
+    return res.status(404).json({ message: "User not found" });
+  }
+
+  try {
+    const flightTrackings = await Flight.findAll({
+      where: { user_id },
+      include: [
+        { model: Airline, as: "airline" },
+        { model: Airport, as: "origin" },
+        { model: Airport, as: "destination" },
+      ],
+    });
+
+    if (flightTrackings.length === 0) {
+      return res.status(404).json({ message: "No flight trackings found" });
+    }
+
+    res.status(200).json(flightTrackings);
+  } catch (error) {
+    console.error("Error fetching user flight trackings:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};

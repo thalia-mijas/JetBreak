@@ -6,5 +6,9 @@ const flightTrackingController = require("../controllers/flightTracking.controll
 router.get("/arrivals/:iataCode", flightController.getArrivals);
 router.get("/departures/:iataCode", flightController.getDepartures);
 router.post("/tracking", flightTrackingController.createFlightTracking);
+router.get(
+  "/tracking/:user_id",
+  flightTrackingController.getUserFlightTrackings
+);
 
 module.exports = router;
