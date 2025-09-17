@@ -13,7 +13,7 @@ export default function Login() {
               Iniciar sesión
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Accede a tu cuenta para disfrutar de todas las funcionalidades
+              Accede a tu cuenta para reclamos o seguimiento de vuelos
             </p>
           </div>
 
@@ -42,15 +42,12 @@ export default function Login() {
                         type="password"
                       />
                       <p className="text-right text-small">
-                        <Link
-                          size="sm"
-                          onPress={() => setSelected("forgot-password")}
-                        >
+                        <Link size="sm" href="/reset-password">
                           Olvide mi contraseña
                         </Link>
                       </p>
                       <div className="flex gap-2 justify-end">
-                        <Button fullWidth color="primary">
+                        <Button fullWidth color="primary" onPress={() => {}}>
                           Iniciar sesión
                         </Button>
                       </div>

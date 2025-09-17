@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import NavBar from "./components/NavBar";
 import NotFound from "./components/NotFound";
 import Offers from "./components/Offers";
+import ResetPassword from "./components/ResetPassword";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/offers" element={<Offers />}></Route>
         <Route path="/claims" element={<Claims />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/reset-password" element={<ResetPassword />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />

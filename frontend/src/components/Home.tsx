@@ -77,8 +77,10 @@ export default function Home() {
                         airports.map((airport) => (
                           <option
                             key={airport.iata_code}
-                            value={`${airport.name} (${airport.iata_code})`}
-                          />
+                            value={airport.iata_code}
+                          >
+                            {airport.name} ({airport.iata_code})
+                          </option>
                         ))}
                     </datalist>
                   </div>
@@ -179,23 +181,32 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Información de vuelos */}
-          <div className="p-2">
-            <Tabs
-              fullWidth
-              aria-label="Tabs form"
-              selectedKey={selected}
-              size="md"
-              onSelectionChange={(key) => setSelected(key as string)}
-            >
-              <Tab key="flight" title="Vuelos">
-                <Flights />
-              </Tab>
-              <Tab key="stores" title="Tiendas">
-                <Stores selectedAirport={selectedAirport} />
-              </Tab>
-            </Tabs>
-          </div>
+          {/* Información de vuelos y tiendas */}
+          {!selectedAirport ? (
+            <div className="container mx-auto px-4 md:px-6 py-16">
+              <p className="text-center text-gray-600">
+                Por favor, selecciona un aeropuerto para ver la información de
+                vuelos y tiendas.
+              </p>
+            </div>
+          ) : (
+            <div className="p-2">
+              <Tabs
+                fullWidth
+                aria-label="Tabs form"
+                selectedKey={selected}
+                size="md"
+                onSelectionChange={(key) => setSelected(key as string)}
+              >
+                <Tab key="flight" title="Vuelos">
+                  <Flights selectedAirport={selectedAirport} />
+                </Tab>
+                <Tab key="stores" title="Tiendas">
+                  <Stores selectedAirport={selectedAirport} />
+                </Tab>
+              </Tabs>
+            </div>
+          )}
         </section>
       </>
     );

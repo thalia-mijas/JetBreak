@@ -9,7 +9,7 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from "@heroui/react";
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export const Logo = () => {
@@ -26,12 +26,22 @@ export const Logo = () => {
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const { pathname } = useLocation();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const menuItems = [
     { label: "Aeropuerto", href: "/" },
     { label: "Ofertas", href: "/offers" },
-    { label: "Reclamos", href: "/claims" },
   ];
+
+  if (isAuthenticated) {
+    menuItems.push({ label: "Reclamos", href: "/claims" });
+    menuItems.push({ label: "Seguimiento", href: "/trackingFlights" });
+  }
+
+  const logout = () => {
+    setIsAuthenticated(false);
+    //conectar con backend para cerrar sesión
+  };
 
   return (
     <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
@@ -64,15 +74,27 @@ export default function NavBar() {
 
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button
-            as={Link}
-            color="primary"
-            href="/login"
-            variant="flat"
-            className="text-black"
-          >
-            Iniciar sesión
-          </Button>
+          {isAuthenticated ? (
+            <Button
+              as={Link}
+              color="primary"
+              onPress={() => logout()}
+              variant="flat"
+              className="text-black"
+            >
+              Cerrar sesión
+            </Button>
+          ) : (
+            <Button
+              as={Link}
+              color="primary"
+              href="/login"
+              variant="flat"
+              className="text-black"
+            >
+              Iniciar sesión
+            </Button>
+          )}
         </NavbarItem>
       </NavbarContent>
 

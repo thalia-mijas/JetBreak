@@ -32,31 +32,34 @@ exports.getStores = async (req, res) => {
     } else {
       console.log("Cache miss, fetching from API");
       const response = await fetch(url, options);
-      const stores = await response.json().results;
+      let stores = await response.json();
+      stores = stores.results;
 
-      const filteredStores = stores
-        .filter((store) => {
-          const parentName =
-            store?.related_places?.parent?.name?.toLowerCase() || "";
-          const address = store?.location?.address?.toLowerCase() || "";
+      if (stores.length !== 0) {
+        const filteredStores = stores
+          ?.filter((store) => {
+            const parentName =
+              store?.related_places?.parent?.name?.toLowerCase() || "";
+            const address = store?.location?.address?.toLowerCase() || "";
 
-          return (
-            parentName.includes("aeropuerto") ||
-            parentName.includes("airport") ||
-            address.includes("aeropuerto") ||
-            address.includes("airport")
-          );
-        })
-        .map((store) => ({
-          id: store.fsq_place_id,
-          name: store.name,
-          icon: `${store.categories[0].icon.prefix}bg_64${store.categories[0].icon.suffix}`,
-          category: store.categories[0].name,
-        }));
+            return (
+              parentName.includes("aeropuerto") ||
+              parentName.includes("airport") ||
+              address.includes("aeropuerto") ||
+              address.includes("airport")
+            );
+          })
+          .map((store) => ({
+            id: store.fsq_place_id,
+            name: store.name,
+            icon: `${store.categories[0].icon.prefix}bg_64${store.categories[0].icon.suffix}`,
+            category: store.categories[0].name,
+          }));
 
-      await redisClient.set(cachedKey, JSON.stringify(filteredStores), {
-        EX: CACHE_TIME,
-      });
+        await redisClient.set(cachedKey, JSON.stringify(filteredStores), {
+          EX: CACHE_TIME,
+        });
+      }
     }
 
     res.status(200).json(filteredStores);
