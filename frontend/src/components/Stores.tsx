@@ -7,57 +7,6 @@ export default function Stores({
 }: {
   selectedAirport: string;
 }) {
-  // const stores = [
-  //   {
-  //     id: "4d7d729279c4b1f767e30df3",
-  //     name: "Juan Valdez",
-  //     icon: "https://ss3.4sqi.net/img/categories_v2/food/cafe_bg_64.png",
-  //     category: "Café",
-  //   },
-  //   {
-  //     id: "4f4998a7e4b030691a8f7d79",
-  //     name: "Duty Free Aereopuerto Jose Joaquin De Olmedo",
-  //     icon: "https://ss3.4sqi.net/img/categories_v2/shops/default_bg_64.png",
-  //     category: "Tienda duty free",
-  //   },
-  //   {
-  //     id: "5c51eef9c58ed7002c3694a8",
-  //     name: "McDonald's",
-  //     icon: "https://ss3.4sqi.net/img/categories_v2/food/fastfood_bg_64.png",
-  //     category: "Restaurante de comida rápida",
-  //   },
-  //   {
-  //     id: "4dbb3acb4b222080d372d7a8",
-  //     name: "City Bistro",
-  //     icon: "https://ss3.4sqi.net/img/categories_v2/food/gastropub_bg_64.png",
-  //     category: "Gastropub",
-  //   },
-  //   {
-  //     id: "4efb660777c8e88f4b44e793",
-  //     name: "República Del Cacao",
-  //     icon: "https://ss3.4sqi.net/img/categories_v2/shops/candystore_bg_64.png",
-  //     category: "Tienda de golosinas",
-  //   },
-  //   {
-  //     id: "4e65199c1495676d56df3e8d",
-  //     name: "Arrecife Bar Restaurant",
-  //     icon: "https://ss3.4sqi.net/img/categories_v2/food/default_bg_64.png",
-  //     category: "Restaurante",
-  //   },
-  //   {
-  //     id: "4e89a7819a52f9bbd0e982a7",
-  //     name: "Cafe Du Port",
-  //     icon: "https://ss3.4sqi.net/img/categories_v2/food/breakfast_bg_64.png",
-  //     category: "Café",
-  //   },
-  //   {
-  //     id: "4e9b7c865503cfce74a76f0a",
-  //     name: "KFC",
-  //     icon: "https://ss3.4sqi.net/img/categories_v2/food/friedchicken_bg_64.png",
-  //     category: "Local de pollo frito",
-  //   },
-  // ];
-
   const [stores, setStores] = useState([]);
 
   useEffect(() => {
