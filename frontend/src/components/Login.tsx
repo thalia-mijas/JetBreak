@@ -1,8 +1,103 @@
-import { Button, Card, CardBody, Input, Link, Tab, Tabs } from "@heroui/react";
+import {
+  Button,
+  Card,
+  CardBody,
+  Input,
+  Link,
+  Tab,
+  Tabs,
+  addToast,
+} from "@heroui/react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import * as API from "../services/authentication";
 
 export default function Login() {
   const [selected, setSelected] = React.useState("login");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = (email: string, password: string) => {
+    API.login(email, password).then((data) => {
+      if (data.message === "Login successful") {
+        addToast({
+          title: "Inicio de sesión",
+          description: "Has iniciado sesión con éxito",
+          color: "success",
+          icon: (
+            <svg height={24} viewBox="0 0 24 24" width={24}>
+              <g
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit={10}
+                strokeWidth={1.5}
+              >
+                <path
+                  d="M20.364 5.636L9 17l-5.364-5.364"
+                  data-name="Stroke 1"
+                />
+              </g>
+            </svg>
+          ),
+        });
+        navigate("/claims"); // Redirect to home page
+        localStorage.setItem("isAuthenticated", "true");
+      } else {
+        addToast({
+          title: "Error de inicio de sesión",
+          description: data?.message || "No se pudo iniciar sesión",
+          color: "danger",
+          icon: (
+            <svg height={24} viewBox="0 0 24 24" width={24}>
+              <g
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit={10}
+                strokeWidth={1.5}
+              >
+                <path d="M18 6L6 18M6 6l12 12" data-name="Stroke 1" />
+              </g>
+            </svg>
+          ),
+        });
+        localStorage.setItem("isAuthenticated", "false");
+      }
+    });
+  };
+
+  const handleRegister = () => {
+    addToast({
+      title: "Creación de usuario",
+      description: "Usuario registrado con éxito",
+      color: "success",
+      icon: (
+        <svg height={24} viewBox="0 0 24 24" width={24}>
+          <g
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeMiterlimit={10}
+            strokeWidth={1.5}
+          >
+            <path
+              d="M11.845 21.662C8.153 21.662 5 21.088 5 18.787s3.133-4.425 6.845-4.425c3.692 0 6.845 2.1 6.845 4.4s-3.134 2.9-6.845 2.9z"
+              data-name="Stroke 1"
+            />
+            <path
+              d="M11.837 11.174a4.372 4.372 0 10-.031 0z"
+              data-name="Stroke 3"
+            />
+          </g>
+        </svg>
+      ),
+    });
+  };
 
   return (
     <>
@@ -34,12 +129,16 @@ export default function Login() {
                         label="Correo electrónico"
                         placeholder="Ingresa tu correo electrónico"
                         type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                       <Input
                         isRequired
                         label="Contraseña"
                         placeholder="Ingresa tu contraseña"
                         type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                       <p className="text-right text-small">
                         <Link size="sm" href="/reset-password">
@@ -47,7 +146,11 @@ export default function Login() {
                         </Link>
                       </p>
                       <div className="flex gap-2 justify-end">
-                        <Button fullWidth color="primary" onPress={() => {}}>
+                        <Button
+                          fullWidth
+                          color="primary"
+                          onPress={() => handleLogin(email, password)}
+                        >
                           Iniciar sesión
                         </Button>
                       </div>
@@ -81,12 +184,19 @@ export default function Login() {
                       />
                       <p className="text-center text-small">
                         Ya tienes una cuenta?{" "}
-                        <Link size="sm" onPress={() => setSelected("login")}>
+                        <Link
+                          size="sm"
+                          onPress={() => handleLogin(email, password)}
+                        >
                           Iniciar sesión
                         </Link>
                       </p>
                       <div className="flex gap-2 justify-end">
-                        <Button fullWidth color="primary">
+                        <Button
+                          fullWidth
+                          color="primary"
+                          onPress={handleRegister}
+                        >
                           Regístrate
                         </Button>
                       </div>

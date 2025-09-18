@@ -19,6 +19,9 @@ const Flight = require("./models/flight.model");
 const { seedAirlines } = require("./controllers/airlines.controller");
 const { seedAirports } = require("./controllers/airports.controller");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
+
+app.use(cookieParser());
 
 app.use(express.json());
 
@@ -54,9 +57,15 @@ Airline.hasMany(Flight, { foreignKey: "airline_id", as: "flights" });
 Flight.belongsTo(Airline, { foreignKey: "airline_id", as: "airline" });
 
 Airport.hasMany(Flight, { foreignKey: "origin_iata", as: "departingFlights" });
-Airport.hasMany(Flight, { foreignKey: "destination_iata", as: "arrivingFlights" });
+Airport.hasMany(Flight, {
+  foreignKey: "destination_iata",
+  as: "arrivingFlights",
+});
 Flight.belongsTo(Airport, { foreignKey: "origin_iata", as: "origin" });
-Flight.belongsTo(Airport, { foreignKey: "destination_iata", as: "destination" });
+Flight.belongsTo(Airport, {
+  foreignKey: "destination_iata",
+  as: "destination",
+});
 
 // Sincroniza
 sequelize

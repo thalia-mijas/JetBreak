@@ -56,20 +56,19 @@ exports.createClaim = async (req, res) => {
       });
 
       if (!airline) {
-        console.log("Aerolínea no encontrada en la base de datos");
         try {
           airline = await Airline.create({
             iata_code: match.airline.iata,
             name: match.airline.name,
           });
-          console.log(`✅ Creando aerolínea: ${match.airline.name}`);
+          console.log(`✅ Creating airline: ${match.airline.name}`);
 
           airline = await Airline.findOne({
             where: { iata_code: match.airline.iata },
           });
         } catch (error) {
           console.error(
-            `❌ Error creando ${match.airline.name}:`,
+            `❌ Error creating ${match.airline.name}:`,
             error.message
           );
         }

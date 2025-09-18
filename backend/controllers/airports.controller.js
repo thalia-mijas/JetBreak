@@ -25,10 +25,10 @@ async function seedAirports() {
         },
       });
     } catch (error) {
-      console.error(`❌ Error con ${data.name}:`, error.message);
+      console.error(`❌ Error creating ${data.name}:`, error.message);
     }
   }
-  console.log(`✅ Aeropuertos creados`);
+  console.log(`✅ Airports seeded`);
 }
 
 exports.seedAirports = seedAirports;

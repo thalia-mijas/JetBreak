@@ -40,7 +40,7 @@ exports.getOffers = async (req, res) => {
       limit: 10,
     });
 
-    console.log("Ofertas encontradas:", offers.data);
+    console.log("Offers found:", offers.data);
 
     const filteredOffers = offers.data.map((offer) => ({
       id: offer.id,

@@ -1,5 +1,6 @@
 import { Card } from "@heroui/react";
 import { useEffect, useState } from "react";
+import type { Store } from "../models/store";
 import * as API from "../services/stores";
 
 export default function Stores({
@@ -7,7 +8,7 @@ export default function Stores({
 }: {
   selectedAirport: string;
 }) {
-  const [stores, setStores] = useState([]);
+  const [stores, setStores] = useState<Store[]>([]);
 
   useEffect(() => {
     API.getStores(selectedAirport)
@@ -33,41 +34,47 @@ export default function Stores({
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {stores.map((store) => (
-            <Card
-              key={store.id}
-              className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
-            >
-              <div className="p-6">
-                {/* Store Icon and Category Badge */}
-                <div className="flex items-start justify-between mb-4 gap-3">
-                  <div className="w-16 h-16 bg-white rounded-xl shadow-sm border flex items-center justify-center overflow-hidden group-hover:shadow-md transition-shadow">
-                    <img
-                      src={store.icon || "/placeholder.svg"}
-                      alt={store.name}
-                      className="w-12 h-12 object-cover rounded-lg"
-                      onError={(e) => {
-                        e.currentTarget.src = "/local-grocery-store.png";
-                      }}
-                    />
+          {stores.length > 0 ? (
+            stores.map((store) => (
+              <Card
+                key={store.id}
+                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
+              >
+                <div className="p-6">
+                  {/* Store Icon and Category Badge */}
+                  <div className="flex items-start justify-between mb-4 gap-3">
+                    <div className="w-16 h-16 bg-white rounded-xl shadow-sm border flex items-center justify-center overflow-hidden group-hover:shadow-md transition-shadow">
+                      <img
+                        src={store.icon || "/placeholder.svg"}
+                        alt={store.name}
+                        className="w-12 h-12 object-cover rounded-lg"
+                        onError={(e) => {
+                          e.currentTarget.src = "/local-grocery-store.png";
+                        }}
+                      />
+                    </div>
+                    <div className="text-xs px-1 py-1 rounded-full bg-[#56DFCF] text-black text-center">
+                      {store.category}
+                    </div>
                   </div>
-                  <div className="text-xs px-1 py-1 rounded-full bg-[#56DFCF] text-white text-center">
-                    {store.category}
-                  </div>
-                </div>
 
-                {/* Store Name */}
-                <div className="mb-3">
-                  <h3
-                    className="font-semibold text-lg text-gray-900 mb-1"
-                    title={store.name}
-                  >
-                    {store.name}
-                  </h3>
+                  {/* Store Name */}
+                  <div className="mb-3">
+                    <h3
+                      className="font-semibold text-lg text-gray-900 mb-1"
+                      title={store.name}
+                    >
+                      {store.name}
+                    </h3>
+                  </div>
                 </div>
-              </div>
-            </Card>
-          ))}
+              </Card>
+            ))
+          ) : (
+            <p className="text-center text-gray-500 col-span-full">
+              No se encontraron tiendas o servicios para este aeropuerto.
+            </p>
+          )}
         </div>
       </div>
     </>

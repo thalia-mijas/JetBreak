@@ -1,16 +1,16 @@
 import { Button, Card, CardBody, Input } from "@heroui/react";
 
-export default function ResetPassword() {
+export default function RecoverPassword() {
   return (
     <>
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6 flex flex-col items-center">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Nueva contraseña
+              Recupera tu contraseña
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Ingresa tu nueva contraseña
+              Ingresa tu correo electrónico para restablecer tu contraseña
             </p>
           </div>
 
@@ -20,13 +20,13 @@ export default function ResetPassword() {
                 <form className="flex flex-col gap-4">
                   <Input
                     isRequired
-                    label="Nueva contraseña"
-                    placeholder="Ingresa tu nueva contraseña"
-                    type="password"
+                    label="Correo electrónico"
+                    placeholder="Ingresa tu correo electrónico"
+                    type="email"
                   />
                   <div className="flex gap-2 justify-end">
                     <Button fullWidth color="primary" onPress={() => {}}>
-                      Restablecer contraseña
+                      Recuperar contraseña
                     </Button>
                   </div>
                 </form>

@@ -20,10 +20,10 @@ async function seedAirlines() {
         defaults: { name: data.name },
       });
     } catch (error) {
-      console.error(`❌ Error con ${data.name}:`, error.message);
+      console.error(`❌ Error creating ${data.name}:`, error.message);
     }
   }
-  console.log(`✅ Aerolíneas creadas`);
+  console.log(`✅ Airlines seeded`);
 }
 
 exports.seedAirlines = seedAirlines;
