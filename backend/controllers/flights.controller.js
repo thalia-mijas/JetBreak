@@ -1,6 +1,8 @@
 const redisClient = require("../redis");
-const API_KEY = process.env.AVIATION_STACK_API_KEY;
+const API_KEY = process.env.AVIATION_EDGE_API_KEY;
 const CACHE_TIME = process.env.CACHE_TIME;
+const mockArrivals = require("../mocks/flightsArrivals.json");
+const mockDepartures = require("../mocks/flightsDepartures.json");
 
 exports.getArrivals = async (req, res) => {
   try {
@@ -10,14 +12,13 @@ exports.getArrivals = async (req, res) => {
       return res.status(400).json({ message: "IATA code is required" });
     }
 
-    const url = `https://api.aviationstack.com/v1/timetable?access_key=${API_KEY}&iataCode=${iataCode}&type=arrival`;
+    const path = mockArrivals;
+    // const url = `https://aviation-edge.com/v2/public/timetable?key=${API_KEY}&iataCode=${iataCode}&type=arrival`;
     const options = {
       method: "GET",
     };
 
     let flights = [];
-
-    console.log(typeof CACHE_TIME);
 
     const cachedKey = `arrivals:${iataCode}`;
     const cachedData = await redisClient.get(cachedKey);
@@ -26,12 +27,13 @@ exports.getArrivals = async (req, res) => {
       flights = JSON.parse(cachedData);
     } else {
       console.log("Cache miss, fetching from API");
-      const response = await fetch(url, options);
+      // const response = await fetch(url, options);
+      const response = { json: async () => path };
       flights = await response.json();
       console.log(flights);
       if (flights.data.length > 0) {
         flights = flights.data.filter(
-          (flight) => flight.flight && flight.flight.iataCode !== ""
+          (flight) => flight.flight && flight.flight.iataNumber !== ""
         );
       }
       await redisClient.set(cachedKey, JSON.stringify(flights), {
@@ -53,7 +55,8 @@ exports.getDepartures = async (req, res) => {
       return res.status(400).json({ message: "IATA code is required" });
     }
 
-    const url = `https://api.aviationstack.com/v1/timetable?access_key=${API_KEY}&iataCode=${iataCode}&type=departure`;
+    const path = mockDepartures;
+    // const url = `https://aviation-edge.com/v2/public/timetable?key=${API_KEY}&iataCode=${iataCode}&type=departure`;
     const options = {
       method: "GET",
     };
@@ -67,12 +70,13 @@ exports.getDepartures = async (req, res) => {
       flights = JSON.parse(cachedData);
     } else {
       console.log("Cache miss, fetching from API");
-      const response = await fetch(url, options);
+      // const response = await fetch(url, options);
+      const response = { json: async () => path };
       flights = await response.json();
       console.log(flights);
       if (flights.data.length > 0) {
         flights = flights.data.filter(
-          (flight) => flight.flight && flight.flight.iataCode !== ""
+          (flight) => flight.flight && flight.flight.iataNumber !== ""
         );
       }
       await redisClient.set(cachedKey, JSON.stringify(flights), {

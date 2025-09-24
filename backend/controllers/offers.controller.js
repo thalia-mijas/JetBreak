@@ -1,65 +1,117 @@
-const API_KEY = process.env.DUFFEL_API_KEY;
-const { Duffel } = require("@duffel/api");
+const redisClient = require("../redis");
+const CACHE_TIME = process.env.CACHE_TIME;
+const Amadeus = require("amadeus");
+const amadeus = new Amadeus({
+  clientId: process.env.AMADEUS_API_KEY,
+  clientSecret: process.env.AMADEUS_API_SECRET,
+});
+const mockOffers = require("../mocks/offers.json");
+const mockOfferDetails = require("../mocks/offerDetails.json");
 
 exports.getOffers = async (req, res) => {
   try {
-    const { origin, destination, date } = req.params;
+    const { origin } = req.params;
 
-    if (!origin || !destination || !date) {
+    if (!origin) {
       return res.status(400).json({
-        message: "Origin, destination and date are required",
+        message: "Origin is required",
       });
     }
 
-    const duffel = new Duffel({
-      token: API_KEY,
-    });
+    let filteredOffers = [];
 
-    const response = await duffel.offerRequests.create({
-      slices: [
-        {
-          origin: origin, // Iata origen
-          destination: destination, // Iata destino
-          departure_date: date, // Fecha de salida
-        },
-      ],
-      passengers: [
-        {
-          type: "adult",
-        },
-      ],
-    });
+    const cachedKey = `offers:${origin}`;
+    const cachedData = await redisClient.get(cachedKey);
+    if (cachedData) {
+      console.log("Cache offers from Redis");
+      filteredOffers = JSON.parse(cachedData);
+    } else {
+      console.log("Cache miss, fetching from API");
+      const amadeusResponse = await amadeus.shopping.flightDestinations.get({
+        origin,
+      });
 
-    const offerRequestId = response.data.id;
-    console.log("Offer Request creado:", offerRequestId);
+      const offers = amadeusResponse.data;
 
-    // Ahora puedes usar ese ID para obtener las ofertas
-    const offers = await duffel.offers.list({
-      offer_request_id: offerRequestId,
-      sort: "total_amount",
-      limit: 10,
-    });
+      var id = 1;
 
-    console.log("Offers found:", offers.data);
+      const newOffers = offers.map((offer) => ({
+        id: id++,
+        origin: offer.origin,
+        destination: offer.destination,
+        departure: offer.departureDate,
+        return: offer.returnDate,
+        conf: offer.links.flightOffers
+          .replace("&viewBy=DESTINATION", "")
+          .replace(
+            "https://test.api.amadeus.com/v2/shopping/flight-offers?",
+            ""
+          ),
+      }));
 
-    const filteredOffers = offers.data.map((offer) => ({
-      id: offer.id,
-      owner: offer.owner.name,
-      icon: offer.owner.logo_symbol_url,
-      class:
-        offer.slices[0].segments[0].passengers[0].cabin_class_marketing_name,
-      flight: `${offer.slices[0].segments[0].marketing_carrier.iata_code} ${offer.slices[0].segments[0].marketing_carrier_flight_number}`,
-      origin: offer.slices[0].segments[0].origin.name,
-      departure: offer.slices[0].segments[0].departing_at,
-      destination: offer.slices[0].segments[0].destination.name,
-      arrival: offer.slices[0].segments[0].arriving_at,
-      duration: offer.slices[0].segments[0].duration,
-      total: `£${offer.total_amount} ${offer.total_currency} for ${offer.passengers[0].type}`,
-    }));
+      filteredOffers = newOffers.filter((offer) => offer.origin === origin);
+
+      await redisClient.set(cachedKey, JSON.stringify(filteredOffers), {
+        EX: CACHE_TIME,
+      });
+    }
 
     res.status(200).json(filteredOffers);
   } catch (error) {
     console.error("Error fetching offers:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+exports.getOfferDetails = async (req, res) => {
+  try {
+    const { conf } = req.params;
+
+    if (!conf) {
+      return res.status(400).json({ message: "Conf is required" });
+    }
+
+    params = new URLSearchParams(conf);
+
+    let filteredOfferDetails = [];
+
+    const cachedKey = `offerDetails:${conf}`;
+    const cachedData = await redisClient.get(cachedKey);
+    if (cachedData) {
+      console.log("Cache offers from Redis");
+      filteredOfferDetails = JSON.parse(cachedData);
+    } else {
+      console.log("Cache miss, fetching from API");
+
+      // Use Amadeus SDK to fetch offer details
+      const offerDetailsResponse =
+        await amadeus.shopping.flightOffersSearch.get({
+          originLocationCode: params.get("originLocationCode"),
+          destinationLocationCode: params.get("destinationLocationCode"),
+          departureDate: params.get("departureDate"),
+          returnDate: params.get("returnDate"),
+          adults: Number(params.get("adults")),
+          max: 20,
+        });
+
+      console.log("Offers found:", offerDetailsResponse);
+
+      const newDetails = offerDetailsResponse.data.map((offer) => ({
+        id: offer.id,
+        itineraries: offer.itineraries,
+        total: offer.travelerPricings[0].price.total,
+      }));
+
+      filteredOfferDetails = newDetails;
+
+      await redisClient.set(cachedKey, JSON.stringify(filteredOfferDetails), {
+        EX: CACHE_TIME,
+      });
+    }
+
+    res.status(200).json(filteredOfferDetails);
+  } catch (error) {
+    console.error("Error fetching offerDetails:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };

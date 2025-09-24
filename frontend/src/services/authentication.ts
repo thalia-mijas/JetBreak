@@ -17,7 +17,7 @@ export async function register(userData: {
     const response = await fetch(url, options);
     const data = await response.json();
 
-    console.log("Ofertas obtenidas: ", data);
+    console.log("Register response: ", data);
 
     return data;
   } catch (error) {
@@ -56,6 +56,7 @@ export async function logout() {
     headers: {
       "Content-Type": "application/json",
     },
+    credentials: "include" as RequestCredentials, // Include cookies in the request
   };
 
   try {

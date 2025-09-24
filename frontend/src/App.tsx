@@ -8,6 +8,7 @@ import NotFound from "./components/NotFound";
 import Offers from "./components/Offers";
 import RecoverPassword from "./components/RecoverPassword";
 import ResetPassword from "./components/ResetPassword";
+import Tracking from "./components/Tracking";
 
 function App() {
   return (
@@ -17,9 +18,13 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/offers" element={<Offers />}></Route>
         <Route path="/claims" element={<Claims />}></Route>
+        <Route path="/tracking" element={<Tracking />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/recover-password" element={<RecoverPassword />}></Route>
-        <Route path="/reset-password" element={<ResetPassword />}></Route>
+        <Route
+          path="/reset-password/:token"
+          element={<ResetPassword />}
+        ></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />

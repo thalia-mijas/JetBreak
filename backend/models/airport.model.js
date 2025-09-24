@@ -25,6 +25,10 @@ const Airport = sequelize.define("Airport", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  country: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
 });
 
 module.exports = Airport;

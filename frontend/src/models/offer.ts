@@ -1,13 +1,8 @@
 export type Offer = {
-  id: string;
-  owner: string;
-  icon: string;
-  class: string;
-  flight: string;
+  id: number;
   origin: string;
-  departure: string;
   destination: string;
-  arrival: string;
-  duration: string;
-  total: string;
+  departure: string;
+  return: string;
+  conf: string;
 };

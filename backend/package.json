@@ -12,6 +12,7 @@
   "dependencies": {
     "@api/fsq-developers-places": "file:.api/apis/fsq-developers-places",
     "@duffel/api": "^4.15.1",
+    "amadeus": "^11.0.0",
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",

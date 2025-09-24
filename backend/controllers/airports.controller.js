@@ -8,10 +8,11 @@ async function seedAirports() {
   const fullAirports = JSON.parse(rawData);
 
   const minimalAirports = fullAirports.map((a) => ({
-    iata_code: a.iata_code,
-    latitude: a.latitude,
-    longitude: a.longitude,
-    name: a.airport_name,
+    iata_code: a.codeIataAirport,
+    latitude: a.latitudeAirport,
+    longitude: a.longitudeAirport,
+    name: a.nameAirport,
+    country: a.nameCountry,
   }));
 
   for (const data of minimalAirports) {

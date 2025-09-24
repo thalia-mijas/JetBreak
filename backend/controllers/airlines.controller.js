@@ -7,10 +7,10 @@ async function seedAirlines() {
   const rawData = fs.readFileSync(filePath);
   const fullAirlines = JSON.parse(rawData);
 
-  // Extraer solo iata_code y airline_name
+  // Extraer solo codigo iata y nombre
   const minimalAirlines = fullAirlines.map((a) => ({
-    iata_code: a.iata_code,
-    name: a.airline_name,
+    iata_code: a.codeIataAirline,
+    name: a.nameAirline,
   }));
 
   for (const data of minimalAirlines) {

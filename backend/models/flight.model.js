@@ -17,6 +17,10 @@ const Flight = sequelize.define("Flight", {
       key: "id",
     },
   },
+  flight_iata: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   airline_id: {
     type: DataTypes.INTEGER,
     allowNull: true,
@@ -40,10 +44,6 @@ const Flight = sequelize.define("Flight", {
       model: Airport,
       key: "id",
     },
-  },
-  number: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
   },
   date: {
     type: DataTypes.DATE,

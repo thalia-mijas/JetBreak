@@ -1,4 +1,5 @@
 import {
+  addToast,
   Button,
   Card,
   CardBody,
@@ -6,49 +7,65 @@ import {
   Link,
   Tab,
   Tabs,
-  addToast,
 } from "@heroui/react";
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import * as API from "../services/authentication";
 
 export default function Login() {
+  const { isAuthenticated, login } = useAuth();
   const [selected, setSelected] = React.useState("login");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [rname, setRname] = React.useState("");
+  const [remail, setRemail] = React.useState("");
+  const [rpassword, setRpassword] = React.useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (email: string, password: string) => {
-    API.login(email, password).then((data) => {
-      if (data.message === "Login successful") {
+  const handleRegister = (userData: {
+    name: string;
+    email: string;
+    password: string;
+  }) => {
+    API.register(userData)
+      .then((data) => {
+        console.log("Respuesta del registro:", data);
+        if (data.message === "User registered successfully") {
+          addToast({
+            title: "Creación de usuario",
+            description: "Usuario registrado con éxito",
+            color: "success",
+            icon: (
+              <svg height={24} viewBox="0 0 24 24" width={24}>
+                <g
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeMiterlimit={10}
+                  strokeWidth={1.5}
+                >
+                  <path
+                    d="M11.845 21.662C8.153 21.662 5 21.088 5 18.787s3.133-4.425 6.845-4.425c3.692 0 6.845 2.1 6.845 4.4s-3.134 2.9-6.845 2.9z"
+                    data-name="Stroke 1"
+                  />
+                  <path
+                    d="M11.837 11.174a4.372 4.372 0 10-.031 0z"
+                    data-name="Stroke 3"
+                  />
+                </g>
+              </svg>
+            ),
+          });
+          setSelected("login");
+        }
+      })
+      .catch((error) => {
+        console.error("Error during registration:", error);
         addToast({
-          title: "Inicio de sesión",
-          description: "Has iniciado sesión con éxito",
-          color: "success",
-          icon: (
-            <svg height={24} viewBox="0 0 24 24" width={24}>
-              <g
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeMiterlimit={10}
-                strokeWidth={1.5}
-              >
-                <path
-                  d="M20.364 5.636L9 17l-5.364-5.364"
-                  data-name="Stroke 1"
-                />
-              </g>
-            </svg>
-          ),
-        });
-        navigate("/claims"); // Redirect to home page
-        localStorage.setItem("isAuthenticated", "true");
-      } else {
-        addToast({
-          title: "Error de inicio de sesión",
-          description: data?.message || "No se pudo iniciar sesión",
+          title: "Error",
+          description: "Error registrando usuario",
           color: "danger",
           icon: (
             <svg height={24} viewBox="0 0 24 24" width={24}>
@@ -60,154 +77,152 @@ export default function Login() {
                 strokeMiterlimit={10}
                 strokeWidth={1.5}
               >
-                <path d="M18 6L6 18M6 6l12 12" data-name="Stroke 1" />
+                <path
+                  d="M11.845 21.662C8.153 21.662 5 21.088 5 18.787s3.133-4.425 6.845-4.425c3.692 0 6.845 2.1 6.845 4.4s-3.134 2.9-6.845 2.9z"
+                  data-name="Stroke 1"
+                />
+                <path
+                  d="M11.837 11.174a4.372 4.372 0 10-.031 0z"
+                  data-name="Stroke 3"
+                />
               </g>
             </svg>
           ),
         });
-        localStorage.setItem("isAuthenticated", "false");
-      }
-    });
+      });
   };
 
-  const handleRegister = () => {
-    addToast({
-      title: "Creación de usuario",
-      description: "Usuario registrado con éxito",
-      color: "success",
-      icon: (
-        <svg height={24} viewBox="0 0 24 24" width={24}>
-          <g
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeMiterlimit={10}
-            strokeWidth={1.5}
-          >
-            <path
-              d="M11.845 21.662C8.153 21.662 5 21.088 5 18.787s3.133-4.425 6.845-4.425c3.692 0 6.845 2.1 6.845 4.4s-3.134 2.9-6.845 2.9z"
-              data-name="Stroke 1"
-            />
-            <path
-              d="M11.837 11.174a4.372 4.372 0 10-.031 0z"
-              data-name="Stroke 3"
-            />
-          </g>
-        </svg>
-      ),
-    });
-  };
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/tracking");
+    }
+  }, [isAuthenticated, navigate]);
 
   return (
     <>
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6 flex flex-col items-center">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Iniciar sesión
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Accede a tu cuenta para reclamos o seguimiento de vuelos
-            </p>
-          </div>
+      {isAuthenticated ? (
+        <p>Bienvenido</p>
+      ) : (
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 md:px-6 flex flex-col items-center">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Iniciar sesión
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Accede a tu cuenta para reclamos o seguimiento de vuelos
+              </p>
+            </div>
 
-          <div className="container flex flex-col w-full max-w-2xl">
-            <Card className="max-w-full">
-              <CardBody className="overflow-hidden">
-                <Tabs
-                  fullWidth
-                  aria-label="Tabs form"
-                  selectedKey={selected}
-                  size="md"
-                  onSelectionChange={(key) => setSelected(key as string)}
-                >
-                  <Tab key="login" title="Inicio de sesión">
-                    <form className="flex flex-col gap-4">
-                      <Input
-                        isRequired
-                        label="Correo electrónico"
-                        placeholder="Ingresa tu correo electrónico"
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                      />
-                      <Input
-                        isRequired
-                        label="Contraseña"
-                        placeholder="Ingresa tu contraseña"
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                      />
-                      <p className="text-right text-small">
-                        <Link size="sm" href="/reset-password">
-                          Olvide mi contraseña
-                        </Link>
-                      </p>
-                      <div className="flex gap-2 justify-end">
-                        <Button
-                          fullWidth
-                          color="primary"
-                          onPress={() => handleLogin(email, password)}
-                        >
-                          Iniciar sesión
-                        </Button>
-                      </div>
-                      <p className="text-center text-small">
-                        Necesitas crear una cuenta?{" "}
-                        <Link size="sm" onPress={() => setSelected("sign-up")}>
-                          Regístrate
-                        </Link>
-                      </p>
-                    </form>
-                  </Tab>
-                  <Tab key="sign-up" title="Registro">
-                    <form className="flex flex-col gap-4 h-[300px]">
-                      <Input
-                        isRequired
-                        label="Nombre"
-                        placeholder="Ingresa tus nombres y apellidos"
-                        type="text"
-                      />
-                      <Input
-                        isRequired
-                        label="Correo electrónico"
-                        placeholder="Ingresa tu correo electrónico"
-                        type="email"
-                      />
-                      <Input
-                        isRequired
-                        label="Contraseña"
-                        placeholder="Ingresa tu contraseña"
-                        type="password"
-                      />
-                      <p className="text-center text-small">
-                        Ya tienes una cuenta?{" "}
-                        <Link
-                          size="sm"
-                          onPress={() => handleLogin(email, password)}
-                        >
-                          Iniciar sesión
-                        </Link>
-                      </p>
-                      <div className="flex gap-2 justify-end">
-                        <Button
-                          fullWidth
-                          color="primary"
-                          onPress={handleRegister}
-                        >
-                          Regístrate
-                        </Button>
-                      </div>
-                    </form>
-                  </Tab>
-                </Tabs>
-              </CardBody>
-            </Card>
+            <div className="container flex flex-col w-full max-w-2xl">
+              <Card className="max-w-full">
+                <CardBody className="overflow-hidden">
+                  <Tabs
+                    fullWidth
+                    aria-label="Tabs form"
+                    selectedKey={selected}
+                    size="md"
+                    onSelectionChange={(key) => setSelected(key as string)}
+                  >
+                    <Tab key="login" title="Inicio de sesión">
+                      <form className="flex flex-col gap-4">
+                        <Input
+                          isRequired
+                          label="Correo electrónico"
+                          placeholder="Ingresa tu correo electrónico"
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <Input
+                          isRequired
+                          label="Contraseña"
+                          placeholder="Ingresa tu contraseña"
+                          type="password"
+                          value={password}
+                          onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <p className="text-right text-small">
+                          <Link size="sm" href="/recover-password">
+                            Olvide mi contraseña
+                          </Link>
+                        </p>
+                        <div className="flex gap-2 justify-end">
+                          <Button
+                            fullWidth
+                            color="primary"
+                            onPress={() => login(email, password)}
+                          >
+                            Iniciar sesión
+                          </Button>
+                        </div>
+                        <p className="text-center text-small">
+                          Necesitas crear una cuenta?{" "}
+                          <Link
+                            size="sm"
+                            onPress={() => setSelected("sign-up")}
+                          >
+                            Regístrate
+                          </Link>
+                        </p>
+                      </form>
+                    </Tab>
+                    <Tab key="sign-up" title="Registro">
+                      <form className="flex flex-col gap-4 h-[300px]">
+                        <Input
+                          isRequired
+                          label="Nombre"
+                          placeholder="Ingresa tus nombres y apellidos"
+                          type="text"
+                          value={rname}
+                          onChange={(e) => setRname(e.target.value)}
+                        />
+                        <Input
+                          isRequired
+                          label="Correo electrónico"
+                          placeholder="Ingresa tu correo electrónico"
+                          type="email"
+                          value={remail}
+                          onChange={(e) => setRemail(e.target.value)}
+                        />
+                        <Input
+                          isRequired
+                          label="Contraseña"
+                          placeholder="Ingresa tu contraseña"
+                          type="password"
+                          value={rpassword}
+                          onChange={(e) => setRpassword(e.target.value)}
+                        />
+                        <p className="text-center text-small">
+                          Ya tienes una cuenta?{" "}
+                          <Link size="sm" onPress={() => setSelected("login")}>
+                            Iniciar sesión
+                          </Link>
+                        </p>
+                        <div className="flex gap-2 justify-end">
+                          <Button
+                            fullWidth
+                            color="primary"
+                            onPress={() => {
+                              handleRegister({
+                                name: rname,
+                                email: remail,
+                                password: rpassword,
+                              });
+                            }}
+                          >
+                            Regístrate
+                          </Button>
+                        </div>
+                      </form>
+                    </Tab>
+                  </Tabs>
+                </CardBody>
+              </Card>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   );
 }

@@ -4,6 +4,7 @@ const User = require("../models/user.model");
 const { JWT_SECRET } = process.env;
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
+const { Op } = require("sequelize");
 
 // Register a new user
 exports.register = async (req, res) => {
@@ -29,6 +30,8 @@ exports.register = async (req, res) => {
       name,
       email,
       password: hashedPassword,
+      resetToken: null,
+      resetTokenExpires: null,
     });
 
     res
@@ -70,6 +73,7 @@ exports.login = async (req, res) => {
     res.status(200).json({
       message: "Login successful",
       user: { id: user.id, name: user.name, email: user.email },
+      token: token,
     });
   } catch (error) {
     console.error("Error logging in:", error);
@@ -95,9 +99,9 @@ exports.logout = (req, res) => {
 
 exports.generateEmail = async (req, res) => {
   const { email } = req.body;
-  const user = await User.findOne({ email });
+  const user = await User.findOne({ where: { email } });
 
-  if (!user) return res.status(404).json({ message: "Usuario no encontrado" });
+  if (!user) return res.status(404).json({ message: "User not found" });
 
   // Generar token aleatorio
   const token = crypto.randomBytes(32).toString("hex");
@@ -108,7 +112,7 @@ exports.generateEmail = async (req, res) => {
   await user.save();
 
   // Enviar email con el enlace
-  const resetLink = `http://localhost:5173/reset-password?token=${token}`;
+  const resetLink = `http://localhost:5173/reset-password/${token}`;
 
   // Configura tu transporte
   const transporter = nodemailer.createTransport({
@@ -128,24 +132,30 @@ exports.generateEmail = async (req, res) => {
     html: `<p>Haz clic <a href="${resetLink}">aquí</a> para restablecer tu contraseña.</p>`,
   });
 
-  res.status(200).json({ message: "Correo enviado" });
+  res.status(200).json({ message: "Recovery email sent" });
 };
 
 exports.resetPassword = async (req, res) => {
   const { token, newPassword } = req.body;
 
   const user = await User.findOne({
-    resetToken: token,
-    resetTokenExpires: { $gt: Date.now() }, // aún válido
+    where: {
+      resetToken: token,
+      resetTokenExpires: { [Op.gt]: Date.now() }, // aún válido
+    },
   });
+
+  console.log("User found for token:", user);
 
   if (!user)
     return res.status(400).json({ message: "Token inválido o expirado" });
 
   // Actualizar contraseña y limpiar token
-  user.password = hashPassword(newPassword);
-  user.resetToken = undefined;
-  user.resetTokenExpires = undefined;
+  const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+  user.password = hashedPassword;
+  user.resetToken = null;
+  user.resetTokenExpires = null;
   await user.save();
 
   res.json({ message: "Contraseña actualizada correctamente" });

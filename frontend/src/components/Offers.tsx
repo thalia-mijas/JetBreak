@@ -1,11 +1,28 @@
-import { Button, Card, CardHeader } from "@heroui/react";
-import { ArrowRight, Plane } from "lucide-react";
+import { Badge, Button, Card, CardHeader, Input, Spinner } from "@heroui/react";
+import { ArrowLeft, ArrowRight, Plane, Search } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useAuth } from "../context/AuthContext";
+import type { Airline } from "../models/airline";
+import type { Airport } from "../models/airport";
 import type { Offer } from "../models/offer";
+import type { OfferDetail } from "../models/offerDetail";
+import * as AirlinesAPI from "../services/airlines";
+import * as AirportsAPI from "../services/airports";
 import * as API from "../services/offers";
 
 export default function Offers() {
   const [flightOffers, setFlightOffers] = useState<Offer[]>([]);
+  const { isAuthenticated } = useAuth();
+  const [viewDetails, setViewDetails] = useState<boolean>(false);
+  const [offerDetails, setOfferDetails] = useState<OfferDetail[]>([]);
+  const [airports, setAirports] = useState<Airport[]>([]);
+  const [airlines, setAirlines] = useState<Airline[]>([]);
+  const [offerID, setOfferID] = useState<number>(0);
+  const [valueInput, setValueInput] = useState<string>("");
+  const [searchedAirport, setSearchedAirport] = useState<string>("MAD");
+  const [loading, setLoading] = useState<boolean>(false);
+
+  // const [trackingFlights, setTrackingFlights] = useState<trackingFlight[]>([]);
 
   const parseDuration = (duration: string) => {
     const match = duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?/);
@@ -15,47 +32,89 @@ export default function Offers() {
     return `${hours}h ${minutes}m`;
   };
 
-  // Format date
-  const formatTime = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleTimeString("es-ES", {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  };
-
-  // Extract price from total string
-  const extractPrice = (total: string) => {
-    const match = total.match(/([£€¥$]\d+(?:\.\d+)?|\d+(?:\.\d+)?\s*[A-Z]{3})/);
-    return match ? match[0] : total;
-  };
-
-  // Shorten destination name
-  const shortenLocation = (location: string) => {
-    if (location.includes("International")) {
-      return location
-        .replace(" International Airport", "")
-        .replace(" International", "");
-    }
-    return location.length > 20 ? location.substring(0, 20) + "..." : location;
-  };
-
   useEffect(() => {
-    API.getOffers()
+    AirportsAPI.getAirports().then(setAirports);
+    AirlinesAPI.getAirlines().then(setAirlines);
+  }, []);
+
+  // Airport name
+  const getAirportName = (iata: string) => {
+    const airport = airports.find((airport) => airport.iata_code === iata);
+    return airport ? airport.name : iata;
+  };
+
+  // Airport country
+  const getAirportCountry = (iata: string) => {
+    const airport = airports.find((airport) => airport.iata_code === iata);
+    return airport ? airport.country : iata;
+  };
+
+  // Get airline logo URL (mock)
+  const getAirlineLogo = (carrierCode: string) => {
+    return `https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/${carrierCode}.svg`;
+  };
+
+  // Get airline name from carrier code (mock data)
+  const getAirlineName = (carrierCode: string) => {
+    const airline = airlines.find(
+      (airline) => airline.iata_code === carrierCode
+    );
+    return airline ? airline.name : carrierCode;
+  };
+
+  // Format date and time
+  const formatDateTime = (dateString: string) => {
+    const date = new Date(dateString);
+    return {
+      time: date.toLocaleTimeString("es-ES", {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+      date: date.toLocaleDateString("es-ES", {
+        day: "2-digit",
+        month: "short",
+      }),
+    };
+  };
+
+  const fetchOffers = () => {
+    console.log("fetchOffers called with airport:", searchedAirport);
+    API.getOffers(searchedAirport)
       .then((data) => {
         console.log("Ofertas obtenidas: ", data);
         setFlightOffers(data);
+        setLoading(false);
       })
       .catch((err) => {
         console.error("Error fetching offers: ", err);
+        setLoading(false);
       });
-  }, []);
+  };
+
+  const fetchingDetails = () => {
+    console.log("fetchingDetails called:", offerID);
+    console.log(flightOffers);
+    console.log(
+      "Fetching details for offerID:",
+      flightOffers[offerID - 1]?.conf
+    );
+    API.getOfferDetails(flightOffers[offerID]?.conf || "")
+      .then((data) => {
+        console.log("Detalles de oferta obtenidos: ", data);
+        setOfferDetails(data);
+      })
+      .catch((err) => {
+        console.error("Error fetching offer details: ", err);
+      });
+  };
+
+  const trackingFlights = ["UX6031", "UX6048"];
 
   return (
     <>
       <section id="ofertas" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-4">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Ofertas de Vuelos
             </h2>
@@ -64,96 +123,395 @@ export default function Offers() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {flightOffers.length > 0 ? (
-              flightOffers.map((offer) => {
-                return (
-                  <Card
-                    key={offer.id}
-                    className="hover:shadow-lg transition-shadow overflow-hidden"
-                  >
-                    <CardHeader className="pb-4">
-                      <div className="flex justify-between items-start mb-3">
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-8 bg-white rounded border flex items-center justify-center overflow-hidden">
-                            <img
-                              src={offer.icon || "/placeholder.svg"}
-                              alt={offer.owner}
-                              className="max-w-full max-h-full object-contain"
-                              onError={(e) => {
-                                e.currentTarget.style.display = "none";
-                                if (e.currentTarget.nextElementSibling) {
-                                  (
-                                    e.currentTarget
-                                      .nextElementSibling as HTMLElement
-                                  ).style.display = "block";
-                                }
-                              }}
-                            />
-                            <div className="hidden text-xs font-bold text-gray-600">
-                              {offer.owner.substring(0, 2)}
-                            </div>
-                          </div>
-                          <div>
-                            <span className="text-lg font-semibold">
-                              {offer.flight}
-                            </span>
-                            <div className="text-sm text-gray-500">
-                              {offer.owner} • {offer.class}
-                            </div>
-                          </div>
-                          <div className="bg-[#56DFCF] px-4 py-2 rounded-full flex flex-col items-center">
-                            <span className="text-2xl font-bold text-white">
-                              {extractPrice(offer.total)}
-                            </span>
-                            <div className="text-xs text-white">por adulto</div>
-                          </div>
-                        </div>
-                      </div>
-                    </CardHeader>
-
-                    {/* Route Information */}
-                    <div className=" p-4 space-y-2">
-                      <div className="flex items-center justify-between text-sm">
-                        <div className="flex flex-col items-start gap-2">
-                          <div className="w-2 h-2 bg-[#56DFCF] rounded-full"></div>
-                          <span className="font-medium">
-                            {shortenLocation(offer.origin)}
-                          </span>
-                          <span>{formatTime(offer.departure)}</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-2 text-gray-500">
-                          <div className="flex-1 h-px bg-gray-300"></div>
-                          <Plane className="h-3 w-3 text-gray-400" />
-                          <span className="bg-gray-100 px-2 py-1 rounded">
-                            {parseDuration(offer.duration)}
-                          </span>
-                        </div>
-                        <div className="flex flex-col items-end gap-2">
-                          <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-                          <span className="font-medium">
-                            {shortenLocation(offer.destination)}
-                          </span>
-                          <span>{formatTime(offer.arrival)}</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="pt-0">
-                      <Button className="w-full bg-[#56DFCF] hover:bg-[#4BC5B5]">
-                        Ver detalles del vuelo
-                        <ArrowRight className="h-4 w-4 ml-2" />
-                      </Button>
-                    </div>
-                  </Card>
-                );
-              })
-            ) : (
-              <p className="text-center text-gray-500 col-span-full">
-                No se encontraron ofertas de vuelos disponibles.
-              </p>
-            )}
+          {/* Search Bar */}
+          <div className="mx-auto max-w-2xl mb-4">
+            <div className="flex gap-2 rounded-lg bg-white p-2 shadow-lg">
+              <div className="relative flex-1">
+                <Input
+                  placeholder="(ej: Madrid, MAD, Barajas)"
+                  value={valueInput}
+                  onChange={(e) => setValueInput(e.target.value)}
+                  list="airport-suggestions"
+                />
+                <datalist id="airport-suggestions">
+                  {Array.isArray(airports) &&
+                    airports.map((airport) => (
+                      <option key={airport.iata_code} value={airport.iata_code}>
+                        {airport.name} ({airport.iata_code})
+                      </option>
+                    ))}
+                </datalist>
+              </div>
+              <Button
+                color="primary"
+                startContent={<Search className="h-5 w-5" />}
+                variant="solid"
+                className="text-black"
+                onPress={() => {
+                  if (valueInput) {
+                    console.log("Input value:", valueInput);
+                    setSearchedAirport(valueInput);
+                    setLoading(true);
+                    fetchOffers();
+                  } else {
+                    alert("Por favor, ingresa un aeropuerto para buscar.");
+                  }
+                }}
+              >
+                Buscar
+              </Button>
+            </div>
           </div>
+
+          {flightOffers.length === 0 && !loading ? (
+            <p className="text-center text-gray-600">
+              Por favor, selecciona un aeropuerto para ver la información de
+              vuelos y tiendas.
+            </p>
+          ) : (
+            <>{loading && <Spinner color="success" />}</>
+          )}
+
+          {viewDetails ? (
+            <div>
+              <div className="w-full flex items-center mb-6 gap-4">
+                <ArrowLeft
+                  className="h-6 w-6 text-gray-600 mb-4 cursor-pointer"
+                  onClick={() => setViewDetails(false)}
+                />
+                <div className="w-lvw">
+                  <p className="text-lg font-semibold text-gray-900 text-center">
+                    {flightOffers[offerID]?.origin} ✈{" "}
+                    {flightOffers[offerID]?.destination}
+                  </p>
+                  <p className="text-lg font-semibold text-gray-900 text-center">
+                    {flightOffers[offerID]?.departure} a{" "}
+                    {flightOffers[offerID]?.return}
+                  </p>
+                </div>
+              </div>
+              <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
+                {offerDetails.length > 0 ? (
+                  offerDetails.map((detail) => {
+                    const outboundItinerary = detail.itineraries[0];
+                    const returnItinerary = detail.itineraries[1];
+                    const mainCarrier =
+                      outboundItinerary.segments[0].carrierCode;
+                    return (
+                      <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden p-4">
+                        <CardHeader className="pb-4">
+                          <div className="flex justify-between mb-3 w-full">
+                            <div className="flex items-center gap-3">
+                              <div className="w-12 h-8 bg-white rounded border flex items-center justify-center overflow-hidden">
+                                <img
+                                  src={
+                                    getAirlineLogo(mainCarrier) ||
+                                    "/placeholder.svg"
+                                  }
+                                  alt={getAirlineName(mainCarrier)}
+                                />
+                                <div className="hidden text-xs font-bold text-gray-600">
+                                  {getAirlineName(mainCarrier).substring(0, 2)}
+                                </div>
+                              </div>
+                              <div>
+                                <h2 className="text-lg font-semibold">
+                                  {getAirlineName(mainCarrier)}
+                                </h2>
+                                <p className="text-sm text-gray-500">
+                                  Vuelo directo •{" "}
+                                  {outboundItinerary.segments[0]
+                                    .numberOfStops === 0
+                                    ? "Sin escalas"
+                                    : `${outboundItinerary.segments[0].numberOfStops} escala(s)`}
+                                </p>
+                              </div>
+                            </div>
+                            <button className="pr-2 self-end-safe">
+                              {[
+                                `${outboundItinerary.segments[0].carrierCode}${outboundItinerary.segments[0].number}`,
+                                returnItinerary
+                                  ? `${returnItinerary.segments[0].carrierCode}${returnItinerary.segments[0].number}`
+                                  : null,
+                              ].every(
+                                (flightCode) =>
+                                  flightCode &&
+                                  trackingFlights.includes(flightCode)
+                              ) ? (
+                                <svg
+                                  fill={"red"}
+                                  height={24}
+                                  viewBox="0 0 24 24"
+                                  width={24}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12.62 20.81c-.34.12-.9.12-1.24 0C8.48 19.82 2 15.69 2 8.69 2 5.6 4.49 3.1 7.56 3.1c1.82 0 3.43.88 4.44 2.24a5.53 5.53 0 0 1 4.44-2.24C19.51 3.1 22 5.6 22 8.69c0 7-6.48 11.13-9.38 12.12Z"
+                                    stroke="red"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={1.5}
+                                  />
+                                </svg>
+                              ) : (
+                                <svg
+                                  fill={"none"}
+                                  height={24}
+                                  viewBox="0 0 24 24"
+                                  width={24}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12.62 20.81c-.34.12-.9.12-1.24 0C8.48 19.82 2 15.69 2 8.69 2 5.6 4.49 3.1 7.56 3.1c1.82 0 3.43.88 4.44 2.24a5.53 5.53 0 0 1 4.44-2.24C19.51 3.1 22 5.6 22 8.69c0 7-6.48 11.13-9.38 12.12Z"
+                                    stroke="#888"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={1.5}
+                                  />
+                                </svg>
+                              )}
+                            </button>
+                          </div>
+                        </CardHeader>
+
+                        <div className="space-y-6">
+                          {/* Outbound Flight */}
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                              <Plane className="h-4 w-4 text-[#56DFCF]" />
+                              <span>Ida</span>
+                              <Badge variant="outline" className="text-xs">
+                                {outboundItinerary.segments[0].carrierCode}{" "}
+                                {outboundItinerary.segments[0].number}
+                              </Badge>
+                            </div>
+
+                            <div className="flex items-center justify-between">
+                              <div className="text-center">
+                                <div className="font-bold text-xl text-gray-900">
+                                  {
+                                    formatDateTime(
+                                      outboundItinerary.segments[0].departure.at
+                                    ).time
+                                  }
+                                </div>
+                                <div className="text-sm text-gray-600">
+                                  {getAirportName(
+                                    outboundItinerary.segments[0].departure
+                                      .iataCode
+                                  )}
+                                </div>
+                                <div className="text-xs text-gray-500">
+                                  {
+                                    formatDateTime(
+                                      outboundItinerary.segments[0].departure.at
+                                    ).date
+                                  }
+                                </div>
+                              </div>
+
+                              <div className="flex-1 flex flex-col items-center mx-4">
+                                <div className="flex items-center w-full">
+                                  <div className="flex-1 h-px bg-gray-300"></div>
+                                  <div className="mx-2 text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                                    {parseDuration(outboundItinerary.duration)}
+                                  </div>
+                                  <div className="flex-1 h-px bg-gray-300"></div>
+                                </div>
+                                <Plane className="h-4 w-4 text-gray-400 mt-1 rotate-90" />
+                              </div>
+
+                              <div className="text-center">
+                                <div className="font-bold text-xl text-gray-900">
+                                  {
+                                    formatDateTime(
+                                      outboundItinerary.segments[0].arrival.at
+                                    ).time
+                                  }
+                                </div>
+                                <div className="text-sm text-gray-600">
+                                  {getAirportName(
+                                    outboundItinerary.segments[0].arrival
+                                      .iataCode
+                                  )}
+                                </div>
+                                <div className="text-xs text-gray-500">
+                                  {
+                                    formatDateTime(
+                                      outboundItinerary.segments[0].arrival.at
+                                    ).date
+                                  }
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Return Flight */}
+                          {returnItinerary && (
+                            <div className="space-y-3 border-t pt-4">
+                              <div className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                                <Plane className="h-4 w-4 text-[#56DFCF] rotate-180" />
+                                <span>Vuelta</span>
+                                <Badge variant="outline" className="text-xs">
+                                  {returnItinerary.segments[0].carrierCode}{" "}
+                                  {returnItinerary.segments[0].number}
+                                </Badge>
+                              </div>
+
+                              <div className="flex items-center justify-between">
+                                <div className="text-center">
+                                  <div className="font-bold text-xl text-gray-900">
+                                    {
+                                      formatDateTime(
+                                        returnItinerary.segments[0].departure.at
+                                      ).time
+                                    }
+                                  </div>
+                                  <div className="text-sm text-gray-600">
+                                    {getAirportName(
+                                      returnItinerary.segments[0].departure
+                                        .iataCode
+                                    )}
+                                  </div>
+                                  <div className="text-xs text-gray-500">
+                                    {
+                                      formatDateTime(
+                                        returnItinerary.segments[0].departure.at
+                                      ).date
+                                    }
+                                  </div>
+                                  {returnItinerary.segments[0].departure
+                                    .terminal && (
+                                    <div className="text-xs text-gray-400">
+                                      T
+                                      {
+                                        returnItinerary.segments[0].departure
+                                          .terminal
+                                      }
+                                    </div>
+                                  )}
+                                </div>
+
+                                <div className="flex-1 flex flex-col items-center mx-4">
+                                  <div className="flex items-center w-full">
+                                    <div className="flex-1 h-px bg-gray-300"></div>
+                                    <div className="mx-2 text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                                      {parseDuration(returnItinerary.duration)}
+                                    </div>
+                                    <div className="flex-1 h-px bg-gray-300"></div>
+                                  </div>
+                                  <Plane className="h-4 w-4 text-gray-400 mt-1 -rotate-90" />
+                                </div>
+
+                                <div className="text-center">
+                                  <div className="font-bold text-xl text-gray-900">
+                                    {
+                                      formatDateTime(
+                                        returnItinerary.segments[0].arrival.at
+                                      ).time
+                                    }
+                                  </div>
+                                  <div className="text-sm text-gray-600">
+                                    {getAirportName(
+                                      returnItinerary.segments[0].arrival
+                                        .iataCode
+                                    )}
+                                  </div>
+                                  <div className="text-xs text-gray-500">
+                                    {
+                                      formatDateTime(
+                                        returnItinerary.segments[0].arrival.at
+                                      ).date
+                                    }
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Price and Actions */}
+                          <div className="flex items-center justify-center pt-4 border-t gap-4">
+                            <div className="text-3xl font-bold text-[#56DFCF]">
+                              {detail.total}
+                            </div>
+                            <div className="text-xs text-gray-500">
+                              por persona
+                            </div>
+                          </div>
+                        </div>
+                      </Card>
+                    );
+                  })
+                ) : (
+                  <p className="text-center text-gray-500 col-span-full">
+                    No se encontraron detalles de esta ruta.
+                  </p>
+                )}
+              </div>
+            </div>
+          ) : (
+            <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
+              {flightOffers.length > 0 ? (
+                flightOffers.map((offer) => {
+                  return (
+                    <Card
+                      key={offer.id}
+                      className="hover:shadow-lg transition-shadow overflow-hidden"
+                    >
+                      {/* Route Information */}
+                      <div className=" p-4 space-y-2">
+                        <div className="flex items-center justify-between text-sm">
+                          <div className="flex flex-col items-end gap-2">
+                            <div className="w-2 h-2 bg-[#56DFCF] rounded-full"></div>
+                            <span className="font-medium">
+                              {getAirportName(offer.origin)}
+                            </span>
+                            <span className="font-medium">
+                              {getAirportCountry(offer.origin)}
+                            </span>
+                            <span>{offer.departure}</span>
+                          </div>
+                          <div className="text-[#56DFCF]">
+                            <ArrowRight className="h-10 w-10 ml-2" />
+                          </div>
+                          <div className="flex flex-col items-end gap-2">
+                            <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                            <span className="font-medium">
+                              {getAirportName(offer.destination)}
+                            </span>
+                            <span className="font-medium">
+                              {getAirportCountry(offer.destination)}
+                            </span>
+                            <span>{offer.return}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Price Information */}
+                      <button
+                        className="bg-[#56DFCF] px-4 py-2 rounded-lg flex justify-center items-center text-white"
+                        onClick={() => {
+                          setViewDetails(!viewDetails);
+                          setOfferID(offer.id);
+                          console.log("OfferID set to:", offerID);
+                          fetchingDetails();
+                        }}
+                      >
+                        <span className="text-xl font-bold ">
+                          Revisar detalles de ruta
+                        </span>
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </button>
+                    </Card>
+                  );
+                })
+              ) : (
+                <p className="text-center text-gray-500 col-span-full">
+                  No se encontraron ofertas de vuelos disponibles.
+                </p>
+              )}
+            </div>
+          )}
         </div>
       </section>
     </>

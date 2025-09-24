@@ -1,6 +1,9 @@
 import { Card, Chip, Input, Tab, Tabs } from "@heroui/react";
 import { Clock, Plane, Search } from "lucide-react";
 import { useEffect, useState } from "react";
+import type { Airport } from "../models/airport";
+import type { Flight } from "../models/flights";
+import * as APIAirports from "../services/airports";
 import * as API from "../services/flights";
 
 export default function Flights({
@@ -19,8 +22,9 @@ export default function Flights({
     { key: "unknown", label: "Desconocido", color: "default" }, // gris
   ];
 
-  const [flights, setFlights] = useState([]);
-  const [allFlights, setAllFlights] = useState([]);
+  const [flights, setFlights] = useState<Flight[]>([]);
+  const [allFlights, setAllFlights] = useState<Flight[]>([]);
+  const [airports, setAirports] = useState<Airport[]>([]);
   const [typeInfo, setTypeInfo] = useState("arrivals"); // Example type of flight information
   const [valueSearch, setValueSearch] = useState(""); // Search input state
 
@@ -31,6 +35,17 @@ export default function Flights({
     const minutes = totalMinutes % 60;
     return `${hours}:${minutes < 10 ? "0" : ""}${minutes}`;
   };
+
+  useEffect(() => {
+    APIAirports.getAirports()
+      .then((data) => {
+        console.log("Datos de aeropuertos obtenidos: ", data);
+        setAirports(data);
+      })
+      .catch((err) => {
+        console.error("Error fetching airports: ", err);
+      });
+  }, []);
 
   useEffect(() => {
     API.getFlights(selectedAirport, typeInfo)
@@ -110,7 +125,7 @@ export default function Flights({
                   flights?.map((flight, index) => (
                     <Card key={index}>
                       <div className="flex items-center justify-between p-6">
-                        <div className="flex items-center space-x-4">
+                        <div className="flex items-center space-x-4 w-1/2">
                           <div className="bg-turquoise-100 p-2 rounded-lg">
                             <Plane className="h-6 w-6" />
                           </div>
@@ -119,7 +134,17 @@ export default function Flights({
                               {flight.flight.iataNumber}
                             </h3>
                             <p className="text-gray-600">
-                              Desde {flight.departure.iataCode}
+                              Desde{" "}
+                              {airports.filter(
+                                (airport) =>
+                                  airport.iata_code ===
+                                  flight.departure.iataCode
+                              )[0]?.country ||
+                                airports.filter(
+                                  (airport) =>
+                                    airport.iata_code ===
+                                    flight.departure.iataCode
+                                )[0]?.name}
                             </p>
                           </div>
                         </div>
@@ -172,7 +197,7 @@ export default function Flights({
                   flights.map((flight, index) => (
                     <Card key={index}>
                       <div className="flex items-center justify-between p-6">
-                        <div className="flex items-center space-x-4">
+                        <div className="flex items-center space-x-4 w-1/2">
                           <div className="bg-turquoise-100 p-2 rounded-lg">
                             <Plane className="h-6 w-6" />
                           </div>
@@ -181,7 +206,16 @@ export default function Flights({
                               {flight.flight.iataNumber}
                             </h3>
                             <p className="text-gray-600">
-                              Hacia {flight.arrival.iataCode}
+                              Hacia{" "}
+                              {airports.filter(
+                                (airport) =>
+                                  airport.iata_code === flight.arrival.iataCode
+                              )[0]?.country ||
+                                airports.filter(
+                                  (airport) =>
+                                    airport.iata_code ===
+                                    flight.departure.iataCode
+                                )[0]?.name}
                             </p>
                           </div>
                         </div>

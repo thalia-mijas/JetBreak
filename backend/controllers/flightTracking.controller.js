@@ -8,12 +8,12 @@ const CACHE_TIME = process.env.CACHE_TIME;
 
 exports.createFlightTracking = async (req, res) => {
   try {
-    const { user_id, airline_iata, number, date } = req.body;
+    const { user_id, flight_iata, date } = req.body;
 
-    if (!user_id || !airline_iata || !number || !date) {
+    if (!user_id || !flight_iata || !date) {
       return res
         .status(400)
-        .json({ message: "User, airline_iata, number and date are required" });
+        .json({ message: "User, flight_iata and date are required" });
     }
 
     const user = await User.findByPk(user_id);
@@ -21,14 +21,14 @@ exports.createFlightTracking = async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    const url = `https://api.aviationstack.com/v1/flights?access_key=${API_KEY}&flight_iata=${airline_iata}${number}`;
+    const url = `https://api.aviationstack.com/v1/flights?access_key=${API_KEY}&flight_iata=${flight_iata}`;
     const options = {
       method: "GET",
     };
 
     let flight = [];
 
-    const cachedKey = `flightTracking:${airline_iata}${number}`;
+    const cachedKey = `flightTracking:${flight_iata}:${date}`;
     const cachedData = await redisClient.get(cachedKey);
     if (cachedData) {
       console.log("Cache flightTracking from Redis");
@@ -36,15 +36,16 @@ exports.createFlightTracking = async (req, res) => {
     } else {
       console.log("Cache miss, fetching from API");
       const response = await fetch(url, options);
-      flight = await response.json().data;
-
-      await redisClient.set(cachedKey, JSON.stringify(flight), {
-        EX: CACHE_TIME,
-      });
+      flight = await response.json();
+      flight = flight.data;
     }
 
     if (flight.length === 0) {
       return res.status(404).json({ message: "Flight not found" });
+    } else {
+      await redisClient.set(cachedKey, JSON.stringify(flight), {
+        EX: CACHE_TIME,
+      });
     }
 
     const match = flight.find((f) => f.flight_date === date);
@@ -74,6 +75,7 @@ exports.createFlightTracking = async (req, res) => {
     if (match) {
       const flightTracking = await Flight.create({
         user_id,
+        flight_iata,
         airline_id: airline?.id || null,
         origin_iata:
           (
@@ -87,7 +89,6 @@ exports.createFlightTracking = async (req, res) => {
               where: { iata_code: match.arrival.iata },
             })
           ).id || null,
-        number,
         date,
         state: match.flight_status || "unknown",
       });
@@ -134,6 +135,27 @@ exports.getUserFlightTrackings = async (req, res) => {
     res.status(200).json(flightTrackings);
   } catch (error) {
     console.error("Error fetching user flight trackings:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+exports.deleteFlightTracking = async (req, res) => {
+  const { id } = req.params;
+
+  if (!id) {
+    return res.status(400).json({ message: "FlightTracking ID is required" });
+  }
+
+  try {
+    const flightTracking = await Flight.findByPk(id);
+    if (!flightTracking) {
+      return res.status(404).json({ message: "FlightTracking not found" });
+    }
+
+    await flightTracking.destroy();
+    res.status(200).json({ message: "FlightTracking deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting flight tracking:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };

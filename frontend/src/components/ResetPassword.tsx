@@ -1,6 +1,24 @@
 import { Button, Card, CardBody, Input } from "@heroui/react";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import * as API from "../services/authentication";
+// ...existing code...
 
 export default function ResetPassword() {
+  const [newPassword, setNewPassword] = useState("");
+  const { token } = useParams<{ token: string }>();
+
+  console.log("Token from URL:", token);
+
+  const handleResetPassword = (token: string, newPassword: string) => {
+    API.resetPassword(token, newPassword)
+      .then((response) => {
+        console.log("Password reset successful:", response);
+      })
+      .catch((error) => {
+        console.error("Error resetting password:", error);
+      });
+  };
   return (
     <>
       <section className="py-16 bg-gray-50">
@@ -23,9 +41,15 @@ export default function ResetPassword() {
                     label="Nueva contraseña"
                     placeholder="Ingresa tu nueva contraseña"
                     type="password"
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
                   />
                   <div className="flex gap-2 justify-end">
-                    <Button fullWidth color="primary" onPress={() => {}}>
+                    <Button
+                      fullWidth
+                      color="primary"
+                      onPress={() => handleResetPassword(token, newPassword)}
+                    >
                       Restablecer contraseña
                     </Button>
                   </div>

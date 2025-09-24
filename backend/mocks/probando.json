@@ -1,0 +1,12341 @@
+[
+  {
+    "airlineIata": "0B",
+
+    "airlineIcao": "BMS",
+
+    "arrivalIata": "OTP",
+
+    "arrivalIcao": "LROP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "00:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "19:55:00",
+
+    "flightNumber": "104",
+
+    "regNumber": [
+      "ES-SAK",
+
+      "YR-BAP",
+
+      "EC-MFS",
+
+      "YR-BAJ",
+
+      "YR-BAO",
+
+      "YR-BAR",
+
+      "YR-BAS",
+
+      "YR-BAU",
+
+      "YR-BMB",
+
+      "YR-BMC",
+
+      "YR-BMD",
+
+      "YR-BME",
+
+      "YR-BMF",
+
+      "YR-BMG"
+    ]
+  },
+
+  {
+    "airlineIata": "0B",
+
+    "airlineIcao": "BMS",
+
+    "arrivalIata": "BCM",
+
+    "arrivalIcao": "LRBC",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "06:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "01:10:00",
+
+    "flightNumber": "2904",
+
+    "regNumber": [
+      "YR-BAC",
+
+      "YR-BAF",
+
+      "YR-BAP",
+
+      "YR-BAO",
+
+      "YR-BAS",
+
+      "YR-BAG",
+
+      "LZ-DEO"
+    ]
+  },
+
+  {
+    "airlineIata": "0B",
+
+    "airlineIcao": "BMS",
+
+    "arrivalIata": "TRN",
+
+    "arrivalIcao": "LIMF",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:50:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "10:40:00",
+
+    "flightNumber": "4014",
+
+    "regNumber": ["YR-BAK"]
+  },
+
+  {
+    "airlineIata": "0B",
+
+    "airlineIcao": "BMS",
+
+    "arrivalIata": "TRN",
+
+    "arrivalIcao": "LIMF",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:50:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IG",
+
+        "flight_number": "9014"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": null,
+
+    "departureTime": "10:40:00",
+
+    "flightNumber": "9014",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "2L",
+
+    "airlineIcao": "OAW",
+
+    "arrivalIata": "ZRH",
+
+    "arrivalIcao": "LSZH",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:15:00",
+
+    "codeshares": [
+      {
+        "airline_code": "LX",
+
+        "flight_number": "2021"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "10:00:00",
+
+    "flightNumber": "2021",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "2L",
+
+    "airlineIcao": "OAW",
+
+    "arrivalIata": "ZRH",
+
+    "arrivalIcao": "LSZH",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "21:55:00",
+
+    "codeshares": [
+      {
+        "airline_code": "LX",
+
+        "flight_number": "2033"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "19:40:00",
+
+    "flightNumber": "2033",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "3O",
+
+    "airlineIcao": "MAC",
+
+    "arrivalIata": "TNG",
+
+    "arrivalIcao": "GMTT",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "08:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": null,
+
+    "departureTime": "08:25:00",
+
+    "flightNumber": "392",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "5O",
+
+    "airlineIcao": "FPO",
+
+    "arrivalIata": "EMA",
+
+    "arrivalIcao": "EGNX",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "04:20:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": null,
+
+    "departureTime": "02:40:00",
+
+    "flightNumber": "1364",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "5O",
+
+    "airlineIcao": "FPO",
+
+    "arrivalIata": "CDG",
+
+    "arrivalIcao": "LFPG",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "05:10:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": null,
+
+    "departureTime": "03:20:00",
+
+    "flightNumber": "818",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "9U",
+
+    "airlineIcao": "MLD",
+
+    "arrivalIata": "KIV",
+
+    "arrivalIcao": "LUKK",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "05:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "01:10:00",
+
+    "flightNumber": "854",
+
+    "regNumber": ["ER-ECB", "ER-ECC"]
+  },
+
+  {
+    "airlineIata": "A3",
+
+    "airlineIcao": "AEE",
+
+    "arrivalIata": "ATH",
+
+    "arrivalIcao": "LGAV",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "17:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "TP",
+
+        "flight_number": "7449"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "3",
+
+    "departureTime": "12:55:00",
+
+    "flightNumber": "687",
+
+    "regNumber": [
+      "SX-DGD",
+
+      "SX-DGJ",
+
+      "SX-DGK",
+
+      "SX-DVJ",
+
+      "SX-DVQ",
+
+      "SX-DGA",
+
+      "SX-DGP",
+
+      "SX-DGQ",
+
+      "SX-DGS",
+
+      "SX-DGT",
+
+      "SX-DVO",
+
+      "SX-DVP",
+
+      "SX-DVZ"
+    ]
+  },
+
+  {
+    "airlineIata": "A3",
+
+    "airlineIcao": "AEE",
+
+    "arrivalIata": "ATH",
+
+    "arrivalIcao": "LGAV",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "06:00:00",
+
+    "codeshares": [
+      {
+        "airline_code": "TP",
+
+        "flight_number": "7427"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "01:30:00",
+
+    "flightNumber": "689",
+
+    "regNumber": [
+      "SX-DGJ",
+
+      "SX-DGN",
+
+      "SX-DGY",
+
+      "SX-DGZ",
+
+      "SX-DNB",
+
+      "SX-DNC",
+
+      "SX-DND",
+
+      "SX-DNE",
+
+      "SX-DVJ",
+
+      "SX-DVL",
+
+      "SX-DVY"
+    ]
+  },
+
+  {
+    "airlineIata": "A3",
+
+    "airlineIcao": "AEE",
+
+    "arrivalIata": "ATH",
+
+    "arrivalIcao": "LGAV",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "06:05:00",
+
+    "codeshares": [
+      {
+        "airline_code": "TP",
+
+        "flight_number": "7427"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "01:45:00",
+
+    "flightNumber": "703",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AA",
+
+    "airlineIcao": "AAL",
+
+    "arrivalIata": "DFW",
+
+    "arrivalIcao": "KDFW",
+
+    "arrivalTerminal": "D",
+
+    "arrivalTime": "14:50:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AY",
+
+        "flight_number": "4001"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "1513"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7153"
+      },
+
+      {
+        "airline_code": "QR",
+
+        "flight_number": "5201"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "11:15:00",
+
+    "flightNumber": "37",
+
+    "regNumber": [
+      "N750AN",
+
+      "N752AN",
+
+      "N753AN",
+
+      "N755AN",
+
+      "N758AN",
+
+      "N761AJ",
+
+      "N762AN",
+
+      "N765AN",
+
+      "N767AJ",
+
+      "N771AN",
+
+      "N772AN",
+
+      "N775AN",
+
+      "N777AN",
+
+      "N778AN",
+
+      "N779AN",
+
+      "N780AN",
+
+      "N782AN",
+
+      "N786AN",
+
+      "N789AN",
+
+      "N790AN",
+
+      "N791AN",
+
+      "N792AN",
+
+      "N793AN",
+
+      "N796AN",
+
+      "N797AN",
+
+      "N799AN"
+    ]
+  },
+
+  {
+    "airlineIata": "AA",
+
+    "airlineIcao": "AAL",
+
+    "arrivalIata": "JFK",
+
+    "arrivalIcao": "KJFK",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": null,
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": null,
+
+    "departureTime": null,
+
+    "flightNumber": "9263",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AA",
+
+    "airlineIcao": "AAL",
+
+    "arrivalIata": "JFK",
+
+    "arrivalIcao": "KJFK",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": null,
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": null,
+
+    "departureTime": null,
+
+    "flightNumber": "9268",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AA",
+
+    "airlineIcao": "AAL",
+
+    "arrivalIata": "JFK",
+
+    "arrivalIcao": "KJFK",
+
+    "arrivalTerminal": "8",
+
+    "arrivalTime": "13:20:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AY",
+
+        "flight_number": "4007"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "1567"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "4001"
+      },
+
+      {
+        "airline_code": "QR",
+
+        "flight_number": "5567"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "10:55:00",
+
+    "flightNumber": "95",
+
+    "regNumber": [
+      "N191AN",
+
+      "N342AN",
+
+      "N343AN",
+
+      "N344AN",
+
+      "N345AN",
+
+      "N346AN",
+
+      "N347AN",
+
+      "N348AN",
+
+      "N349AN",
+
+      "N350AN",
+
+      "N351AA",
+
+      "N353AA",
+
+      "N361AA",
+
+      "N368AA",
+
+      "N373AA",
+
+      "N377AN",
+
+      "N379AA",
+
+      "N382AN",
+
+      "N383AN",
+
+      "N384AA",
+
+      "N385AM",
+
+      "N391AA",
+
+      "N392AN",
+
+      "N39356",
+
+      "N393AN",
+
+      "N394AN",
+
+      "N395AN",
+
+      "N396AN",
+
+      "N399AN"
+    ]
+  },
+
+  {
+    "airlineIata": "AB",
+
+    "airlineIcao": "BER",
+
+    "arrivalIata": "TXL",
+
+    "arrivalIcao": "EDDT",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "15:50:00",
+
+    "codeshares": [
+      {
+        "airline_code": "BT",
+
+        "flight_number": "5875"
+      },
+
+      {
+        "airline_code": "EY",
+
+        "flight_number": "1467"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7361"
+      },
+
+      {
+        "airline_code": "JU",
+
+        "flight_number": "9009"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "13:00:00",
+
+    "flightNumber": "8963",
+
+    "regNumber": ["D-ABNF", "D-ABCA", "D-ABCQ", "D-ALSA"]
+  },
+
+  {
+    "airlineIata": "AC",
+
+    "airlineIcao": "ACA",
+
+    "arrivalIata": "YYZ",
+
+    "arrivalIcao": "CYYZ",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "11:50:00",
+
+    "codeshares": [
+      {
+        "airline_code": "LH",
+
+        "flight_number": "6590"
+      },
+
+      {
+        "airline_code": "UA",
+
+        "flight_number": "8355"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "09:35:00",
+
+    "flightNumber": "837",
+
+    "regNumber": [
+      "C-GHPT",
+
+      "C-GHPU",
+
+      "C-GHPV",
+
+      "C-GHPY",
+
+      "C-GHQY",
+
+      "C-FGDT",
+
+      "C-FGDX",
+
+      "C-FGDZ",
+
+      "C-FGEI",
+
+      "C-FGEO",
+
+      "C-FGFZ",
+
+      "C-FGHZ",
+
+      "C-FKSV",
+
+      "C-FNOE",
+
+      "C-FNOG",
+
+      "C-FNOH",
+
+      "C-FNOI",
+
+      "C-FPQB"
+    ]
+  },
+
+  {
+    "airlineIata": "I9",
+
+    "airlineIcao": "AEY",
+
+    "arrivalIata": "NAP",
+
+    "arrivalIcao": "LIRN",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "17:15:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IG",
+
+        "flight_number": "388"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "14:40:00",
+
+    "flightNumber": "388",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AF",
+
+    "airlineIcao": "AFR",
+
+    "arrivalIata": "CDG",
+
+    "arrivalIcao": "LFPG",
+
+    "arrivalTerminal": "2F",
+
+    "arrivalTime": "12:15:00",
+
+    "codeshares": [
+      {
+        "airline_code": "9W",
+
+        "flight_number": "6780"
+      },
+
+      {
+        "airline_code": "BE",
+
+        "flight_number": "4101"
+      },
+
+      {
+        "airline_code": "DL",
+
+        "flight_number": "8541"
+      },
+
+      {
+        "airline_code": "KE",
+
+        "flight_number": "6380"
+      },
+
+      {
+        "airline_code": "MK",
+
+        "flight_number": "9427"
+      },
+
+      {
+        "airline_code": "MU",
+
+        "flight_number": "4994"
+      },
+
+      {
+        "airline_code": "UX",
+
+        "flight_number": "3435"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "3",
+
+    "departureTime": "10:10:00",
+
+    "flightNumber": "1001",
+
+    "regNumber": ["F-GRHU"]
+  },
+
+  {
+    "airlineIata": "AF",
+
+    "airlineIcao": "AFR",
+
+    "arrivalIata": "CDG",
+
+    "arrivalIcao": "LFPG",
+
+    "arrivalTerminal": "2F",
+
+    "arrivalTime": "22:20:00",
+
+    "codeshares": [
+      {
+        "airline_code": "9W",
+
+        "flight_number": "6784"
+      },
+
+      {
+        "airline_code": "AR",
+
+        "flight_number": "7830"
+      },
+
+      {
+        "airline_code": "MK",
+
+        "flight_number": "9563"
+      },
+
+      {
+        "airline_code": "UX",
+
+        "flight_number": "3449"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "20:15:00",
+
+    "flightNumber": "1101",
+
+    "regNumber": ["F-GUGA", "F-GUGN"]
+  },
+
+  {
+    "airlineIata": "AF",
+
+    "airlineIcao": "AFR",
+
+    "arrivalIata": "CDG",
+
+    "arrivalIcao": "LFPG",
+
+    "arrivalTerminal": "2F",
+
+    "arrivalTime": "12:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "3",
+
+    "departureTime": "09:55:00",
+
+    "flightNumber": "1201",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AF",
+
+    "airlineIcao": "AFR",
+
+    "arrivalIata": "CDG",
+
+    "arrivalIcao": "LFPG",
+
+    "arrivalTerminal": "2F",
+
+    "arrivalTime": "15:00:00",
+
+    "codeshares": [
+      {
+        "airline_code": "9W",
+
+        "flight_number": "6781"
+      },
+
+      {
+        "airline_code": "DL",
+
+        "flight_number": "8561"
+      },
+
+      {
+        "airline_code": "MU",
+
+        "flight_number": "4990"
+      },
+
+      {
+        "airline_code": "UU",
+
+        "flight_number": "8301"
+      },
+
+      {
+        "airline_code": "UX",
+
+        "flight_number": "3437"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "12:55:00",
+
+    "flightNumber": "1301",
+
+    "regNumber": ["F-GFKY", "F-GKXT"]
+  },
+
+  {
+    "airlineIata": "AF",
+
+    "airlineIcao": "AFR",
+
+    "arrivalIata": "CDG",
+
+    "arrivalIcao": "LFPG",
+
+    "arrivalTerminal": "2F",
+
+    "arrivalTime": "09:10:00",
+
+    "codeshares": [
+      {
+        "airline_code": "9W",
+
+        "flight_number": "6779"
+      },
+
+      {
+        "airline_code": "CZ",
+
+        "flight_number": "7002"
+      },
+
+      {
+        "airline_code": "DL",
+
+        "flight_number": "8571"
+      },
+
+      {
+        "airline_code": "EY",
+
+        "flight_number": "5923"
+      },
+
+      {
+        "airline_code": "KQ",
+
+        "flight_number": "3023"
+      },
+
+      {
+        "airline_code": "MU",
+
+        "flight_number": "8632"
+      },
+
+      {
+        "airline_code": "UX",
+
+        "flight_number": "3431"
+      },
+
+      {
+        "airline_code": "VN",
+
+        "flight_number": "3137"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "3",
+
+    "departureTime": "07:05:00",
+
+    "flightNumber": "1401",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AF",
+
+    "airlineIcao": "AFR",
+
+    "arrivalIata": "CDG",
+
+    "arrivalIcao": "LFPG",
+
+    "arrivalTerminal": "2F",
+
+    "arrivalTime": "17:40:00",
+
+    "codeshares": [
+      {
+        "airline_code": "9W",
+
+        "flight_number": "6782"
+      },
+
+      {
+        "airline_code": "BE",
+
+        "flight_number": "4105"
+      },
+
+      {
+        "airline_code": "EY",
+
+        "flight_number": "5948"
+      },
+
+      {
+        "airline_code": "KE",
+
+        "flight_number": "6378"
+      },
+
+      {
+        "airline_code": "MK",
+
+        "flight_number": "9569"
+      },
+
+      {
+        "airline_code": "MU",
+
+        "flight_number": "8634"
+      },
+
+      {
+        "airline_code": "UU",
+
+        "flight_number": "8601"
+      },
+
+      {
+        "airline_code": "UX",
+
+        "flight_number": "3441"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "15:35:00",
+
+    "flightNumber": "1601",
+
+    "regNumber": ["F-GUGM"]
+  },
+
+  {
+    "airlineIata": "AF",
+
+    "airlineIcao": "AFR",
+
+    "arrivalIata": "CDG",
+
+    "arrivalIcao": "LFPG",
+
+    "arrivalTerminal": "2F",
+
+    "arrivalTime": "20:30:00",
+
+    "codeshares": [
+      {
+        "airline_code": "9W",
+
+        "flight_number": "6783"
+      },
+
+      {
+        "airline_code": "CZ",
+
+        "flight_number": "7463"
+      },
+
+      {
+        "airline_code": "EY",
+
+        "flight_number": "5953"
+      },
+
+      {
+        "airline_code": "MK",
+
+        "flight_number": "9561"
+      },
+
+      {
+        "airline_code": "MU",
+
+        "flight_number": "4992"
+      },
+
+      {
+        "airline_code": "UX",
+
+        "flight_number": "3445"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "18:25:00",
+
+    "flightNumber": "1801",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AH",
+
+    "airlineIcao": "DAH",
+
+    "arrivalIata": "ALG",
+
+    "arrivalIcao": "DAAG",
+
+    "arrivalTerminal": "I",
+
+    "arrivalTime": "14:10:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "13:30:00",
+
+    "flightNumber": "2007",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AH",
+
+    "airlineIcao": "DAH",
+
+    "arrivalIata": "ALG",
+
+    "arrivalIcao": "DAAG",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "06:35:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": null,
+
+    "departureTime": "07:20:00",
+
+    "flightNumber": "2665",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AH",
+
+    "airlineIcao": "DAH",
+
+    "arrivalIata": "ALG",
+
+    "arrivalIcao": "DAAG",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "06:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": null,
+
+    "departureTime": "06:20:00",
+
+    "flightNumber": "2667",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AH",
+
+    "airlineIcao": "DAH",
+
+    "arrivalIata": "ALG",
+
+    "arrivalIcao": "DAAG",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "00:35:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "23:00:00",
+
+    "flightNumber": "2675",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AI",
+
+    "airlineIcao": "AIC",
+
+    "arrivalIata": "DEL",
+
+    "arrivalIcao": "VIDP",
+
+    "arrivalTerminal": "T3",
+
+    "arrivalTime": "11:10:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "21:50:00",
+
+    "flightNumber": "136",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AM",
+
+    "airlineIcao": "AMX",
+
+    "arrivalIata": "MEX",
+
+    "arrivalIcao": "MMMX",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "19:30:00",
+
+    "codeshares": [
+      {
+        "airline_code": "UX",
+
+        "flight_number": "3221"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "14:40:00",
+
+    "flightNumber": "2",
+
+    "regNumber": ["N745AM", "N746AM", "N774AM", "N776AM", "N783AM", "N965AM"]
+  },
+
+  {
+    "airlineIata": "AM",
+
+    "airlineIcao": "AMX",
+
+    "arrivalIata": "MEX",
+
+    "arrivalIcao": "MMMX",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "04:10:00",
+
+    "codeshares": [
+      {
+        "airline_code": "UX",
+
+        "flight_number": "3219"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "23:25:00",
+
+    "flightNumber": "22",
+
+    "regNumber": [
+      "N782AM",
+
+      "N783AM",
+
+      "N961AM",
+
+      "N964AM",
+
+      "N965AM",
+
+      "N966AM",
+
+      "N967AM",
+
+      "XA-AMR",
+
+      "XA-AMX"
+    ]
+  },
+
+  {
+    "airlineIata": "AM",
+
+    "airlineIcao": "AMX",
+
+    "arrivalIata": "CDG",
+
+    "arrivalIcao": "LFPG",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": null,
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": null,
+
+    "flightNumber": "8691",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AR",
+
+    "airlineIcao": "ARG",
+
+    "arrivalIata": "EZE",
+
+    "arrivalIcao": "SAEZ",
+
+    "arrivalTerminal": "A",
+
+    "arrivalTime": "04:20:00",
+
+    "codeshares": [
+      {
+        "airline_code": "KE",
+
+        "flight_number": "6326"
+      },
+
+      {
+        "airline_code": "UX",
+
+        "flight_number": "3043"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "20:10:00",
+
+    "flightNumber": "1133",
+
+    "regNumber": [
+      "LV-FVH",
+
+      "LV-FVI",
+
+      "LV-CEK",
+
+      "LV-CSD",
+
+      "LV-CSE",
+
+      "LV-CSX",
+
+      "LV-FPU",
+
+      "LV-FPV"
+    ]
+  },
+
+  {
+    "airlineIata": "AT",
+
+    "airlineIcao": "RAM",
+
+    "arrivalIata": "CMN",
+
+    "arrivalIcao": "GMMN",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "20:20:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7971"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "19:30:00",
+
+    "flightNumber": "971",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AT",
+
+    "airlineIcao": "RAM",
+
+    "arrivalIata": "CMN",
+
+    "arrivalIcao": "GMMN",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "11:20:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7969"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "11:30:00",
+
+    "flightNumber": "973",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AT",
+
+    "airlineIcao": "RAM",
+
+    "arrivalIata": "RBA",
+
+    "arrivalIcao": "GMME",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:45:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "13:10:00",
+
+    "flightNumber": "975",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AV",
+
+    "airlineIcao": "AVA",
+
+    "arrivalIata": "BOG",
+
+    "arrivalIcao": "SKBO",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "20:32:00",
+
+    "codeshares": [
+      {
+        "airline_code": "EY",
+
+        "flight_number": "2603"
+      },
+
+      {
+        "airline_code": "TK",
+
+        "flight_number": "8467"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "17:25:00",
+
+    "flightNumber": "11",
+
+    "regNumber": [
+      "N780AV",
+
+      "N781AV",
+
+      "N782AV",
+
+      "N783AV",
+
+      "N784AV",
+
+      "N785AV",
+
+      "N786AV"
+    ]
+  },
+
+  {
+    "airlineIata": "AV",
+
+    "airlineIcao": "AVA",
+
+    "arrivalIata": "CLO",
+
+    "arrivalIcao": "SKCL",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "19:56:00",
+
+    "codeshares": [
+      {
+        "airline_code": "TK",
+
+        "flight_number": "8469"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "16:25:00",
+
+    "flightNumber": "15",
+
+    "regNumber": [
+      "N780AV",
+
+      "N781AV",
+
+      "N782AV",
+
+      "N783AV",
+
+      "N784AV",
+
+      "N785AV",
+
+      "N786AV"
+    ]
+  },
+
+  {
+    "airlineIata": "AV",
+
+    "airlineIcao": "AVA",
+
+    "arrivalIata": "MDE",
+
+    "arrivalIcao": "SKRG",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "20:00:00",
+
+    "codeshares": [
+      {
+        "airline_code": "TK",
+
+        "flight_number": "8471"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "16:25:00",
+
+    "flightNumber": "17",
+
+    "regNumber": ["N780AV", "N782AV", "N783AV", "N784AV", "N785AV", "N786AV"]
+  },
+
+  {
+    "airlineIata": "AV",
+
+    "airlineIcao": "AVA",
+
+    "arrivalIata": "BOG",
+
+    "arrivalIcao": "SKBO",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "12:12:00",
+
+    "codeshares": [
+      {
+        "airline_code": "TK",
+
+        "flight_number": "8475"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "09:05:00",
+
+    "flightNumber": "27",
+
+    "regNumber": [
+      "N780AV",
+
+      "N781AV",
+
+      "N782AV",
+
+      "N783AV",
+
+      "N784AV",
+
+      "N785AV",
+
+      "N786AV"
+    ]
+  },
+
+  {
+    "airlineIata": "AY",
+
+    "airlineIcao": "FIN",
+
+    "arrivalIata": "HEL",
+
+    "arrivalIcao": "EFHK",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "15:30:00",
+
+    "codeshares": [
+      {
+        "airline_code": "JL",
+
+        "flight_number": "6852"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7426"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "10:20:00",
+
+    "flightNumber": "1662",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AY",
+
+    "airlineIcao": "FIN",
+
+    "arrivalIata": "HEL",
+
+    "arrivalIcao": "EFHK",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "15:30:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7426"
+      },
+
+      {
+        "airline_code": "JL",
+
+        "flight_number": "6852"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "10:20:00",
+
+    "flightNumber": "3184",
+
+    "regNumber": ["OH-LXA", "OH-LZA", "OH-LZB", "OH-LZC", "OH-LZD"]
+  },
+
+  {
+    "airlineIata": "AZ",
+
+    "airlineIcao": "AZA",
+
+    "arrivalIata": "FCO",
+
+    "arrivalIcao": "LIRF",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "08:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "EY",
+
+        "flight_number": "7095"
+      },
+
+      {
+        "airline_code": "JU",
+
+        "flight_number": "8415"
+      },
+
+      {
+        "airline_code": "ME",
+
+        "flight_number": "2059"
+      },
+
+      {
+        "airline_code": "UX",
+
+        "flight_number": "3115"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "06:10:00",
+
+    "flightNumber": "59",
+
+    "regNumber": ["EI-IXH"]
+  },
+
+  {
+    "airlineIata": "AZ",
+
+    "airlineIcao": "AZA",
+
+    "arrivalIata": "FCO",
+
+    "arrivalIcao": "LIRF",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "13:55:00",
+
+    "codeshares": [
+      {
+        "airline_code": "KE",
+
+        "flight_number": "6302"
+      },
+
+      {
+        "airline_code": "MU",
+
+        "flight_number": "8198"
+      },
+
+      {
+        "airline_code": "SV",
+
+        "flight_number": "6242"
+      },
+
+      {
+        "airline_code": "UX",
+
+        "flight_number": "3117"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "11:25:00",
+
+    "flightNumber": "61",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "AZ",
+
+    "airlineIcao": "AZA",
+
+    "arrivalIata": "FCO",
+
+    "arrivalIcao": "LIRF",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "20:20:00",
+
+    "codeshares": [
+      {
+        "airline_code": "EY",
+
+        "flight_number": "7097"
+      },
+
+      {
+        "airline_code": "KE",
+
+        "flight_number": "6282"
+      },
+
+      {
+        "airline_code": "UX",
+
+        "flight_number": "3119"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "17:55:00",
+
+    "flightNumber": "63",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "BA",
+
+    "airlineIcao": "BAW",
+
+    "arrivalIata": "LHR",
+
+    "arrivalIcao": "EGLL",
+
+    "arrivalTerminal": "5",
+
+    "arrivalTime": "12:15:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "6277"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7442"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "10:50:00",
+
+    "flightNumber": "457",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "BA",
+
+    "airlineIcao": "BAW",
+
+    "arrivalIata": "LHR",
+
+    "arrivalIcao": "EGLL",
+
+    "arrivalTerminal": "5",
+
+    "arrivalTime": "13:20:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "6279"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7444"
+      },
+
+      {
+        "airline_code": "JL",
+
+        "flight_number": "7702"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "11:50:00",
+
+    "flightNumber": "459",
+
+    "regNumber": ["G-EUUI", "G-EUUS", "G-EUXE"]
+  },
+
+  {
+    "airlineIata": "BA",
+
+    "airlineIcao": "BAW",
+
+    "arrivalIata": "LHR",
+
+    "arrivalIcao": "EGLL",
+
+    "arrivalTerminal": "5",
+
+    "arrivalTime": "19:40:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "6281"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7446"
+      },
+
+      {
+        "airline_code": "LA",
+
+        "flight_number": "5780"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "18:20:00",
+
+    "flightNumber": "461",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "BA",
+
+    "airlineIcao": "BAW",
+
+    "arrivalIata": "LHR",
+
+    "arrivalIcao": "EGLL",
+
+    "arrivalTerminal": "5",
+
+    "arrivalTime": "21:00:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "6275"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7462"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "19:45:00",
+
+    "flightNumber": "463",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "BA",
+
+    "airlineIcao": "BAW",
+
+    "arrivalIata": "LHR",
+
+    "arrivalIcao": "EGLL",
+
+    "arrivalTerminal": "5",
+
+    "arrivalTime": "22:10:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "6284"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7448"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "21:00:00",
+
+    "flightNumber": "465",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "CA",
+
+    "airlineIcao": "CCA",
+
+    "arrivalIata": "PEK",
+
+    "arrivalIcao": "ZBAA",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "22:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "05:30:00",
+
+    "flightNumber": "602",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "CA",
+
+    "airlineIcao": "CCA",
+
+    "arrivalIata": "PEK",
+
+    "arrivalIcao": "ZBAA",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "23:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "07:10:00",
+
+    "flightNumber": "606",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "CA",
+
+    "airlineIcao": "CCA",
+
+    "arrivalIata": "PEK",
+
+    "arrivalIcao": "ZBAA",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "04:55:00",
+
+    "codeshares": [
+      {
+        "airline_code": "JJ",
+
+        "flight_number": "8446"
+      },
+
+      {
+        "airline_code": "TP",
+
+        "flight_number": "8320"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "11:25:00",
+
+    "flightNumber": "908",
+
+    "regNumber": [
+      "B-5925",
+
+      "B-5927",
+
+      "B-5933",
+
+      "B-6073",
+
+      "B-6079",
+
+      "B-6090",
+
+      "B-6092",
+
+      "B-6130",
+
+      "B-6536",
+
+      "B-6540",
+
+      "B-6549"
+    ]
+  },
+
+  {
+    "airlineIata": "CJ",
+
+    "airlineIcao": "CFE",
+
+    "arrivalIata": "LCY",
+
+    "arrivalIcao": "EGLC",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "08:50:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7464"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "8752"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "07:25:00",
+
+    "flightNumber": "8752",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "CJ",
+
+    "airlineIcao": "CFE",
+
+    "arrivalIata": "LCY",
+
+    "arrivalIcao": "EGLC",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "18:10:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7466"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "8754"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "16:45:00",
+
+    "flightNumber": "8754",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "CU",
+
+    "airlineIcao": "CUB",
+
+    "arrivalIata": "HAV",
+
+    "arrivalIcao": "MUHA",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "15:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "11:00:00",
+
+    "flightNumber": "471",
+
+    "regNumber": ["CU-T1717"]
+  },
+
+  {
+    "airlineIata": "CX",
+
+    "airlineIcao": "CPA",
+
+    "arrivalIata": "HKG",
+
+    "arrivalIcao": "VHHH",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "07:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "12:30:00",
+
+    "flightNumber": "320",
+
+    "regNumber": [
+      "B-KPY",
+
+      "B-KPZ",
+
+      "B-KQA",
+
+      "B-KQB",
+
+      "B-KQC",
+
+      "B-KQD",
+
+      "B-KQE",
+
+      "B-KQF",
+
+      "B-KQN",
+
+      "B-KQO",
+
+      "B-KQQ",
+
+      "B-KQR",
+
+      "B-KQS",
+
+      "B-KQY"
+    ]
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "LPA",
+
+    "arrivalIcao": "GCLP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "11:45:00",
+
+    "flightNumber": "5805",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "LGW",
+
+    "arrivalIcao": "EGKK",
+
+    "arrivalTerminal": "S",
+
+    "arrivalTime": "09:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "08:00:00",
+
+    "flightNumber": "6050",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "LGW",
+
+    "arrivalIcao": "EGKK",
+
+    "arrivalTerminal": "S",
+
+    "arrivalTime": "19:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "18:15:00",
+
+    "flightNumber": "6054",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "BHX",
+
+    "arrivalIcao": "EGBB",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:20:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "09:00:00",
+
+    "flightNumber": "6058",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "OSL",
+
+    "arrivalIcao": "ENGM",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "11:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "3",
+
+    "departureTime": "07:20:00",
+
+    "flightNumber": "6070",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "OSL",
+
+    "arrivalIcao": "ENGM",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "11:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "07:40:00",
+
+    "flightNumber": "6072",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "BGO",
+
+    "arrivalIcao": "ENBR",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "11:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "07:20:00",
+
+    "flightNumber": "6074",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "ARN",
+
+    "arrivalIcao": "ESSA",
+
+    "arrivalTerminal": "5",
+
+    "arrivalTime": "11:15:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "07:25:00",
+
+    "flightNumber": "6090",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "ARN",
+
+    "arrivalIcao": "ESSA",
+
+    "arrivalTerminal": "5",
+
+    "arrivalTime": "18:35:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "14:45:00",
+
+    "flightNumber": "6092",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "GOT",
+
+    "arrivalIcao": "ESGG",
+
+    "arrivalTerminal": "A",
+
+    "arrivalTime": "11:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "07:30:00",
+
+    "flightNumber": "6094",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "CPH",
+
+    "arrivalIcao": "EKCH",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "11:15:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "08:00:00",
+
+    "flightNumber": "6110",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "CPH",
+
+    "arrivalIcao": "EKCH",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "19:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "16:10:00",
+
+    "flightNumber": "6112",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "HEL",
+
+    "arrivalIcao": "EFHK",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "13:15:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "08:00:00",
+
+    "flightNumber": "6150",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "WAW",
+
+    "arrivalIcao": "EPWA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:45:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "09:00:00",
+
+    "flightNumber": "6170",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "DBV",
+
+    "arrivalIcao": "LDDU",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "07:05:00",
+
+    "flightNumber": "6180",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "MLA",
+
+    "arrivalIcao": "LMML",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "19:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "16:25:00",
+
+    "flightNumber": "6192",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "CTA",
+
+    "arrivalIcao": "LICC",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "09:50:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "07:00:00",
+
+    "flightNumber": "6206",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "KEF",
+
+    "arrivalIcao": "BIKF",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "3",
+
+    "departureTime": "07:15:00",
+
+    "flightNumber": "6240",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "RAK",
+
+    "arrivalIcao": "GMMX",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "18:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "17:30:00",
+
+    "flightNumber": "6244",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "LPA",
+
+    "arrivalIcao": "GCLP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "11:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "10:00:00",
+
+    "flightNumber": "6300",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "LPA",
+
+    "arrivalIcao": "GCLP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "18:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "16:30:00",
+
+    "flightNumber": "6302",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "TFN",
+
+    "arrivalIcao": "GCXO",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "09:20:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "07:25:00",
+
+    "flightNumber": "6306",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "TFN",
+
+    "arrivalIcao": "GCXO",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "18:15:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "16:20:00",
+
+    "flightNumber": "6308",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "PMI",
+
+    "arrivalIcao": "LEPA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "11:45:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "10:15:00",
+
+    "flightNumber": "6771",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "PMI",
+
+    "arrivalIcao": "LEPA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "22:30:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "21:00:00",
+
+    "flightNumber": "6773",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "D8",
+
+    "airlineIcao": "IBK",
+
+    "arrivalIata": "PMI",
+
+    "arrivalIcao": "LEPA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "15:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "14:25:00",
+
+    "flightNumber": "6775",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "DE",
+
+    "airlineIcao": "CFG",
+
+    "arrivalIata": "DUS",
+
+    "arrivalIcao": "EDDL",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": null,
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": null,
+
+    "departureTime": null,
+
+    "flightNumber": "3834",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "DL",
+
+    "airlineIcao": "DAL",
+
+    "arrivalIata": "JFK",
+
+    "arrivalIcao": "KJFK",
+
+    "arrivalTerminal": "4",
+
+    "arrivalTime": "12:20:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AF",
+
+        "flight_number": "3668"
+      },
+
+      {
+        "airline_code": "KL",
+
+        "flight_number": "6127"
+      },
+
+      {
+        "airline_code": "UX",
+
+        "flight_number": "3391"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "10:15:00",
+
+    "flightNumber": "215",
+
+    "regNumber": [
+      "N801NW",
+
+      "N802NW",
+
+      "N803NW",
+
+      "N804NW",
+
+      "N805NW",
+
+      "N807NW",
+
+      "N808NW",
+
+      "N809NW",
+
+      "N811NW",
+
+      "N812NW",
+
+      "N813NW",
+
+      "N814NW",
+
+      "N815NW",
+
+      "N816NW",
+
+      "N817NW",
+
+      "N818NW",
+
+      "N819NW",
+
+      "N820NW",
+
+      "N821NW",
+
+      "N822NW",
+
+      "N823NW",
+
+      "N824NW",
+
+      "N825NW",
+
+      "N826NW",
+
+      "N828NW",
+
+      "N829NW",
+
+      "N827MH"
+    ]
+  },
+
+  {
+    "airlineIata": "EB",
+
+    "airlineIcao": "PLM",
+
+    "arrivalIata": "PUJ",
+
+    "arrivalIcao": "MDPC",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "17:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "15:00:00",
+
+    "flightNumber": "1008",
+
+    "regNumber": ["EC-KQC", "EC-KSM"]
+  },
+
+  {
+    "airlineIata": "EB",
+
+    "airlineIcao": "PLM",
+
+    "arrivalIata": "GYE",
+
+    "arrivalIcao": "SEGU",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "07:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "LA",
+
+        "flight_number": "1441"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "00:55:00",
+
+    "flightNumber": "1441",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "EB",
+
+    "airlineIcao": "PLM",
+
+    "arrivalIata": "CUN",
+
+    "arrivalIcao": "MMUN",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "17:30:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "14:00:00",
+
+    "flightNumber": "2003",
+
+    "regNumber": ["EC-KQC", "EC-KSM"]
+  },
+
+  {
+    "airlineIata": "EB",
+
+    "airlineIcao": "PLM",
+
+    "arrivalIata": "CUN",
+
+    "arrivalIcao": "MMUN",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "17:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "14:00:00",
+
+    "flightNumber": "3003",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "EB",
+
+    "airlineIcao": "PLM",
+
+    "arrivalIata": "PUJ",
+
+    "arrivalIcao": "MDPC",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "17:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "15:00:00",
+
+    "flightNumber": "4008",
+
+    "regNumber": ["EC-KQC", "EC-KSM"]
+  },
+
+  {
+    "airlineIata": "EB",
+
+    "airlineIcao": "PLM",
+
+    "arrivalIata": "CUN",
+
+    "arrivalIcao": "MMUN",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "15:30:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "12:30:00",
+
+    "flightNumber": "5003",
+
+    "regNumber": ["EC-KQC", "EC-KSM"]
+  },
+
+  {
+    "airlineIata": "EB",
+
+    "airlineIcao": "PLM",
+
+    "arrivalIata": "CUN",
+
+    "arrivalIcao": "MMUN",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "17:15:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "14:00:00",
+
+    "flightNumber": "7003",
+
+    "regNumber": ["EC-KQC", "EC-KSM"]
+  },
+
+  {
+    "airlineIata": "EB",
+
+    "airlineIcao": "PLM",
+
+    "arrivalIata": "SIN",
+
+    "arrivalIcao": "WSSS",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": null,
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": null,
+
+    "flightNumber": "8006",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "EB",
+
+    "airlineIcao": "PLM",
+
+    "arrivalIata": "SIN",
+
+    "arrivalIcao": "WSSS",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": null,
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": null,
+
+    "flightNumber": "8008",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "WK",
+
+    "airlineIcao": "EDW",
+
+    "arrivalIata": "ZRH",
+
+    "arrivalIcao": "LSZH",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:15:00",
+
+    "codeshares": [
+      {
+        "airline_code": "LX",
+
+        "flight_number": "2021"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "10:00:00",
+
+    "flightNumber": "2021",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "EI",
+
+    "airlineIcao": "EIN",
+
+    "arrivalIata": "DUB",
+
+    "arrivalIcao": "EIDW",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "12:15:00",
+
+    "codeshares": [
+      {
+        "airline_code": "EY",
+
+        "flight_number": "7997"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "10:35:00",
+
+    "flightNumber": "2593",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "EI",
+
+    "airlineIcao": "EIN",
+
+    "arrivalIata": "DUB",
+
+    "arrivalIcao": "EIDW",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "12:10:00",
+
+    "codeshares": [
+      {
+        "airline_code": "EY",
+
+        "flight_number": "7946"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "10:35:00",
+
+    "flightNumber": "593",
+
+    "regNumber": [
+      "EI-DEA",
+
+      "EI-DEB",
+
+      "EI-DEC",
+
+      "EI-DEE",
+
+      "EI-DEG",
+
+      "EI-DEI",
+
+      "EI-DEN",
+
+      "EI-DVI",
+
+      "EI-DVN",
+
+      "EI-EZV",
+
+      "EI-EZW"
+    ]
+  },
+
+  {
+    "airlineIata": "EI",
+
+    "airlineIcao": "EIN",
+
+    "arrivalIata": "DUB",
+
+    "arrivalIcao": "EIDW",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "22:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "21:05:00",
+
+    "flightNumber": "595",
+
+    "regNumber": ["EI-DEB", "EI-DEI", "EI-EDP"]
+  },
+
+  {
+    "airlineIata": "EK",
+
+    "airlineIcao": "UAE",
+
+    "arrivalIata": "DXB",
+
+    "arrivalIcao": "OMDB",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "00:45:00",
+
+    "codeshares": [
+      {
+        "airline_code": "QF",
+
+        "flight_number": "8142"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "15:20:00",
+
+    "flightNumber": "142",
+
+    "regNumber": [
+      "A6-EDG",
+
+      "A6-EDH",
+
+      "A6-EDK",
+
+      "A6-EDW",
+
+      "A6-EED",
+
+      "A6-EEF",
+
+      "A6-EEM",
+
+      "A6-EEN",
+
+      "A6-EEW",
+
+      "A6-EEX",
+
+      "A6-EEY",
+
+      "A6-EEZ",
+
+      "A6-EOA",
+
+      "A6-EOB",
+
+      "A6-EOI",
+
+      "A6-EOJ",
+
+      "A6-EOK",
+
+      "A6-EOO",
+
+      "A6-EOR",
+
+      "A6-EOT",
+
+      "A6-EOU",
+
+      "A6-EOV",
+
+      "A6-EOW",
+
+      "A6-EOX",
+
+      "A6-EOZ",
+
+      "A6-EUA",
+
+      "A6-EUB"
+    ]
+  },
+
+  {
+    "airlineIata": "EK",
+
+    "airlineIcao": "UAE",
+
+    "arrivalIata": "DXB",
+
+    "arrivalIcao": "OMDB",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "07:10:00",
+
+    "codeshares": [
+      {
+        "airline_code": "MH",
+
+        "flight_number": "4510"
+      },
+
+      {
+        "airline_code": "QF",
+
+        "flight_number": "8144"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "22:05:00",
+
+    "flightNumber": "144",
+
+    "regNumber": [
+      "A6-EBB",
+
+      "A6-EBC",
+
+      "A6-EBE",
+
+      "A6-EBI",
+
+      "A6-EBJ",
+
+      "A6-EBK",
+
+      "A6-EBM",
+
+      "A6-EBN",
+
+      "A6-EBP",
+
+      "A6-EBT",
+
+      "A6-ECQ",
+
+      "A6-EGD",
+
+      "A6-EGK",
+
+      "A6-EGL",
+
+      "A6-EGM",
+
+      "A6-EGN",
+
+      "A6-EGO",
+
+      "A6-EGP",
+
+      "A6-EGQ",
+
+      "A6-EGR",
+
+      "A6-EGS",
+
+      "A6-EGT",
+
+      "A6-EGU",
+
+      "A6-EGV",
+
+      "A6-EGW",
+
+      "A6-EGX",
+
+      "A6-EGZ",
+
+      "A6-ENG",
+
+      "A6-ENH",
+
+      "A6-ENI",
+
+      "A6-ENJ",
+
+      "A6-ENL",
+
+      "A6-ENM",
+
+      "A6-ENN",
+
+      "A6-ENP",
+
+      "A6-ENQ",
+
+      "A6-ENR",
+
+      "A6-ENT",
+
+      "A6-ENV",
+
+      "A6-ENW",
+
+      "A6-ENZ",
+
+      "A6-EPA",
+
+      "A6-EPB",
+
+      "A6-EPC",
+
+      "A6-EPG",
+
+      "A6-EPH",
+
+      "A6-EPI",
+
+      "A6-EPJ",
+
+      "A6-EPK",
+
+      "A6-EPL",
+
+      "A6-EPM"
+    ]
+  },
+
+  {
+    "airlineIata": "EK",
+
+    "airlineIcao": "UAE",
+
+    "arrivalIata": "DWC",
+
+    "arrivalIcao": "OMDW",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "06:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": null,
+
+    "departureTime": "20:15:00",
+
+    "flightNumber": "9980",
+
+    "regNumber": ["A6-EFE", "A6-EFF", "A6-EFI", "A6-EFO"]
+  },
+
+  {
+    "airlineIata": "ET",
+
+    "airlineIcao": "ETH",
+
+    "arrivalIata": "ADD",
+
+    "arrivalIcao": "HAAB",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "06:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "21:40:00",
+
+    "flightNumber": "713",
+
+    "regNumber": ["ET-AQN", "ET-AQO", "ET-AQP", "ET-AQQ", "ET-ASJ"]
+  },
+
+  {
+    "airlineIata": "E4",
+
+    "airlineIcao": "ETR",
+
+    "arrivalIata": "CCS",
+
+    "arrivalIcao": "SVMI",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:15:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "09:45:00",
+
+    "flightNumber": "8594",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "E9",
+
+    "airlineIcao": "EVE",
+
+    "arrivalIata": "PUJ",
+
+    "arrivalIcao": "MDPC",
+
+    "arrivalTerminal": "A",
+
+    "arrivalTime": "18:40:00",
+
+    "codeshares": [
+      {
+        "airline_code": "W2",
+
+        "flight_number": "1701"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "16:00:00",
+
+    "flightNumber": "801",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "E9",
+
+    "airlineIcao": "EVE",
+
+    "arrivalIata": "CUN",
+
+    "arrivalIcao": "MMUN",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "18:10:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7990"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "14:55:00",
+
+    "flightNumber": "813",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "E9",
+
+    "airlineIcao": "EVE",
+
+    "arrivalIata": "HAV",
+
+    "arrivalIcao": "MUHA",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "17:30:00",
+
+    "codeshares": [
+      {
+        "airline_code": "W2",
+
+        "flight_number": "1725"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "13:30:00",
+
+    "flightNumber": "825",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "E9",
+
+    "airlineIcao": "EVE",
+
+    "arrivalIata": "MRU",
+
+    "arrivalIcao": "FIMP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "06:20:00",
+
+    "codeshares": [
+      {
+        "airline_code": "W2",
+
+        "flight_number": "1737"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "16:30:00",
+
+    "flightNumber": "837",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "EY",
+
+    "airlineIcao": "ETD",
+
+    "arrivalIata": "AUH",
+
+    "arrivalIcao": "OMAA",
+
+    "arrivalTerminal": "T1",
+
+    "arrivalTime": "19:45:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AV",
+
+        "flight_number": "2414"
+      },
+
+      {
+        "airline_code": "HM",
+
+        "flight_number": "5093"
+      },
+
+      {
+        "airline_code": "HX",
+
+        "flight_number": "1076"
+      },
+
+      {
+        "airline_code": "PK",
+
+        "flight_number": "4076"
+      },
+
+      {
+        "airline_code": "TP",
+
+        "flight_number": "6930"
+      },
+
+      {
+        "airline_code": "UL",
+
+        "flight_number": "2476"
+      },
+
+      {
+        "airline_code": "UX",
+
+        "flight_number": "3815"
+      },
+
+      {
+        "airline_code": "VA",
+
+        "flight_number": "7174"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "10:00:00",
+
+    "flightNumber": "76",
+
+    "regNumber": [
+      "A6-EYE",
+
+      "A6-EYG",
+
+      "A6-EYH",
+
+      "A6-EYI",
+
+      "A6-EYJ",
+
+      "A6-EYK",
+
+      "A6-EYL",
+
+      "A6-EYM",
+
+      "A6-EYN",
+
+      "A6-EYO",
+
+      "A6-EYP",
+
+      "A6-EYQ",
+
+      "A6-EYS",
+
+      "A6-EYT",
+
+      "A6-EYU"
+    ]
+  },
+
+  {
+    "airlineIata": "FB",
+
+    "airlineIcao": "LZB",
+
+    "arrivalIata": "SOF",
+
+    "arrivalIcao": "LBSF",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "14:30:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7764"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "10:20:00",
+
+    "flightNumber": "472",
+
+    "regNumber": [
+      "LZ-FBA",
+
+      "LZ-FBB",
+
+      "LZ-FBC",
+
+      "LZ-FBD",
+
+      "LZ-FBE",
+
+      "LZ-BUR",
+
+      "LZ-PLO",
+
+      "LZ-SOF",
+
+      "LZ-VAR"
+    ]
+  },
+
+  {
+    "airlineIata": "FB",
+
+    "airlineIcao": "LZB",
+
+    "arrivalIata": "SOF",
+
+    "arrivalIcao": "LBSF",
+
+    "arrivalTerminal": "T2",
+
+    "arrivalTime": "06:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7766"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "02:15:00",
+
+    "flightNumber": "474",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FB",
+
+    "airlineIcao": "LZB",
+
+    "arrivalIata": "BCN",
+
+    "arrivalIcao": "LEBL",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "11:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7768"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "10:10:00",
+
+    "flightNumber": "475",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FB",
+
+    "airlineIcao": "LZB",
+
+    "arrivalIata": "PMI",
+
+    "arrivalIcao": "LEPA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "10:00:00",
+
+    "flightNumber": "561",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FI",
+
+    "airlineIcao": "ICE",
+
+    "arrivalIata": "KEF",
+
+    "arrivalIcao": "BIKF",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "01:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "23:20:00",
+
+    "flightNumber": "595",
+
+    "regNumber": ["TF-FIR", "TF-FIW", "TF-ISJ"]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "WMI",
+
+    "arrivalIcao": "EPMO",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "06:30:00",
+
+    "flightNumber": "1062",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "NAP",
+
+    "arrivalIcao": "LIRN",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:35:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "10:05:00",
+
+    "flightNumber": "1329",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "NAP",
+
+    "arrivalIcao": "LIRN",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "14:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "11:35:00",
+
+    "flightNumber": "1332",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "HAM",
+
+    "arrivalIcao": "EDDH",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "09:50:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "06:55:00",
+
+    "flightNumber": "154",
+
+    "regNumber": [
+      "EI-DAO",
+
+      "EI-DCH",
+
+      "EI-DCL",
+
+      "EI-DPC",
+
+      "EI-DWF",
+
+      "EI-DYE",
+
+      "EI-DYF",
+
+      "EI-EBF",
+
+      "EI-EBO",
+
+      "EI-EFL",
+
+      "EI-EFM",
+
+      "EI-EKI",
+
+      "EI-EKJ",
+
+      "EI-EMF",
+
+      "EI-EMM",
+
+      "EI-ENX",
+
+      "EI-ESO",
+
+      "EI-EVF",
+
+      "EI-EVK",
+
+      "EI-EVY",
+
+      "EI-FIC",
+
+      "EI-FIG",
+
+      "EI-FIK",
+
+      "EI-FOM",
+
+      "EI-FRD"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "FRA",
+
+    "arrivalIcao": "EDDF",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "12:15:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "09:40:00",
+
+    "flightNumber": "1679",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "TFS",
+
+    "arrivalIcao": "GCTS",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "10:50:00",
+
+    "flightNumber": "2010",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "LPA",
+
+    "arrivalIcao": "GCLP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "23:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "21:35:00",
+
+    "flightNumber": "2011",
+
+    "regNumber": [
+      "EI-DLH",
+
+      "EI-DPM",
+
+      "EI-EFE",
+
+      "EI-EKC",
+
+      "EI-EVW",
+
+      "EI-EXF",
+
+      "EI-FEG"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "ACE",
+
+    "arrivalIcao": "GCRR",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "22:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "21:05:00",
+
+    "flightNumber": "2015",
+
+    "regNumber": [
+      "EI-DPL",
+
+      "EI-DYB",
+
+      "EI-DYD",
+
+      "EI-EBA",
+
+      "EI-EBV",
+
+      "EI-EFN",
+
+      "EI-EFP",
+
+      "EI-EKY",
+
+      "EI-ENG"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "ACE",
+
+    "arrivalIcao": "GCRR",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "08:35:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "06:45:00",
+
+    "flightNumber": "2017",
+
+    "regNumber": [
+      "EI-DAE",
+
+      "EI-DAO",
+
+      "EI-DCH",
+
+      "EI-DPC",
+
+      "EI-DPD",
+
+      "EI-DPW",
+
+      "EI-DPZ",
+
+      "EI-DWA",
+
+      "EI-DWK",
+
+      "EI-DWO",
+
+      "EI-EBO",
+
+      "EI-EFN",
+
+      "EI-EFS",
+
+      "EI-EKD",
+
+      "EI-EKI",
+
+      "EI-EKV",
+
+      "EI-EMC",
+
+      "EI-EMF",
+
+      "EI-ENG",
+
+      "EI-ENX",
+
+      "EI-EVF",
+
+      "EI-EVY",
+
+      "EI-FIG",
+
+      "EI-FOZ"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "LPA",
+
+    "arrivalIcao": "GCLP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "08:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "06:50:00",
+
+    "flightNumber": "2031",
+
+    "regNumber": [
+      "EI-DHC",
+
+      "EI-DPW",
+
+      "EI-DWX",
+
+      "EI-DYF",
+
+      "EI-EFS",
+
+      "EI-EKA",
+
+      "EI-EMF",
+
+      "EI-ENF",
+
+      "EI-ENX",
+
+      "EI-EST",
+
+      "EI-EVF",
+
+      "EI-EVG",
+
+      "EI-FEG",
+
+      "EI-FIC",
+
+      "EI-FID",
+
+      "EI-FOM"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "PMI",
+
+    "arrivalIcao": "LEPA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:10:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "08:35:00",
+
+    "flightNumber": "2051",
+
+    "regNumber": ["EI-DHF", "EI-EFM", "EI-EST", "EI-FIE"]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "PMI",
+
+    "arrivalIcao": "LEPA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "17:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "16:20:00",
+
+    "flightNumber": "2053",
+
+    "regNumber": ["EI-DLR", "EI-EVC"]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "PMI",
+
+    "arrivalIcao": "LEPA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "20:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "18:50:00",
+
+    "flightNumber": "2056",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "PMI",
+
+    "arrivalIcao": "LEPA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "21:20:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "19:45:00",
+
+    "flightNumber": "2061",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "PMI",
+
+    "arrivalIcao": "LEPA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "15:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "14:20:00",
+
+    "flightNumber": "2063",
+
+    "regNumber": ["EI-FRD"]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "IBZ",
+
+    "arrivalIcao": "LEIB",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "14:10:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "12:50:00",
+
+    "flightNumber": "2066",
+
+    "regNumber": ["EI-DHZ"]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "BHX",
+
+    "arrivalIcao": "EGBB",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "12:35:00",
+
+    "flightNumber": "2082",
+
+    "regNumber": [
+      "EI-DAH",
+
+      "EI-DAO",
+
+      "EI-DCH",
+
+      "EI-DCL",
+
+      "EI-DHC",
+
+      "EI-DHZ",
+
+      "EI-DPC",
+
+      "EI-DWF",
+
+      "EI-DYM",
+
+      "EI-EBO",
+
+      "EI-EFK",
+
+      "EI-EGB",
+
+      "EI-ENP",
+
+      "EI-ENS",
+
+      "EI-EVF",
+
+      "EI-EVG",
+
+      "EI-EVY",
+
+      "EI-FIE",
+
+      "EI-FOF",
+
+      "EI-FOM",
+
+      "EI-FOZ",
+
+      "EI-FRD"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "IBZ",
+
+    "arrivalIcao": "LEIB",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "21:35:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "20:15:00",
+
+    "flightNumber": "2084",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "IBZ",
+
+    "arrivalIcao": "LEIB",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "16:10:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "14:50:00",
+
+    "flightNumber": "2166",
+
+    "regNumber": ["EI-DAO", "EI-FRJ"]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "OTP",
+
+    "arrivalIcao": "LROP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "21:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "16:20:00",
+
+    "flightNumber": "2513",
+
+    "regNumber": [
+      "EI-DAE",
+
+      "EI-DCL",
+
+      "EI-DLI",
+
+      "EI-DPC",
+
+      "EI-DPW",
+
+      "EI-DWA",
+
+      "EI-DWB",
+
+      "EI-DWF",
+
+      "EI-DWW",
+
+      "EI-DWX",
+
+      "EI-DYD",
+
+      "EI-DYE",
+
+      "EI-DYF",
+
+      "EI-DYM",
+
+      "EI-DYW",
+
+      "EI-EBF",
+
+      "EI-EBO",
+
+      "EI-EBW",
+
+      "EI-EFL",
+
+      "EI-EFS",
+
+      "EI-EGC",
+
+      "EI-EKD",
+
+      "EI-EKI",
+
+      "EI-EKJ",
+
+      "EI-EKV",
+
+      "EI-EMC",
+
+      "EI-EMF",
+
+      "EI-EMM",
+
+      "EI-EMP",
+
+      "EI-ENP",
+
+      "EI-ESO",
+
+      "EI-EVC",
+
+      "EI-EVF",
+
+      "EI-EVG",
+
+      "EI-EVK",
+
+      "EI-EVY",
+
+      "EI-EXD",
+
+      "EI-FIC",
+
+      "EI-FOF",
+
+      "EI-FOM"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "BTS",
+
+    "arrivalIcao": "LZIB",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "09:30:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "06:30:00",
+
+    "flightNumber": "2515",
+
+    "regNumber": [
+      "EI-DAE",
+
+      "EI-DAF",
+
+      "EI-DAO",
+
+      "EI-DHC",
+
+      "EI-DPW",
+
+      "EI-DWA",
+
+      "EI-DWX",
+
+      "EI-DYD",
+
+      "EI-DYE",
+
+      "EI-EFK",
+
+      "EI-EGC",
+
+      "EI-ENX",
+
+      "EI-EVF",
+
+      "EI-FIC",
+
+      "EI-FID",
+
+      "EI-FOS",
+
+      "EI-FRC"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "VNO",
+
+    "arrivalIcao": "EYVI",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:15:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "07:15:00",
+
+    "flightNumber": "2517",
+
+    "regNumber": [
+      "EI-DCL",
+
+      "EI-DHZ",
+
+      "EI-DLI",
+
+      "EI-DPC",
+
+      "EI-DPJ",
+
+      "EI-DPW",
+
+      "EI-DWA",
+
+      "EI-DWO",
+
+      "EI-DYE",
+
+      "EI-DYW",
+
+      "EI-EFM",
+
+      "EI-EFS",
+
+      "EI-EGC",
+
+      "EI-EKD",
+
+      "EI-EKI",
+
+      "EI-EKJ",
+
+      "EI-EKV",
+
+      "EI-EMC",
+
+      "EI-ENG",
+
+      "EI-EVC",
+
+      "EI-EVF",
+
+      "EI-EVY",
+
+      "EI-EXD",
+
+      "EI-FEF",
+
+      "EI-FOM"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "SXF",
+
+    "arrivalIcao": "EDDB",
+
+    "arrivalTerminal": "D",
+
+    "arrivalTime": "09:10:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "06:15:00",
+
+    "flightNumber": "2526",
+
+    "regNumber": [
+      "EI-DCL",
+
+      "EI-DHC",
+
+      "EI-DHZ",
+
+      "EI-DLI",
+
+      "EI-DPC",
+
+      "EI-DPW",
+
+      "EI-DPZ",
+
+      "EI-DWA",
+
+      "EI-DWB",
+
+      "EI-DWG",
+
+      "EI-DWW",
+
+      "EI-DWX",
+
+      "EI-DYD",
+
+      "EI-DYW",
+
+      "EI-EBW",
+
+      "EI-EFE",
+
+      "EI-EFL",
+
+      "EI-EFS",
+
+      "EI-EKD",
+
+      "EI-EKI",
+
+      "EI-EMF",
+
+      "EI-EMP",
+
+      "EI-ENP",
+
+      "EI-ENX",
+
+      "EI-EVC",
+
+      "EI-EVF",
+
+      "EI-EVG",
+
+      "EI-EVK",
+
+      "EI-EXD",
+
+      "EI-FIE",
+
+      "EI-FOF",
+
+      "EI-FRJ"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "SXF",
+
+    "arrivalIcao": "EDDB",
+
+    "arrivalTerminal": "D",
+
+    "arrivalTime": "20:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "17:10:00",
+
+    "flightNumber": "2528",
+
+    "regNumber": [
+      "EI-DWK",
+
+      "EI-DWO",
+
+      "EI-DWX",
+
+      "EI-DYF",
+
+      "EI-DYM",
+
+      "EI-EBF",
+
+      "EI-EMF",
+
+      "EI-ENF",
+
+      "EI-EVY",
+
+      "EI-FOM"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "STN",
+
+    "arrivalIcao": "EGSS",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "10:50:00",
+
+    "flightNumber": "2683",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "BRI",
+
+    "arrivalIcao": "LIBD",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "09:50:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "07:10:00",
+
+    "flightNumber": "2760",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "GLA",
+
+    "arrivalIcao": "EGPF",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "08:45:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "06:55:00",
+
+    "flightNumber": "2762",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "POZ",
+
+    "arrivalIcao": "EPPO",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "09:30:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "06:15:00",
+
+    "flightNumber": "2764",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "PRG",
+
+    "arrivalIcao": "LKPR",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "09:10:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "06:15:00",
+
+    "flightNumber": "2766",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "TFS",
+
+    "arrivalIcao": "GCTS",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "09:10:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "07:05:00",
+
+    "flightNumber": "2775",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "TFS",
+
+    "arrivalIcao": "GCTS",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "11:15:00",
+
+    "flightNumber": "2901",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "TFS",
+
+    "arrivalIcao": "GCTS",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "23:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "21:45:00",
+
+    "flightNumber": "2913",
+
+    "regNumber": [
+      "EI-DWW",
+
+      "EI-EKL",
+
+      "EI-EKM",
+
+      "EI-EKN",
+
+      "EI-EKZ",
+
+      "EI-ENG",
+
+      "EI-ENI",
+
+      "EI-EST",
+
+      "EI-FEF",
+
+      "EI-FEG",
+
+      "EI-FEH",
+
+      "EI-FEI"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "TLS",
+
+    "arrivalIcao": "LFBO",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "07:50:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "06:30:00",
+
+    "flightNumber": "3011",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "CGN",
+
+    "arrivalIcao": "EDDK",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "23:45:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "21:05:00",
+
+    "flightNumber": "3017",
+
+    "regNumber": [
+      "EI-DHN",
+
+      "EI-DPP",
+
+      "EI-DWF",
+
+      "EI-DYE",
+
+      "EI-DYX",
+
+      "EI-EFK",
+
+      "EI-EFS",
+
+      "EI-EGB",
+
+      "EI-EMF",
+
+      "EI-ENV",
+
+      "EI-EVD",
+
+      "EI-EVK",
+
+      "EI-EVY",
+
+      "EI-FOM"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "MAH",
+
+    "arrivalIcao": "LEMH",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "08:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "06:50:00",
+
+    "flightNumber": "3056",
+
+    "regNumber": [
+      "EI-DAF",
+
+      "EI-DAH",
+
+      "EI-DCH",
+
+      "EI-DHC",
+
+      "EI-DHP",
+
+      "EI-DPC",
+
+      "EI-DPZ",
+
+      "EI-DWO",
+
+      "EI-EFS",
+
+      "EI-EKL",
+
+      "EI-EVF",
+
+      "EI-EVG",
+
+      "EI-FIK",
+
+      "EI-FOF"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "MAH",
+
+    "arrivalIcao": "LEMH",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "19:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "18:20:00",
+
+    "flightNumber": "3058",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "EIN",
+
+    "arrivalIcao": "EHEH",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "11:20:00",
+
+    "flightNumber": "3066",
+
+    "regNumber": [
+      "EI-DAL",
+
+      "EI-DWO",
+
+      "EI-EFS",
+
+      "EI-EVF",
+
+      "EI-EVY",
+
+      "EI-FOF",
+
+      "EI-FRJ"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "EIN",
+
+    "arrivalIcao": "EHEH",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "08:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "06:25:00",
+
+    "flightNumber": "3068",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "MAN",
+
+    "arrivalIcao": "EGCC",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "12:20:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "10:40:00",
+
+    "flightNumber": "3186",
+
+    "regNumber": [
+      "EI-DHR",
+
+      "EI-DHT",
+
+      "EI-DPN",
+
+      "EI-DWE",
+
+      "EI-DWL",
+
+      "EI-EFN",
+
+      "EI-EKM",
+
+      "EI-EKW",
+
+      "EI-EMD",
+
+      "EI-EMF",
+
+      "EI-EMI",
+
+      "EI-ESR",
+
+      "EI-FIM"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "BLQ",
+
+    "arrivalIcao": "LIPE",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "09:45:00",
+
+    "flightNumber": "3954",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "DUB",
+
+    "arrivalIcao": "EIDW",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "20:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "18:25:00",
+
+    "flightNumber": "3979",
+
+    "regNumber": [
+      "EI-DCK",
+
+      "EI-DLR",
+
+      "EI-EKI",
+
+      "EI-FIB",
+
+      "EI-FIH",
+
+      "EI-FIV",
+
+      "EI-FRP"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "CTA",
+
+    "arrivalIcao": "LICC",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "16:30:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "13:45:00",
+
+    "flightNumber": "4066",
+
+    "regNumber": ["EI-DPZ", "EI-EGC", "EI-EKD", "EI-FRJ"]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "VRN",
+
+    "arrivalIcao": "LIPX",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:10:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "10:55:00",
+
+    "flightNumber": "5017",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "VRN",
+
+    "arrivalIcao": "LIPX",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "10:10:00",
+
+    "flightNumber": "5047",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "LUX",
+
+    "arrivalIcao": "ELLX",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "09:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "07:45:00",
+
+    "flightNumber": "5054",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "CWL",
+
+    "arrivalIcao": "EGFF",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:20:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "11:20:00",
+
+    "flightNumber": "5089",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "SUF",
+
+    "arrivalIcao": "LICA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "14:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "11:35:00",
+
+    "flightNumber": "5138",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "TFN",
+
+    "arrivalIcao": "GCXO",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "09:20:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "07:10:00",
+
+    "flightNumber": "5278",
+
+    "regNumber": [
+      "EI-DAO",
+
+      "EI-DCL",
+
+      "EI-DHC",
+
+      "EI-DHP",
+
+      "EI-DLI",
+
+      "EI-DLR",
+
+      "EI-DPC",
+
+      "EI-DPJ",
+
+      "EI-DPW",
+
+      "EI-DWF",
+
+      "EI-DWG",
+
+      "EI-DWX",
+
+      "EI-DYE",
+
+      "EI-DYM",
+
+      "EI-EBW",
+
+      "EI-EBX",
+
+      "EI-EFK",
+
+      "EI-EFL",
+
+      "EI-EFM",
+
+      "EI-EFS",
+
+      "EI-EKA",
+
+      "EI-EKD",
+
+      "EI-EKJ",
+
+      "EI-EKV",
+
+      "EI-EMC",
+
+      "EI-EMF",
+
+      "EI-EMP",
+
+      "EI-ENP",
+
+      "EI-ESO",
+
+      "EI-EVC",
+
+      "EI-EVF",
+
+      "EI-EXD",
+
+      "EI-FIG",
+
+      "EI-FOF",
+
+      "EI-FOM"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "SCQ",
+
+    "arrivalIcao": "LEST",
+
+    "arrivalTerminal": "T",
+
+    "arrivalTime": "09:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "08:35:00",
+
+    "flightNumber": "5315",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "SCQ",
+
+    "arrivalIcao": "LEST",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "21:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "20:35:00",
+
+    "flightNumber": "5317",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "RBA",
+
+    "arrivalIcao": "GMME",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "20:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "19:45:00",
+
+    "flightNumber": "5352",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "IBZ",
+
+    "arrivalIcao": "LEIB",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "08:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "06:40:00",
+
+    "flightNumber": "5354",
+
+    "regNumber": [
+      "EI-DAE",
+
+      "EI-DHZ",
+
+      "EI-DPJ",
+
+      "EI-DWA",
+
+      "EI-DWB",
+
+      "EI-DWX",
+
+      "EI-DYM",
+
+      "EI-EBO",
+
+      "EI-EFM",
+
+      "EI-EKD",
+
+      "EI-EKH",
+
+      "EI-EKL",
+
+      "EI-EKV",
+
+      "EI-EMM",
+
+      "EI-ENG",
+
+      "EI-EVC",
+
+      "EI-EVF",
+
+      "EI-EVG",
+
+      "EI-FIC",
+
+      "EI-FID",
+
+      "EI-FIE",
+
+      "EI-FOF",
+
+      "EI-FOM",
+
+      "EI-FRD",
+
+      "EI-FRF",
+
+      "EI-FRJ"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "KRK",
+
+    "arrivalIcao": "EPKK",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:30:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "07:00:00",
+
+    "flightNumber": "5356",
+
+    "regNumber": [
+      "EI-DCL",
+
+      "EI-DHZ",
+
+      "EI-DPC",
+
+      "EI-DPJ",
+
+      "EI-DWF",
+
+      "EI-DWK",
+
+      "EI-DWX",
+
+      "EI-EBO",
+
+      "EI-EFL",
+
+      "EI-EFM",
+
+      "EI-EGC",
+
+      "EI-EKI",
+
+      "EI-EKJ",
+
+      "EI-EMM",
+
+      "EI-EVC",
+
+      "EI-EVF",
+
+      "EI-EXD",
+
+      "EI-FIK",
+
+      "EI-FRD",
+
+      "EI-FRJ"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "BLQ",
+
+    "arrivalIcao": "LIPE",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "16:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "14:15:00",
+
+    "flightNumber": "5374",
+
+    "regNumber": ["EI-DHP", "EI-DPC", "EI-EFK", "EI-EVY", "EI-FOS"]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "MLA",
+
+    "arrivalIcao": "LMML",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "09:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "06:25:00",
+
+    "flightNumber": "5382",
+
+    "regNumber": [
+      "EI-DHS",
+
+      "EI-DHZ",
+
+      "EI-DWK",
+
+      "EI-DWO",
+
+      "EI-DYB",
+
+      "EI-EBY",
+
+      "EI-EFF",
+
+      "EI-EGC",
+
+      "EI-EVF",
+
+      "EI-EVY",
+
+      "EI-FIG",
+
+      "EI-FOM"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "OPO",
+
+    "arrivalIcao": "LPPR",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "08:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "08:35:00",
+
+    "flightNumber": "5422",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "BVA",
+
+    "arrivalIcao": "LFOB",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "09:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "06:45:00",
+
+    "flightNumber": "5444",
+
+    "regNumber": [
+      "EI-DAF",
+
+      "EI-DCH",
+
+      "EI-DHZ",
+
+      "EI-DPC",
+
+      "EI-DPD",
+
+      "EI-DPZ",
+
+      "EI-DWK",
+
+      "EI-DYE",
+
+      "EI-DYM",
+
+      "EI-EBO",
+
+      "EI-EBW",
+
+      "EI-EFK",
+
+      "EI-EFS",
+
+      "EI-EGB",
+
+      "EI-EKJ",
+
+      "EI-EMF",
+
+      "EI-EMM",
+
+      "EI-EVF",
+
+      "EI-EXD",
+
+      "EI-FEF",
+
+      "EI-FOM"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "MRS",
+
+    "arrivalIcao": "LFML",
+
+    "arrivalTerminal": "mpÂ²",
+
+    "arrivalTime": "09:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "07:10:00",
+
+    "flightNumber": "5446",
+
+    "regNumber": [
+      "EI-DAN",
+
+      "EI-DWF",
+
+      "EI-DYD",
+
+      "EI-DYE",
+
+      "EI-EBO",
+
+      "EI-EFL",
+
+      "EI-EFS",
+
+      "EI-EMF",
+
+      "EI-ENF",
+
+      "EI-EVC",
+
+      "EI-EVD",
+
+      "EI-EVF",
+
+      "EI-FOM",
+
+      "EI-FRJ"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "CRL",
+
+    "arrivalIcao": "EBCI",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "09:30:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "07:10:00",
+
+    "flightNumber": "5462",
+
+    "regNumber": [
+      "EI-DAH",
+
+      "EI-DAL",
+
+      "EI-DCL",
+
+      "EI-DPC",
+
+      "EI-DPJ",
+
+      "EI-DWW",
+
+      "EI-EGB",
+
+      "EI-EKH",
+
+      "EI-EKJ",
+
+      "EI-EMF",
+
+      "EI-EMP",
+
+      "EI-ESO",
+
+      "EI-EVF",
+
+      "EI-EVY",
+
+      "EI-EXD",
+
+      "EI-FID",
+
+      "EI-FOF",
+
+      "EI-FOM",
+
+      "EI-FRJ"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "CRL",
+
+    "arrivalIcao": "EBCI",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "20:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "18:20:00",
+
+    "flightNumber": "5464",
+
+    "regNumber": [
+      "EI-DCH",
+
+      "EI-EBW",
+
+      "EI-EFS",
+
+      "EI-EKD",
+
+      "EI-EKJ",
+
+      "EI-EMC",
+
+      "EI-ENS",
+
+      "EI-EVG",
+
+      "EI-EVY",
+
+      "EI-FRD"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "CRL",
+
+    "arrivalIcao": "EBCI",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "16:50:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "14:30:00",
+
+    "flightNumber": "5466",
+
+    "regNumber": ["EI-DLI", "EI-DYE", "EI-EGC", "EI-EVF", "EI-EVK"]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "FUE",
+
+    "arrivalIcao": "GCFV",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "12:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "10:30:00",
+
+    "flightNumber": "5468",
+
+    "regNumber": [
+      "EI-DHZ",
+
+      "EI-DLR",
+
+      "EI-DPC",
+
+      "EI-DPW",
+
+      "EI-DWF",
+
+      "EI-DWG",
+
+      "EI-DWO",
+
+      "EI-DWX",
+
+      "EI-DYB",
+
+      "EI-EBO",
+
+      "EI-EFM",
+
+      "EI-EFS",
+
+      "EI-EKD",
+
+      "EI-EKH",
+
+      "EI-EKJ",
+
+      "EI-EKV",
+
+      "EI-EMC",
+
+      "EI-EMM",
+
+      "EI-ENG",
+
+      "EI-ENP",
+
+      "EI-EVF",
+
+      "EI-EVY",
+
+      "EI-FID",
+
+      "EI-FOF",
+
+      "EI-FOM",
+
+      "EI-FOS",
+
+      "EI-FRD",
+
+      "EI-FRJ"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "OPO",
+
+    "arrivalIcao": "LPPR",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "09:35:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "09:20:00",
+
+    "flightNumber": "5482",
+
+    "regNumber": ["EI-FIC"]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "OPO",
+
+    "arrivalIcao": "LPPR",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "20:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "19:40:00",
+
+    "flightNumber": "5484",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "BGY",
+
+    "arrivalIcao": "LIME",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "16:45:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "14:25:00",
+
+    "flightNumber": "5493",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "BGY",
+
+    "arrivalIcao": "LIME",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "20:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "18:40:00",
+
+    "flightNumber": "5983",
+
+    "regNumber": ["EI-DCK", "EI-EFS", "EI-EKD", "EI-FOF", "EI-FRJ"]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "STN",
+
+    "arrivalIcao": "EGSS",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "10:50:00",
+
+    "flightNumber": "5987",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "STN",
+
+    "arrivalIcao": "EGSS",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "10:35:00",
+
+    "flightNumber": "5991",
+
+    "regNumber": [
+      "EI-DAC",
+
+      "EI-DAH",
+
+      "EI-DLN",
+
+      "EI-DPJ",
+
+      "EI-DWV",
+
+      "EI-EBK",
+
+      "EI-EKD",
+
+      "EI-EPC",
+
+      "EI-EVT",
+
+      "EI-EVY",
+
+      "EI-EVZ",
+
+      "EI-EXF",
+
+      "EI-FIH",
+
+      "EI-FRL"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "STN",
+
+    "arrivalIcao": "EGSS",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "07:45:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "06:15:00",
+
+    "flightNumber": "5993",
+
+    "regNumber": [
+      "EI-DAF",
+
+      "EI-DAR",
+
+      "EI-DCH",
+
+      "EI-DHZ",
+
+      "EI-DLI",
+
+      "EI-DLR",
+
+      "EI-DPC",
+
+      "EI-DPH",
+
+      "EI-DPW",
+
+      "EI-DWA",
+
+      "EI-DWB",
+
+      "EI-DWJ",
+
+      "EI-DWO",
+
+      "EI-DYM",
+
+      "EI-EBF",
+
+      "EI-EBO",
+
+      "EI-EBW",
+
+      "EI-EFF",
+
+      "EI-EFL",
+
+      "EI-EKD",
+
+      "EI-EKI",
+
+      "EI-EKJ",
+
+      "EI-EMF",
+
+      "EI-EMM",
+
+      "EI-ENF",
+
+      "EI-ENX",
+
+      "EI-EVF",
+
+      "EI-FID",
+
+      "EI-FOM",
+
+      "EI-FRF"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "STN",
+
+    "arrivalIcao": "EGSS",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "15:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "13:35:00",
+
+    "flightNumber": "5995",
+
+    "regNumber": [
+      "EI-DCH",
+
+      "EI-DCK",
+
+      "EI-DPD",
+
+      "EI-DWO",
+
+      "EI-EBY",
+
+      "EI-EKI",
+
+      "EI-EMF",
+
+      "EI-EMM",
+
+      "EI-ENX",
+
+      "EI-EVY",
+
+      "EI-FRC"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "STN",
+
+    "arrivalIcao": "EGSS",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "19:30:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "18:00:00",
+
+    "flightNumber": "5997",
+
+    "regNumber": [
+      "EI-DAE",
+
+      "EI-DAL",
+
+      "EI-DWF",
+
+      "EI-DYE",
+
+      "EI-EKD",
+
+      "EI-EMM",
+
+      "EI-ENS",
+
+      "EI-ENX",
+
+      "EI-EVC",
+
+      "EI-EVF",
+
+      "EI-EVY",
+
+      "EI-FEF",
+
+      "EI-FOM",
+
+      "EI-FRC",
+
+      "EI-FRD",
+
+      "EI-FRF",
+
+      "EI-FRJ"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "STN",
+
+    "arrivalIcao": "EGSS",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "09:05:00",
+
+    "flightNumber": "5999",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "CPH",
+
+    "arrivalIcao": "EKCH",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "20:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "17:25:00",
+
+    "flightNumber": "607",
+
+    "regNumber": [
+      "EI-DAD",
+
+      "EI-DAE",
+
+      "EI-DHZ",
+
+      "EI-DPC",
+
+      "EI-DPW",
+
+      "EI-DWF",
+
+      "EI-DYD",
+
+      "EI-EBO",
+
+      "EI-EFK",
+
+      "EI-EFL",
+
+      "EI-EFS",
+
+      "EI-EKA",
+
+      "EI-EKJ",
+
+      "EI-EKV",
+
+      "EI-ENG",
+
+      "EI-ESO",
+
+      "EI-EVC",
+
+      "EI-EVF",
+
+      "EI-EVG",
+
+      "EI-EVK",
+
+      "EI-FIC",
+
+      "EI-FOF",
+
+      "EI-FOM",
+
+      "EI-FOS",
+
+      "EI-FRD"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "SOF",
+
+    "arrivalIcao": "LBSF",
+
+    "arrivalTerminal": "T1",
+
+    "arrivalTime": "14:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "09:40:00",
+
+    "flightNumber": "6410",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "BGY",
+
+    "arrivalIcao": "LIME",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "09:45:00",
+
+    "flightNumber": "6991",
+
+    "regNumber": [
+      "EI-DAF",
+
+      "EI-DAL",
+
+      "EI-DCG",
+
+      "EI-DWB",
+
+      "EI-DWK",
+
+      "EI-EBA",
+
+      "EI-EBI",
+
+      "EI-EFF",
+
+      "EI-EGA",
+
+      "EI-EMH",
+
+      "EI-ENN",
+
+      "EI-ESW",
+
+      "EI-EVM",
+
+      "EI-EVP"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "CAG",
+
+    "arrivalIcao": "LIEE",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "11:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "09:50:00",
+
+    "flightNumber": "7041",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "DUB",
+
+    "arrivalIcao": "EIDW",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "23:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "21:45:00",
+
+    "flightNumber": "7157",
+
+    "regNumber": [
+      "EI-DHO",
+
+      "EI-DHY",
+
+      "EI-DPM",
+
+      "EI-EBY",
+
+      "EI-EKA",
+
+      "EI-EKM",
+
+      "EI-EVO",
+
+      "EI-FIA",
+
+      "EI-FIB",
+
+      "EI-FIF",
+
+      "EI-FIH",
+
+      "EI-FIM",
+
+      "EI-FRI",
+
+      "EI-FRP"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "DUB",
+
+    "arrivalIcao": "EIDW",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "12:20:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "10:35:00",
+
+    "flightNumber": "7257",
+
+    "regNumber": [
+      "EI-DAC",
+
+      "EI-DAD",
+
+      "EI-DPC",
+
+      "EI-DPN",
+
+      "EI-DPR",
+
+      "EI-EGB",
+
+      "EI-EKF",
+
+      "EI-EKR",
+
+      "EI-EKS",
+
+      "EI-EMP",
+
+      "EI-ENB",
+
+      "EI-ENV",
+
+      "EI-EVA",
+
+      "EI-EVO",
+
+      "EI-FEH",
+
+      "EI-FEI",
+
+      "EI-FIJ",
+
+      "EI-FIM",
+
+      "EI-FOO",
+
+      "EI-FOV",
+
+      "EI-FRE",
+
+      "EI-FRG",
+
+      "EI-FRH"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "RAK",
+
+    "arrivalIcao": "GMMX",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:30:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "12:20:00",
+
+    "flightNumber": "7728",
+
+    "regNumber": [
+      "EI-DAL",
+
+      "EI-DYW",
+
+      "EI-EFL",
+
+      "EI-EFS",
+
+      "EI-EVK",
+
+      "EI-EVY",
+
+      "EI-FEF",
+
+      "EI-FRF"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "RAK",
+
+    "arrivalIcao": "GMMX",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "22:45:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "21:40:00",
+
+    "flightNumber": "7752",
+
+    "regNumber": [
+      "EI-DCK",
+
+      "EI-DHZ",
+
+      "EI-EBW",
+
+      "EI-ENX",
+
+      "EI-ESO",
+
+      "EI-FIP",
+
+      "EI-FOM",
+
+      "EI-FRJ"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "TNG",
+
+    "arrivalIcao": "GMTT",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:15:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "12:40:00",
+
+    "flightNumber": "7754",
+
+    "regNumber": ["EI-DPZ", "EI-ESO", "EI-EVF", "EI-FOM"]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "FEZ",
+
+    "arrivalIcao": "GMFF",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "15:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "14:25:00",
+
+    "flightNumber": "7758",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "WRO",
+
+    "arrivalIcao": "EPWR",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:15:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "07:10:00",
+
+    "flightNumber": "8306",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "BUD",
+
+    "arrivalIcao": "LHBP",
+
+    "arrivalTerminal": "2A",
+
+    "arrivalTime": "11:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "07:55:00",
+
+    "flightNumber": "8368",
+
+    "regNumber": [
+      "EI-DAN",
+
+      "EI-DCL",
+
+      "EI-DHZ",
+
+      "EI-DLI",
+
+      "EI-DLJ",
+
+      "EI-DPD",
+
+      "EI-DWA",
+
+      "EI-DWB",
+
+      "EI-DWX",
+
+      "EI-EBO",
+
+      "EI-EBW",
+
+      "EI-EFE",
+
+      "EI-EFM",
+
+      "EI-EFS",
+
+      "EI-EGB",
+
+      "EI-EKH",
+
+      "EI-EKV",
+
+      "EI-EMF",
+
+      "EI-ENG",
+
+      "EI-ENP",
+
+      "EI-ENS",
+
+      "EI-EVC",
+
+      "EI-EVF",
+
+      "EI-FIE",
+
+      "EI-FOM",
+
+      "EI-FRJ"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "PSA",
+
+    "arrivalIcao": "LIRP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "09:50:00",
+
+    "flightNumber": "9472",
+
+    "regNumber": [
+      "EI-DAR",
+
+      "EI-DCJ",
+
+      "EI-DCO",
+
+      "EI-DCY",
+
+      "EI-DHC",
+
+      "EI-DHP",
+
+      "EI-DLN",
+
+      "EI-DPM",
+
+      "EI-DWK",
+
+      "EI-EKZ",
+
+      "EI-EMR",
+
+      "EI-ESX"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "PSA",
+
+    "arrivalIcao": "LIRP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "14:30:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "12:20:00",
+
+    "flightNumber": "9474",
+
+    "regNumber": ["EI-EMR"]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "PSA",
+
+    "arrivalIcao": "LIRP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:25:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "08:10:00",
+
+    "flightNumber": "9475",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "CIA",
+
+    "arrivalIcao": "LIRA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "16:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "13:30:00",
+
+    "flightNumber": "9602",
+
+    "regNumber": [
+      "EI-DCL",
+
+      "EI-DPC",
+
+      "EI-DWO",
+
+      "EI-EFL",
+
+      "EI-EFM",
+
+      "EI-EFS",
+
+      "EI-EMC",
+
+      "EI-EXD"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "CIA",
+
+    "arrivalIcao": "LIRA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:40:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "11:10:00",
+
+    "flightNumber": "9604",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "CIA",
+
+    "arrivalIcao": "LIRA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "09:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "06:35:00",
+
+    "flightNumber": "9674",
+
+    "regNumber": [
+      "EI-DAE",
+
+      "EI-DLI",
+
+      "EI-DPJ",
+
+      "EI-DWB",
+
+      "EI-DWK",
+
+      "EI-DWO",
+
+      "EI-EBF",
+
+      "EI-EFS",
+
+      "EI-EKH",
+
+      "EI-EKI",
+
+      "EI-EKV",
+
+      "EI-EMC",
+
+      "EI-ENP",
+
+      "EI-EVC",
+
+      "EI-EVK",
+
+      "EI-EVY",
+
+      "EI-FID",
+
+      "EI-FIE",
+
+      "EI-FOM"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "CIA",
+
+    "arrivalIcao": "LIRA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "23:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "20:35:00",
+
+    "flightNumber": "9686",
+
+    "regNumber": [
+      "EI-DCP",
+
+      "EI-DPD",
+
+      "EI-DWW",
+
+      "EI-EBP",
+
+      "EI-EFJ",
+
+      "EI-EFZ",
+
+      "EI-EPD",
+
+      "EI-EVJ",
+
+      "EI-FIE",
+
+      "EI-FON"
+    ]
+  },
+
+  {
+    "airlineIata": "FR",
+
+    "airlineIcao": "RYR",
+
+    "arrivalIata": "PMO",
+
+    "arrivalIcao": "LICJ",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "07:30:00",
+
+    "flightNumber": "9966",
+
+    "regNumber": [
+      "EI-EBF",
+
+      "EI-EFM",
+
+      "EI-EKJ",
+
+      "EI-ENP",
+
+      "EI-EVF",
+
+      "EI-EVY",
+
+      "EI-FOM",
+
+      "EI-FOS",
+
+      "EI-FRJ"
+    ]
+  },
+
+  {
+    "airlineIata": "",
+
+    "airlineIcao": "GJT",
+
+    "arrivalIata": "ARN",
+
+    "arrivalIcao": "ESSA",
+
+    "arrivalTerminal": "5",
+
+    "arrivalTime": "11:05:00",
+
+    "codeshares": [
+      {
+        "airline_code": "D8*",
+
+        "flight_number": "6090"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "3",
+
+    "departureTime": "07:15:00",
+
+    "flightNumber": "6090",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "",
+
+    "airlineIcao": "GJT",
+
+    "arrivalIata": "GOT",
+
+    "arrivalIcao": "ESGG",
+
+    "arrivalTerminal": "A",
+
+    "arrivalTime": "11:30:00",
+
+    "codeshares": [
+      {
+        "airline_code": "D8*",
+
+        "flight_number": "6094"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "2",
+
+    "departureTime": "08:00:00",
+
+    "flightNumber": "6094",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "",
+
+    "airlineIcao": "GJT",
+
+    "arrivalIata": "TFN",
+
+    "arrivalIcao": "GCXO",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "09:15:00",
+
+    "codeshares": [
+      {
+        "airline_code": "D8*",
+
+        "flight_number": "6306"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "3",
+
+    "departureTime": "07:20:00",
+
+    "flightNumber": "6306",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "5K",
+
+    "airlineIcao": "HFY",
+
+    "arrivalIata": "BOG",
+
+    "arrivalIcao": "SKBO",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "12:12:00",
+
+    "codeshares": [
+      {
+        "airline_code": "TK",
+
+        "flight_number": "8475"
+      },
+
+      {
+        "airline_code": "AV",
+
+        "flight_number": "27"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "09:05:00",
+
+    "flightNumber": "27",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "5K",
+
+    "airlineIcao": "HFY",
+
+    "arrivalIata": "CCS",
+
+    "arrivalIcao": "SVMI",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:15:00",
+
+    "codeshares": [
+      {
+        "airline_code": "ETR",
+
+        "flight_number": "8594"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": null,
+
+    "departureTime": "09:45:00",
+
+    "flightNumber": "8594",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "HG",
+
+    "airlineIcao": "NLY",
+
+    "arrivalIata": "VIE",
+
+    "arrivalIcao": "LOWW",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AB",
+
+        "flight_number": "8981"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "7349"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "10:45:00",
+
+    "flightNumber": "8981",
+
+    "regNumber": [
+      "OE-LNB",
+
+      "D-ABDQ",
+
+      "OE-LED",
+
+      "OE-LEE",
+
+      "OE-LEG",
+
+      "OE-LEH",
+
+      "OE-LNZ"
+    ]
+  },
+
+  {
+    "airlineIata": "HU",
+
+    "airlineIcao": "CHH",
+
+    "arrivalIata": "SZX",
+
+    "arrivalIcao": "ZGSZ",
+
+    "arrivalTerminal": "T3",
+
+    "arrivalTime": "19:55:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "1",
+
+    "departureTime": "00:00:00",
+
+    "flightNumber": "7984",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "CAG",
+
+    "arrivalIcao": "LIEE",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "09:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IG",
+
+        "flight_number": "9724"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3624"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "07:30:00",
+
+    "flightNumber": "3624",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "NCE",
+
+    "arrivalIcao": "LFMN",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "17:45:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8795"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3630"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "15:50:00",
+
+    "flightNumber": "3630",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "NCE",
+
+    "arrivalIcao": "LFMN",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "12:05:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8696"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3632"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "10:10:00",
+
+    "flightNumber": "3632",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "BHX",
+
+    "arrivalIcao": "EGBB",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:05:00",
+
+    "codeshares": [
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7278"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3634"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:45:00",
+
+    "flightNumber": "3634",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "GOT",
+
+    "arrivalIcao": "ESGG",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "23:00:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3636"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "19:45:00",
+
+    "flightNumber": "3636",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "ORK",
+
+    "arrivalIcao": "EICK",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "12:45:00",
+
+    "codeshares": [
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7290"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3638"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "11:30:00",
+
+    "flightNumber": "3638",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "BOD",
+
+    "arrivalIcao": "LFBD",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "09:15:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8857"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3642"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:00:00",
+
+    "flightNumber": "3642",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "MLA",
+
+    "arrivalIcao": "LMML",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "20:40:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3646"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "18:10:00",
+
+    "flightNumber": "3646",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "OSL",
+
+    "arrivalIcao": "ENGM",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "23:45:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3648"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "20:10:00",
+
+    "flightNumber": "3648",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "RNS",
+
+    "arrivalIcao": "LFRN",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:05:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3650"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "11:25:00",
+
+    "flightNumber": "3650",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "JTR",
+
+    "arrivalIcao": "LGSR",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "05:00:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3654"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "00:15:00",
+
+    "flightNumber": "3654",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "OTP",
+
+    "arrivalIcao": "LROP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "04:10:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3656"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "23:35:00",
+
+    "flightNumber": "3656",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "KEF",
+
+    "arrivalIcao": "BIKF",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "01:00:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3660"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "22:30:00",
+
+    "flightNumber": "3660",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "STR",
+
+    "arrivalIcao": "EDDS",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "09:50:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3664"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "07:25:00",
+
+    "flightNumber": "3664",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "KRK",
+
+    "arrivalIcao": "EPKK",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "03:15:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3666"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "00:05:00",
+
+    "flightNumber": "3666",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "TXL",
+
+    "arrivalIcao": "EDDT",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "19:05:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8762"
+      },
+
+      {
+        "airline_code": "AB",
+
+        "flight_number": "5301"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3672"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "16:05:00",
+
+    "flightNumber": "3672",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "TXL",
+
+    "arrivalIcao": "EDDT",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "22:45:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AB",
+
+        "flight_number": "5303"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3674"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "19:45:00",
+
+    "flightNumber": "3674",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "TXL",
+
+    "arrivalIcao": "EDDT",
+
+    "arrivalTerminal": "C",
+
+    "arrivalTime": "11:40:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8762"
+      },
+
+      {
+        "airline_code": "AB",
+
+        "flight_number": "5358"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3676"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:45:00",
+
+    "flightNumber": "3676",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "CWL",
+
+    "arrivalIcao": "EGFF",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:05:00",
+
+    "codeshares": [
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7292"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3686"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "09:00:00",
+
+    "flightNumber": "3686",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "EDI",
+
+    "arrivalIcao": "EGPH",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:30:00",
+
+    "codeshares": [
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7280"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3690"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:45:00",
+
+    "flightNumber": "3690",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "MAN",
+
+    "arrivalIcao": "EGCC",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "19:55:00",
+
+    "codeshares": [
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7282"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3692"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "18:20:00",
+
+    "flightNumber": "3692",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "NTE",
+
+    "arrivalIcao": "LFRS",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "19:25:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3698"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "17:55:00",
+
+    "flightNumber": "3698",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "NAP",
+
+    "arrivalIcao": "LIRN",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "18:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8785"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3706"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "16:00:00",
+
+    "flightNumber": "3706",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "NAP",
+
+    "arrivalIcao": "LIRN",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "11:25:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8785"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3708"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:45:00",
+
+    "flightNumber": "3708",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "LGW",
+
+    "arrivalIcao": "EGKK",
+
+    "arrivalTerminal": "S",
+
+    "arrivalTime": "10:10:00",
+
+    "codeshares": [
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7284"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3714"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:55:00",
+
+    "flightNumber": "3714",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "LGW",
+
+    "arrivalIcao": "EGKK",
+
+    "arrivalTerminal": "S",
+
+    "arrivalTime": "20:10:00",
+
+    "codeshares": [
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7288"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3718"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4S",
+
+    "departureTime": "18:50:00",
+
+    "flightNumber": "3718",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "AMS",
+
+    "arrivalIcao": "EHAM",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "22:20:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3720"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "19:50:00",
+
+    "flightNumber": "3720",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "AMS",
+
+    "arrivalIcao": "EHAM",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "11:30:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3722"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:50:00",
+
+    "flightNumber": "3722",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "AMS",
+
+    "arrivalIcao": "EHAM",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "18:15:00",
+
+    "codeshares": [
+      {
+        "airline_code": "LA",
+
+        "flight_number": "8019"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3724"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "15:40:00",
+
+    "flightNumber": "3724",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "CPH",
+
+    "arrivalIcao": "EKCH",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "14:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8839"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3730"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "11:25:00",
+
+    "flightNumber": "3730",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "CPH",
+
+    "arrivalIcao": "EKCH",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "00:15:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8808"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3732"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "21:05:00",
+
+    "flightNumber": "3732",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "LYS",
+
+    "arrivalIcao": "LFLL",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:30:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3736"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:45:00",
+
+    "flightNumber": "3736",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "CDG",
+
+    "arrivalIcao": "LFPG",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "10:45:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3738"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:45:00",
+
+    "flightNumber": "3738",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "CDG",
+
+    "arrivalIcao": "LFPG",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "19:15:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3740"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "17:10:00",
+
+    "flightNumber": "3740",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "CDG",
+
+    "arrivalIcao": "LFPG",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "00:10:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "22:05:00",
+
+    "flightNumber": "3744",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "SPC",
+
+    "arrivalIcao": "GCLA",
+
+    "arrivalTerminal": "N",
+
+    "arrivalTime": "18:05:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8810"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3750"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "16:00:00",
+
+    "flightNumber": "3750",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "ACE",
+
+    "arrivalIcao": "GCRR",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "10:55:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8669"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3752"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "09:15:00",
+
+    "flightNumber": "3752",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "ACE",
+
+    "arrivalIcao": "GCRR",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "10:40:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8669"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3754"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "09:00:00",
+
+    "flightNumber": "3754",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "SPC",
+
+    "arrivalIcao": "GCLA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "11:00:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "09:00:00",
+
+    "flightNumber": "3756",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "TFN",
+
+    "arrivalIcao": "GCXO",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "18:50:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8668"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3758"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "17:00:00",
+
+    "flightNumber": "3758",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "PMI",
+
+    "arrivalIcao": "LEPA",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:05:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8687"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3760"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:45:00",
+
+    "flightNumber": "3760",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "TXL",
+
+    "arrivalIcao": "EDDT",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "14:50:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8730"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3762"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "11:55:00",
+
+    "flightNumber": "3762",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "EDI",
+
+    "arrivalIcao": "EGPH",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "14:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3764"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "12:50:00",
+
+    "flightNumber": "3764",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "FUE",
+
+    "arrivalIcao": "GCFV",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "10:40:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8704"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3766"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "09:00:00",
+
+    "flightNumber": "3766",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "CPH",
+
+    "arrivalIcao": "EKCH",
+
+    "arrivalTerminal": "2",
+
+    "arrivalTime": "15:10:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8662"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3768"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "12:00:00",
+
+    "flightNumber": "3768",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "SCQ",
+
+    "arrivalIcao": "LEST",
+
+    "arrivalTerminal": "T",
+
+    "arrivalTime": "10:00:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8776"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3772"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:45:00",
+
+    "flightNumber": "3772",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "SCQ",
+
+    "arrivalIcao": "LEST",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:15:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3774"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "12:00:00",
+
+    "flightNumber": "3774",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "TFS",
+
+    "arrivalIcao": "GCTS",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:45:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8877"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:45:00",
+
+    "flightNumber": "3778",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "ATH",
+
+    "arrivalIcao": "LGAV",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "04:10:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3782"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "23:50:00",
+
+    "flightNumber": "3782",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "HER",
+
+    "arrivalIcao": "LGIR",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "04:33:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3786"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "23:59:00",
+
+    "flightNumber": "3786",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "DUB",
+
+    "arrivalIcao": "EIDW",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "13:05:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8743"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3790"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "11:25:00",
+
+    "flightNumber": "3790",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "DUB",
+
+    "arrivalIcao": "EIDW",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "10:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8763"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7276"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3792"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:55:00",
+
+    "flightNumber": "3792",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "IBZ",
+
+    "arrivalIcao": "LEIB",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "20:40:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8710"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7250"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3802"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "19:30:00",
+
+    "flightNumber": "3802",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "IBZ",
+
+    "arrivalIcao": "LEIB",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "08:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8776"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3808"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "07:25:00",
+
+    "flightNumber": "3808",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "IBZ",
+
+    "arrivalIcao": "LEIB",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "23:30:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8729"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3812"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "22:20:00",
+
+    "flightNumber": "3812",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "IBZ",
+
+    "arrivalIcao": "LEIB",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "23:40:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3814"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "22:30:00",
+
+    "flightNumber": "3814",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "MAH",
+
+    "arrivalIcao": "LEMH",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "08:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3816"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "07:05:00",
+
+    "flightNumber": "3816",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "LPA",
+
+    "arrivalIcao": "GCLP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "00:05:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3820"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "22:15:00",
+
+    "flightNumber": "3820",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "LPA",
+
+    "arrivalIcao": "GCLP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:20:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8692"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3822"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "11:30:00",
+
+    "flightNumber": "3822",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "LPA",
+
+    "arrivalIcao": "GCLP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "00:10:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3824"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "22:20:00",
+
+    "flightNumber": "3824",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "LPA",
+
+    "arrivalIcao": "GCLP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "10:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8665"
+      },
+
+      {
+        "airline_code": "AV",
+
+        "flight_number": "6040"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3826"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:45:00",
+
+    "flightNumber": "3826",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "LPA",
+
+    "arrivalIcao": "GCLP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "16:00:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8718"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7138"
+      },
+
+      {
+        "airline_code": "S7",
+
+        "flight_number": "4883"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3828"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "14:10:00",
+
+    "flightNumber": "3828",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "LPA",
+
+    "arrivalIcao": "GCLP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "13:15:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8741"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7142"
+      },
+
+      {
+        "airline_code": "FB",
+
+        "flight_number": "1405"
+      },
+
+      {
+        "airline_code": "S7",
+
+        "flight_number": "4885"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3830"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "11:25:00",
+
+    "flightNumber": "3830",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "LPA",
+
+    "arrivalIcao": "GCLP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "09:50:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8661"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3832"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:00:00",
+
+    "flightNumber": "3832",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "LPA",
+
+    "arrivalIcao": "GCLP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "22:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8734"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7140"
+      },
+
+      {
+        "airline_code": "JJ",
+
+        "flight_number": "8680"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3834"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "20:45:00",
+
+    "flightNumber": "3834",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "LPA",
+
+    "arrivalIcao": "GCLP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "01:35:00",
+
+    "codeshares": [
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3836"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "23:45:00",
+
+    "flightNumber": "3836",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "LPA",
+
+    "arrivalIcao": "GCLP",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "17:50:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8865"
+      },
+
+      {
+        "airline_code": "AV",
+
+        "flight_number": "6039"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7144"
+      },
+
+      {
+        "airline_code": "JJ",
+
+        "flight_number": "8679"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3838"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "16:00:00",
+
+    "flightNumber": "3838",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "SPC",
+
+    "arrivalIcao": "GCLA",
+
+    "arrivalTerminal": "N",
+
+    "arrivalTime": "14:30:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8683"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7236"
+      },
+
+      {
+        "airline_code": "S7",
+
+        "flight_number": "4887"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3842"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "12:25:00",
+
+    "flightNumber": "3842",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "SPC",
+
+    "arrivalIcao": "GCLA",
+
+    "arrivalTerminal": "N",
+
+    "arrivalTime": "11:05:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8810"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3844"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "09:00:00",
+
+    "flightNumber": "3844",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "ACE",
+
+    "arrivalIcao": "GCRR",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "10:40:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8669"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3852"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "09:00:00",
+
+    "flightNumber": "3852",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "ACE",
+
+    "arrivalIcao": "GCRR",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "17:40:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8652"
+      },
+
+      {
+        "airline_code": "S7",
+
+        "flight_number": "4889"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3854"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "16:00:00",
+
+    "flightNumber": "3854",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "ACE",
+
+    "arrivalIcao": "GCRR",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "13:05:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8770"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7226"
+      },
+
+      {
+        "airline_code": "S7",
+
+        "flight_number": "4901"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3856"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "11:25:00",
+
+    "flightNumber": "3856",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "ACE",
+
+    "arrivalIcao": "GCRR",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "21:20:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8652"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3858"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "19:45:00",
+
+    "flightNumber": "3858",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "AGP",
+
+    "arrivalIcao": "LEMG",
+
+    "arrivalTerminal": "3",
+
+    "arrivalTime": "09:55:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8843"
+      },
+
+      {
+        "airline_code": "AV",
+
+        "flight_number": "6102"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3866"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:45:00",
+
+    "flightNumber": "3866",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "SCQ",
+
+    "arrivalIcao": "LEST",
+
+    "arrivalTerminal": "T",
+
+    "arrivalTime": "12:55:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8844"
+      },
+
+      {
+        "airline_code": "AV",
+
+        "flight_number": "6124"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7130"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3874"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "11:40:00",
+
+    "flightNumber": "3874",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "SCQ",
+
+    "arrivalIcao": "LEST",
+
+    "arrivalTerminal": "T",
+
+    "arrivalTime": "08:50:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8727"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3876"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "07:35:00",
+
+    "flightNumber": "3876",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "SCQ",
+
+    "arrivalIcao": "LEST",
+
+    "arrivalTerminal": "T",
+
+    "arrivalTime": "17:00:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8773"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7132"
+      },
+
+      {
+        "airline_code": "JJ",
+
+        "flight_number": "8622"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3878"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "15:45:00",
+
+    "flightNumber": "3878",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "SCQ",
+
+    "arrivalIcao": "LEST",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "20:45:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AV",
+
+        "flight_number": "6128"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7134"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3880"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "19:35:00",
+
+    "flightNumber": "3880",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "SCQ",
+
+    "arrivalIcao": "LEST",
+
+    "arrivalTerminal": "T",
+
+    "arrivalTime": "10:00:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8653"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3882"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "08:45:00",
+
+    "flightNumber": "3882",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "SCQ",
+
+    "arrivalIcao": "LEST",
+
+    "arrivalTerminal": "T",
+
+    "arrivalTime": "23:40:00",
+
+    "codeshares": [
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7128"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3894"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "22:30:00",
+
+    "flightNumber": "3894",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "SCQ",
+
+    "arrivalIcao": "LEST",
+
+    "arrivalTerminal": "T",
+
+    "arrivalTime": "00:05:00",
+
+    "codeshares": null,
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "22:55:00",
+
+    "flightNumber": "3896",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "FUE",
+
+    "arrivalIcao": "GCFV",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "10:45:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8704"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3900"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "09:00:00",
+
+    "flightNumber": "3900",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "FUE",
+
+    "arrivalIcao": "GCFV",
+
+    "arrivalTerminal": null,
+
+    "arrivalTime": "21:30:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8777"
+      },
+
+      {
+        "airline_code": "S7",
+
+        "flight_number": "4891"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3902"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "19:45:00",
+
+    "flightNumber": "3902",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "FUE",
+
+    "arrivalIcao": "GCFV",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "17:45:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8794"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7176"
+      },
+
+      {
+        "airline_code": "S7",
+
+        "flight_number": "4893"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3904"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "16:00:00",
+
+    "flightNumber": "3904",
+
+    "regNumber": null
+  },
+
+  {
+    "airlineIata": "I2",
+
+    "airlineIcao": "IBS",
+
+    "arrivalIata": "FUE",
+
+    "arrivalIcao": "GCFV",
+
+    "arrivalTerminal": "1",
+
+    "arrivalTime": "13:10:00",
+
+    "codeshares": [
+      {
+        "airline_code": "AA",
+
+        "flight_number": "8774"
+      },
+
+      {
+        "airline_code": "BA",
+
+        "flight_number": "7166"
+      },
+
+      {
+        "airline_code": "IB",
+
+        "flight_number": "3906"
+      }
+    ],
+
+    "departureIata": "MAD",
+
+    "departureIcao": "LEMD",
+
+    "departureTerminal": "4",
+
+    "departureTime": "11:25:00",
+
+    "flightNumber": "3906",
+
+    "regNumber": null
+  }
+]

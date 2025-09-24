@@ -1,8 +1,6 @@
-export type Airport = {
+export type Airline = {
   id: number;
   iata_code: string;
-  latitude: number;
-  longitude: number;
   name: string;
   country: string;
 };
