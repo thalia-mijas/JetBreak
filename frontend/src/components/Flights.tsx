@@ -1,4 +1,4 @@
-import { Card, Chip, Input, Tab, Tabs } from "@heroui/react";
+import { Card, Chip, Input, Spinner, Tab, Tabs } from "@heroui/react";
 import { Clock, Plane, Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { Airport } from "../models/airport";
@@ -27,6 +27,7 @@ export default function Flights({
   const [airports, setAirports] = useState<Airport[]>([]);
   const [typeInfo, setTypeInfo] = useState("arrivals"); // Example type of flight information
   const [valueSearch, setValueSearch] = useState(""); // Search input state
+  const [loading, setLoading] = useState(true);
 
   const duration = (arrival: string, departure: string) => {
     const diffMs = new Date(arrival).getTime() - new Date(departure).getTime();
@@ -53,9 +54,11 @@ export default function Flights({
         console.log("Datos de vuelos obtenidos: ", data);
         setAllFlights(data);
         setFlights(data);
+        setLoading(false);
       })
       .catch((err) => {
         console.error("Error fetching flights: ", err);
+        setLoading(false);
       });
     setValueSearch("");
   }, [selectedAirport, typeInfo]);
@@ -179,8 +182,12 @@ export default function Flights({
                       </div>
                     </Card>
                   ))
+                ) : loading ? (
+                  <div className="w-full flex justify-center items-center">
+                    <Spinner color="success" />
+                  </div>
                 ) : (
-                  <p>Cargando vuelos...</p>
+                  <p className="text-center">No se han encontrado vuelos.</p>
                 )}
               </div>
             </Tab>
@@ -250,8 +257,12 @@ export default function Flights({
                       </div>
                     </Card>
                   ))
+                ) : loading ? (
+                  <div className="w-full flex justify-center items-center">
+                    <Spinner color="success" />
+                  </div>
                 ) : (
-                  <p>Cargando vuelos...</p>
+                  <p className="text-center">No se han encontrado vuelos.</p>
                 )}
               </div>
             </Tab>

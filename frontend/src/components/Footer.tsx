@@ -27,7 +27,7 @@ export default function Footer() {
               <ul className="space-y-2 text-gray-400">
                 <li>
                   <Link href="/" className="hover:text-primary">
-                    Información de Vuelos
+                    Aeropuerto
                   </Link>
                 </li>
                 <li>
@@ -36,13 +36,13 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/stores" className="hover:text-primary">
-                    Tiendas
+                  <Link href="/claims" className="hover:text-primary">
+                    Reclamos
                   </Link>
                 </li>
                 <li>
-                  <Link href="/claims" className="hover:text-primary">
-                    Reclamos
+                  <Link href="/tracking" className="hover:text-primary">
+                    Seguimiento
                   </Link>
                 </li>
               </ul>

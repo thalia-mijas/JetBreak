@@ -5,8 +5,6 @@ const amadeus = new Amadeus({
   clientId: process.env.AMADEUS_API_KEY,
   clientSecret: process.env.AMADEUS_API_SECRET,
 });
-const mockOffers = require("../mocks/offers.json");
-const mockOfferDetails = require("../mocks/offerDetails.json");
 
 exports.getOffers = async (req, res) => {
   try {
@@ -58,6 +56,12 @@ exports.getOffers = async (req, res) => {
 
     res.status(200).json(filteredOffers);
   } catch (error) {
+    if (
+      error.code === "NotFoundError" &&
+      error.description?.[0]?.code === 1797
+    ) {
+      return res.status(404).json({ message: "No offers found" });
+    }
     console.error("Error fetching offers:", error);
     res.status(500).json({ message: "Internal server error" });
   }
@@ -93,8 +97,6 @@ exports.getOfferDetails = async (req, res) => {
           adults: Number(params.get("adults")),
           max: 20,
         });
-
-      console.log("Offers found:", offerDetailsResponse);
 
       const newDetails = offerDetailsResponse.data.map((offer) => ({
         id: offer.id,

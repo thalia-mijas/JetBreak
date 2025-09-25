@@ -1,4 +1,4 @@
-import { Card } from "@heroui/react";
+import { Card, Spinner } from "@heroui/react";
 import { useEffect, useState } from "react";
 import type { Store } from "../models/store";
 import * as API from "../services/stores";
@@ -9,15 +9,18 @@ export default function Stores({
   selectedAirport: string;
 }) {
   const [stores, setStores] = useState<Store[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     API.getStores(selectedAirport)
       .then((data) => {
         console.log("Datos de tiendas obtenidos: ", data);
         setStores(data);
+        setLoading(false);
       })
       .catch((err) => {
         console.error("Error fetching stores: ", err);
+        setLoading(false);
       });
   }, [selectedAirport]);
 
@@ -33,7 +36,7 @@ export default function Stores({
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="w-full flex justify-center items-center flex-wrap gap-6">
           {stores.length > 0 ? (
             stores.map((store) => (
               <Card
@@ -70,9 +73,11 @@ export default function Stores({
                 </div>
               </Card>
             ))
+          ) : loading ? (
+            <Spinner color="success" />
           ) : (
-            <p className="text-center text-gray-500 col-span-full">
-              No se encontraron tiendas o servicios para este aeropuerto.
+            <p className="text-center">
+              No se encontraron tiendas para este aeropuerto.
             </p>
           )}
         </div>

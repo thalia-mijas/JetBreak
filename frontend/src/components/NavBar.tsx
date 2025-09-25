@@ -9,9 +9,9 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from "@heroui/react";
-import React, { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import React from "react";
+import { useLocation } from "react-router-dom";
+import { useAuth } from "../context/useAuth";
 
 export const Logo = () => {
   return (
@@ -29,7 +29,6 @@ export default function NavBar() {
   const { isAuthenticated, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const { pathname } = useLocation();
-  const navigate = useNavigate();
 
   const menuItems = [
     { label: "Aeropuerto", href: "/" },
@@ -40,15 +39,6 @@ export default function NavBar() {
     menuItems.push({ label: "Reclamos", href: "/claims" });
     menuItems.push({ label: "Seguimiento", href: "/tracking" });
   }
-
-  useEffect(() => {
-    if (
-      !isAuthenticated &&
-      (pathname === "/tracking" || pathname === "/claims")
-    ) {
-      navigate("/");
-    }
-  }, [isAuthenticated, navigate, pathname]);
 
   return (
     <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>

@@ -5,6 +5,11 @@ const Flight = require("../models/flight.model");
 const redisClient = require("../redis");
 const API_KEY = process.env.AVIATION_STACK_API_KEY;
 const CACHE_TIME = process.env.CACHE_TIME;
+const Amadeus = require("amadeus");
+const amadeus = new Amadeus({
+  clientId: process.env.AMADEUS_API_KEY,
+  clientSecret: process.env.AMADEUS_API_SECRET,
+});
 
 exports.createFlightTracking = async (req, res) => {
   try {
@@ -21,58 +26,42 @@ exports.createFlightTracking = async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    const url = `https://api.aviationstack.com/v1/flights?access_key=${API_KEY}&flight_iata=${flight_iata}`;
-    const options = {
-      method: "GET",
-    };
+    if (date <= new Date().toISOString().split("T")[0]) {
+      return res.status(400).json({ message: "Date cannot be in the past" });
+    }
 
     let flight = [];
 
-    const cachedKey = `flightTracking:${flight_iata}:${date}`;
+    const cachedKey = `flight:${flight_iata}:${date}`;
     const cachedData = await redisClient.get(cachedKey);
     if (cachedData) {
-      console.log("Cache flightTracking from Redis");
+      console.log("Cache flight from Redis");
       flight = JSON.parse(cachedData);
     } else {
       console.log("Cache miss, fetching from API");
-      const response = await fetch(url, options);
-      flight = await response.json();
-      flight = flight.data;
-    }
 
-    if (flight.length === 0) {
-      return res.status(404).json({ message: "Flight not found" });
-    } else {
+      const amadeusResponse = await amadeus.schedule.flights.get({
+        carrierCode: flight_iata.slice(0, 2),
+        flightNumber: flight_iata.slice(2),
+        scheduledDepartureDate: date,
+      });
+
+      flight = amadeusResponse.data;
+
       await redisClient.set(cachedKey, JSON.stringify(flight), {
         EX: CACHE_TIME,
       });
     }
 
-    const match = flight.find((f) => f.flight_date === date);
-
-    let airline = await Airline.findOne({
-      where: { iata_code: match.airline.iata },
-    });
-
-    if (!airline) {
-      try {
-        airline = await Airline.create({
-          iata_code: match.airline.iata,
-          name: match.airline.name,
-        });
-        console.log(`✅ Creating airline: ${match.airline.name}`);
-        airline = await Airline.findOne({
-          where: { iata_code: match.airline.iata },
-        });
-      } catch (error) {
-        console.error(
-          `❌ Error creating ${match.airline.name}:`,
-          error.message
-        );
-      }
+    if (flight.length === 0) {
+      return res.status(404).json({ message: "Flight not found" });
     }
 
-    if (match) {
+    const airline = await Airline.findOne({
+      where: { iata_code: flight[0].flightDesignator.carrierCode },
+    });
+
+    if (flight && flight.length > 0) {
       const flightTracking = await Flight.create({
         user_id,
         flight_iata,
@@ -80,17 +69,17 @@ exports.createFlightTracking = async (req, res) => {
         origin_iata:
           (
             await Airport.findOne({
-              where: { iata_code: match.departure.iata },
+              where: { iata_code: flight[0].flightPoints[0].iataCode },
             })
           ).id || null,
         destination_iata:
           (
             await Airport.findOne({
-              where: { iata_code: match.arrival.iata },
+              where: { iata_code: flight[0].flightPoints[1].iataCode },
             })
           ).id || null,
         date,
-        state: match.flight_status || "unknown",
+        state: null,
       });
 
       res.status(201).json({

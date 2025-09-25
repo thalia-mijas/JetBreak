@@ -10,5 +10,6 @@ router.get(
   "/tracking/:user_id",
   flightTrackingController.getUserFlightTrackings
 );
+router.delete("/tracking/:id", flightTrackingController.deleteFlightTracking);
 
 module.exports = router;

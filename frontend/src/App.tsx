@@ -9,8 +9,11 @@ import Offers from "./components/Offers";
 import RecoverPassword from "./components/RecoverPassword";
 import ResetPassword from "./components/ResetPassword";
 import Tracking from "./components/Tracking";
+import { useAuth } from "./context/useAuth";
 
 function App() {
+  const { isAuthenticated } = useAuth();
+
   return (
     <BrowserRouter>
       <NavBar />

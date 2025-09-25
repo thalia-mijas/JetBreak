@@ -8,9 +8,9 @@ import {
   Tab,
   Tabs,
 } from "@heroui/react";
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/useAuth";
 import * as API from "../services/authentication";
 
 export default function Login() {
@@ -92,12 +92,6 @@ export default function Login() {
       });
   };
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      navigate("/tracking");
-    }
-  }, [isAuthenticated, navigate]);
-
   return (
     <>
       {isAuthenticated ? (
@@ -151,7 +145,9 @@ export default function Login() {
                           <Button
                             fullWidth
                             color="primary"
-                            onPress={() => login(email, password)}
+                            onPress={async () => {
+                              await login(email, password);
+                            }}
                           >
                             Iniciar sesión
                           </Button>
