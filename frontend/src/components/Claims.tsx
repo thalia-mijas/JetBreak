@@ -8,7 +8,7 @@ import {
 } from "@heroui/react";
 import { CalendarDate, getLocalTimeZone } from "@internationalized/date";
 import { I18nProvider } from "@react-aria/i18n";
-import { Calendar, MessageSquare, Plane } from "lucide-react";
+import { Calendar, MessageSquare, Plane, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { useAuth } from "../context/useAuth";
@@ -123,6 +123,34 @@ export default function Claims() {
       })
       .catch((err: unknown) => {
         console.error("Error creating claim: ", err);
+      });
+  };
+
+  const handleDeleteClaim = (claimId: number) => {
+    API.deleteClaim(claimId)
+      .then((data) => {
+        console.log("Reclamo eliminado: ", data);
+        if (data.message === "Claim deleted successfully") {
+          addToast({
+            title: "Reclamo eliminado",
+            description: "El reclamo se ha eliminado con éxito",
+            color: "success",
+            icon: <MessageSquare />,
+          });
+          setClaims((prevClaims) =>
+            prevClaims.filter((claim) => claim.id !== claimId)
+          );
+        } else {
+          addToast({
+            title: "Error al eliminar reclamo",
+            description: data?.message || "No se pudo eliminar el reclamo",
+            color: "danger",
+            icon: <MessageSquare />,
+          });
+        }
+      })
+      .catch((err: unknown) => {
+        console.error("Error deleting claim: ", err);
       });
   };
 
@@ -265,6 +293,18 @@ export default function Claims() {
                             </div>
                           </div>
                         </div>
+                      </div>
+                      <div className="self-right">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="text-red-600 hover:bg-red-50 bg-transparent"
+                          onPress={() => {
+                            handleDeleteClaim(claim.id);
+                          }}
+                        >
+                          <X className="h-4 w-4" />
+                        </Button>
                       </div>
                     </div>
 

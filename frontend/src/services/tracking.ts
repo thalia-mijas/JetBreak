@@ -1,4 +1,8 @@
-export async function getTrackingFlights(userId: number) {
+export async function getTrackingFlights() {
+  const userId = localStorage.getItem("user_id");
+  if (!userId) {
+    throw new Error("User ID not found");
+  }
   const url = `http://localhost:3000/api/flights/tracking/${userId}`;
 
   const options = {

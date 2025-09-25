@@ -1,54 +1,156 @@
-import { Badge, Button, Card, CardHeader, Input } from "@heroui/react";
-import { AlertCircle, Plane, Search, X } from "lucide-react";
+import {
+  addToast,
+  Badge,
+  Button,
+  Card,
+  CardHeader,
+  Chip,
+  DateInput,
+  Input,
+} from "@heroui/react";
+import { I18nProvider } from "@react-aria/i18n";
+import { ArrowRight, Plane, Search, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import type { trackingFlight } from "../models/tracking";
+import * as API from "../services/tracking";
 
 export default function Tracking() {
-  const trackingFlights = [
-    {
-      id: "track-1",
-      flightNumber: "IB6254",
-      airline: "Iberia",
-      route: "MAD → BCN",
-      departure: "14:30",
-      arrival: "15:45",
-      status: "En vuelo",
-      progress: 65,
-      gate: "B12",
-      terminal: "1",
-      delay: 0,
-      lastUpdate: "Hace 2 min",
-      notifications: 2,
-    },
-    {
-      id: "track-2",
-      flightNumber: "VY2108",
-      airline: "Vueling",
-      route: "BCN → CDG",
-      departure: "18:20",
-      arrival: "20:15",
-      status: "Retrasado",
-      progress: 0,
-      gate: "A8",
-      terminal: "2",
-      delay: 25,
-      lastUpdate: "Hace 5 min",
-      notifications: 1,
-    },
-    {
-      id: "track-3",
-      flightNumber: "UX9087",
-      airline: "Air Europa",
-      route: "MAD → LHR",
-      departure: "16:20",
-      arrival: "17:35",
-      status: "Aterrizó",
-      progress: 100,
-      gate: "C4",
-      terminal: "1",
-      delay: 0,
-      lastUpdate: "Hace 1 min",
-      notifications: 0,
-    },
+  const flightStatus = [
+    { key: "landed", label: "Aterrizado", color: "success" }, // verde
+    { key: "scheduled", label: "Programado", color: "secondary" }, // azul
+    { key: "cancelled", label: "Cancelado", color: "danger" }, // rojo
+    { key: "active", label: "En vuelo", color: "success" }, // amarillo
+    { key: "incident", label: "Incidente", color: "danger" }, // púrpura
+    { key: "diverted", label: "Desviado", color: "warning" }, // marrón
+    { key: "redirected", label: "Redirigido", color: "warning" }, // cian
+    { key: "unknown", label: "Desconocido", color: "default" }, // gris
   ];
+  const [trackingFlights, setTrackingFlights] = useState<trackingFlight[]>([]);
+  const [dateValue, setDateValue] = useState<any>("");
+  const [flightValue, setFlightValue] = useState<string>("");
+
+  useEffect(() => {
+    API.getTrackingFlights()
+      .then((data) => {
+        console.log("Datos de vuelos en seguimiento obtenidos: ", data);
+        setTrackingFlights(data);
+      })
+      .catch((err) => {
+        console.error("Error fetching tracking flights: ", err);
+      });
+  }, []);
+
+  const formatDateTime = (isoString: string) => {
+    const date = new Date(isoString);
+
+    const pad = (num: number) => String(num).padStart(2, "0");
+
+    const day = pad(date.getUTCDate());
+    const month = pad(date.getUTCMonth() + 1); // Los meses van de 0 a 11
+    const year = date.getUTCFullYear();
+
+    const hours = pad(date.getUTCHours());
+    const minutes = pad(date.getUTCMinutes());
+
+    const formattedDate = `${day}/${month}/${year}`;
+    const formattedTime = `${hours}:${minutes}`;
+
+    return { formattedDate, formattedTime };
+  };
+
+  const handleAddFlight = () => {
+    if (!flightValue || !dateValue) {
+      addToast({
+        title: "Error al agregar vuelo",
+        description: "Por favor, completa todos los campos",
+        color: "danger",
+        icon: <Plane />,
+      });
+      return;
+    }
+
+    const userId = localStorage.getItem("user_id");
+    if (!userId) {
+      addToast({
+        title: "Error de usuario",
+        description: "ID de usuario no encontrado. Por favor, inicia sesión.",
+        color: "danger",
+        icon: <Plane />,
+      });
+      return;
+    }
+
+    const flightData = {
+      user_id: parseInt(userId),
+      flight_iata: flightValue,
+      date: dateValue.toString(),
+    };
+
+    console.log("Adding flight to tracking: ", flightData);
+
+    API.addTrackingFlight(flightData)
+      .then((data) => {
+        console.log("Flight added to tracking: ", data);
+        if (data.message === "FlightTracking created successfully") {
+          addToast({
+            title: "Vuelo agregado",
+            description: "El vuelo se ha agregado con éxito al seguimiento",
+            color: "success",
+            icon: <Plane />,
+          });
+          // Clear input fields
+          setDateValue("");
+          setFlightValue("");
+          // Refetch tracking flights to include the newly added flight
+          API.getTrackingFlights()
+            .then((data) => {
+              console.log("Updated tracking flights: ", data);
+              setTrackingFlights(data);
+            })
+            .catch((err) => {
+              console.error("Error fetching updated tracking flights: ", err);
+            });
+        } else {
+          addToast({
+            title: "Error al agregar vuelo",
+            description: data?.message || "No se pudo agregar el vuelo",
+            color: "danger",
+            icon: <Plane />,
+          });
+        }
+      })
+      .catch((err) => {
+        console.error("Error adding tracking flight: ", err);
+      });
+  };
+
+  const handleDeleteFlight = (trackingId: number) => {
+    API.removeTrackingFlight(trackingId)
+      .then((data) => {
+        console.log("Flight removed from tracking: ", data);
+        if (data.message === "FlightTracking deleted successfully") {
+          addToast({
+            title: "Seguimiento eliminado",
+            description: "El seguimiento se ha eliminado con éxito",
+            color: "success",
+            icon: <Plane />,
+          });
+        } else {
+          addToast({
+            title: "Error de eliminación de seguimiento",
+            description: data?.message || "No se pudo eliminar el seguimiento",
+            color: "danger",
+            icon: <Plane />,
+          });
+        }
+        setTrackingFlights((prevFlights) =>
+          prevFlights.filter((flight) => flight.id !== trackingId)
+        );
+      })
+      .catch((err) => {
+        console.error("Error removing tracking flight: ", err);
+      });
+  };
 
   return (
     <>
@@ -69,18 +171,37 @@ export default function Tracking() {
               <CardHeader>
                 <h2 className="flex items-center">
                   <Search className="h-5 w-5 mr-2 text-[#56DFCF]" />
-                  Agregar Vuelo al Seguimiento
+                  Agregar Vuelo
                 </h2>
               </CardHeader>
-              <div>
-                <div className="flex gap-4">
-                  <div className="flex-1">
+              <div className="w-full">
+                <div className="w-full flex justify-between gap-4 flex-col md:flex-row">
+                  <div className="w-1/3 space-y-2">
+                    <label className="text-sm font-medium">
+                      Número de Vuelo
+                    </label>
                     <Input
                       placeholder="Ingresa el número de vuelo (ej: IB6254, BA1234)"
                       className="text-lg"
+                      onChange={(e) =>
+                        setFlightValue(e.target.value.toUpperCase())
+                      }
                     />
                   </div>
-                  <Button className="bg-[#56DFCF] hover:bg-[#4BC5B5]">
+                  <div className="w-1/3 space-y-2">
+                    <label className="text-sm font-medium">
+                      Fecha de Vuelo
+                    </label>
+                    <I18nProvider locale="es-ES">
+                      <DateInput onChange={setDateValue} />
+                    </I18nProvider>
+                  </div>
+                  <Button
+                    className="w-1/3 self-end bg-[#56DFCF] hover:bg-[#4BC5B5]"
+                    onPress={() => {
+                      handleAddFlight();
+                    }}
+                  >
                     <Plane className="h-4 w-4 mr-2" />
                     Seguir
                   </Button>
@@ -94,26 +215,10 @@ export default function Tracking() {
                 <h3 className="text-xl font-semibold text-gray-900">
                   Vuelos Seguidos
                 </h3>
-                <div className="bg-[#56DFCF]/10 text-[#56DFCF] border-[#56DFCF]/20">
-                  3 vuelos activos
-                </div>
               </div>
 
               {/* Tracked Flight Cards */}
               {trackingFlights.map((flight) => {
-                const getStatusColor = (status: string) => {
-                  switch (status) {
-                    case "En vuelo":
-                      return "bg-[#56DFCF]/10 text-[#56DFCF] border-[#56DFCF]/20";
-                    case "Retrasado":
-                      return "bg-orange-100 text-orange-700 border-orange-200";
-                    case "Aterrizó":
-                      return "bg-green-100 text-green-700 border-green-200";
-                    default:
-                      return "bg-gray-100 text-gray-700 border-gray-200";
-                  }
-                };
-
                 return (
                   <Card
                     key={flight.id}
@@ -128,87 +233,71 @@ export default function Tracking() {
                           <div>
                             <div className="flex items-center gap-2 mb-1">
                               <h4 className="font-semibold text-lg">
-                                {flight.flightNumber}
+                                {flight.flight_iata}
                               </h4>
                               <Badge variant="outline" className="text-xs">
-                                {flight.airline}
+                                {flight.airline.name}
                               </Badge>
-                              {flight.notifications > 0 && (
-                                <Badge className="bg-red-500 text-white text-xs px-1.5 py-0.5">
-                                  {flight.notifications}
-                                </Badge>
-                              )}
                             </div>
                             <p className="text-gray-600 font-medium">
-                              {flight.route}
+                              {flight.origin.name}
+                              <ArrowRight className="inline-block mx-1" />
+                              {flight.destination.name}
                             </p>
-                            <p className="text-sm text-gray-500">
-                              {flight.departure} - {flight.arrival} • Terminal{" "}
-                              {flight.terminal} • Puerta {flight.gate}
-                            </p>
+                            {flight.date_departure &&
+                              flight.date_arrival &&
+                              (() => {
+                                const {
+                                  formattedDate: formattedDateDep,
+                                  formattedTime: formattedTimeDep,
+                                } = formatDateTime(flight.date_departure);
+                                const {
+                                  formattedDate: formattedDateArr,
+                                  formattedTime: formattedTimeArr,
+                                } = formatDateTime(flight.date_arrival);
+                                return (
+                                  <>
+                                    <p className="text-sm text-gray-500">
+                                      {formattedDateDep} - {formattedDateArr}
+                                    </p>
+                                    <p className="text-sm text-gray-500">
+                                      {formattedTimeDep} - {formattedTimeArr}
+                                    </p>
+                                  </>
+                                );
+                              })()}
                           </div>
                         </div>
                         <div className="text-right">
-                          <Badge
+                          <Button
                             variant="outline"
-                            className={getStatusColor(flight.status)}
+                            size="sm"
+                            className="text-red-600 hover:bg-red-50 bg-transparent"
+                            onPress={() => {
+                              handleDeleteFlight(flight.id);
+                            }}
                           >
-                            {flight.status}
-                          </Badge>
-                          {flight.delay > 0 && (
-                            <p className="text-sm text-orange-600 mt-1">
-                              +{flight.delay} min
-                            </p>
-                          )}
-                          <p className="text-xs text-gray-500 mt-1">
-                            {flight.lastUpdate}
-                          </p>
+                            <X className="h-4 w-4" />
+                          </Button>
                         </div>
                       </div>
 
-                      {/* Progress Bar */}
-                      <div className="mb-4">
-                        <div className="flex items-center justify-between text-sm text-gray-600 mb-2">
-                          <span>Progreso del vuelo</span>
-                          <span>{flight.progress}%</span>
-                        </div>
-                        <div className="w-full bg-gray-200 rounded-full h-2">
-                          <div
-                            className="bg-[#56DFCF] h-2 rounded-full transition-all duration-500"
-                            style={{ width: `${flight.progress}%` }}
-                          ></div>
-                        </div>
-                      </div>
-
-                      {/* Action Buttons */}
+                      {/* Status */}
                       <div className="flex gap-2">
-                        <Button
-                          variant="outline"
+                        <Chip
+                          color={
+                            flightStatus.find(
+                              (status) => status.key === flight.state
+                            )?.color || "default"
+                          }
                           size="sm"
-                          className="text-red-600 hover:bg-red-50 bg-transparent"
+                          variant="flat"
                         >
-                          <X className="h-4 w-4" />
-                        </Button>
+                          {flightStatus.find(
+                            (status) => status.key === flight.state
+                          )?.label || "-"}
+                        </Chip>
                       </div>
-
-                      {/* Recent Updates */}
-                      {flight.notifications > 0 && (
-                        <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
-                          <div className="flex items-start gap-2">
-                            <AlertCircle className="h-4 w-4 text-blue-600 mt-0.5" />
-                            <div>
-                              <p className="text-sm font-medium text-blue-900">
-                                Actualización reciente
-                              </p>
-                              <p className="text-sm text-blue-700">
-                                {flight.status === "Retrasado"
-                                  ? `Vuelo retrasado ${flight.delay} minutos debido a condiciones meteorológicas`
-                                  : "Cambio de puerta de embarque"}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      )}
                     </div>
                   </Card>
                 );

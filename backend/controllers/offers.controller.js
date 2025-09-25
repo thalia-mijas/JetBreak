@@ -79,7 +79,11 @@ exports.getOfferDetails = async (req, res) => {
 
     let filteredOfferDetails = [];
 
-    const cachedKey = `offerDetails:${conf}`;
+    const cachedKey = `offerDetails:${params.get(
+      "originLocationCode"
+    )}:${params.get("destinationLocationCode")}:${params.get(
+      "departureDate"
+    )}:${params.get("returnDate")}`;
     const cachedData = await redisClient.get(cachedKey);
     if (cachedData) {
       console.log("Cache offers from Redis");

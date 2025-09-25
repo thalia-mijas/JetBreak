@@ -30,6 +30,16 @@ exports.createFlightTracking = async (req, res) => {
       return res.status(400).json({ message: "Date cannot be in the past" });
     }
 
+    const existingTracking = await Flight.findOne({
+      where: { user_id, flight_iata },
+    });
+
+    if (existingTracking) {
+      return res
+        .status(409)
+        .json({ message: "Flight tracking already exists for this user" });
+    }
+
     let flight = [];
 
     const cachedKey = `flight:${flight_iata}:${date}`;
@@ -72,14 +82,17 @@ exports.createFlightTracking = async (req, res) => {
               where: { iata_code: flight[0].flightPoints[0].iataCode },
             })
           ).id || null,
+        date_departure:
+          flight[0].flightPoints[0].departure.timings[0].value || null,
         destination_iata:
           (
             await Airport.findOne({
               where: { iata_code: flight[0].flightPoints[1].iataCode },
             })
           ).id || null,
-        date,
-        state: null,
+        date_arrival:
+          flight[0].flightPoints[1].arrival.timings[0].value || null,
+        state: "scheduled",
       });
 
       res.status(201).json({
@@ -117,8 +130,54 @@ exports.getUserFlightTrackings = async (req, res) => {
       ],
     });
 
+    //Actualizar estado de los vuelos
     if (flightTrackings.length === 0) {
       return res.status(404).json({ message: "No flight trackings found" });
+    } else {
+      flightTrackings.map((flight) => {
+        if (flight.date >= new Date().toISOString().split("T")[0]) {
+          const statusURL = `http://api.aviationstack.com/v1/flights?access_key=${API_KEY}&flight_iata=${flight.flight_iata}`;
+          const options = { method: "GET" };
+          fetch(statusURL, options)
+            .then((response) => response.json())
+            .then((data) => {
+              if (data && data.data && data.data.length > 0) {
+                const flightData = data.data.filter((flight) => {
+                  return flight.flight_date === flight.date;
+                });
+                if (flightData.length > 0) {
+                  if (flightData[0].flight_status === "active") {
+                    flight.state = "en route";
+                    flight.save();
+                  } else if (flightData[0].flight_status === "landed") {
+                    flight.state = "landed";
+                    flight.save();
+                  } else if (flightData[0].flight_status === "scheduled") {
+                    flight.state = "scheduled";
+                    flight.save();
+                  } else if (flightData[0].flight_status === "cancelled") {
+                    flight.state = "cancelled";
+                    flight.save();
+                  } else if (flightData[0].flight_status === "incident") {
+                    flight.state = "incident";
+                    flight.save();
+                  } else if (flightData[0].flight_status === "diverted") {
+                    flight.state = "diverted";
+                    flight.save();
+                  }
+                }
+              }
+            })
+            .catch((error) =>
+              console.error("Error fetching flight status:", error)
+            );
+        } else {
+          if (flight.state === null) {
+            flight.state = "landed";
+            flight.save();
+          }
+        }
+      });
     }
 
     res.status(200).json(flightTrackings);

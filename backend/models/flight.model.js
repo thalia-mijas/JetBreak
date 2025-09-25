@@ -37,6 +37,10 @@ const Flight = sequelize.define("Flight", {
       key: "id",
     },
   },
+  date_departure: {
+    type: DataTypes.DATE,
+    allowNull: true,
+  },
   destination_iata: {
     type: DataTypes.STRING,
     allowNull: true,
@@ -45,9 +49,9 @@ const Flight = sequelize.define("Flight", {
       key: "id",
     },
   },
-  date: {
+  date_arrival: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   state: {
     type: DataTypes.STRING,

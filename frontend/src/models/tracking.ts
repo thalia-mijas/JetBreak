@@ -4,8 +4,9 @@ export type trackingFlight = {
   flight_iata: string;
   airline_id: number;
   origin_iata: string;
+  date_departure: string;
   destination_iata: string;
-  date: string;
+  date_arrival: string;
   state: string;
   createdAt: string;
   updatedAt: string;

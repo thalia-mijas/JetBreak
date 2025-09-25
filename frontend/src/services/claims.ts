@@ -46,3 +46,22 @@ export async function createClaim(claim: Partial<Claim>) {
     console.error(error);
   }
 }
+
+export async function deleteClaim(claimId: number) {
+  const url = `http://localhost:3000/api/claims/${claimId}`;
+
+  const options = {
+    method: "DELETE",
+  };
+
+  try {
+    const response = await fetch(url, options);
+    const data = await response.json();
+
+    console.log("Reclamo eliminado: ", data);
+
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+}

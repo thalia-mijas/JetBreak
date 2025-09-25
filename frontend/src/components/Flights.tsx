@@ -11,7 +11,7 @@ export default function Flights({
 }: {
   selectedAirport: string;
 }) {
-  const flightStatuses = [
+  const flightStatus = [
     { key: "landed", label: "Aterrizado", color: "success" }, // verde
     { key: "scheduled", label: "Programado", color: "secondary" }, // azul
     { key: "cancelled", label: "Cancelado", color: "danger" }, // rojo
@@ -161,14 +161,14 @@ export default function Flights({
                           </div>
                           <Chip
                             color={
-                              flightStatuses.find(
+                              flightStatus.find(
                                 (status) => status.key === flight.status
                               )?.color || "default"
                             }
                             size="sm"
                             variant="flat"
                           >
-                            {flightStatuses.find(
+                            {flightStatus.find(
                               (status) => status.key === flight.status
                             )?.label || "-"}
                           </Chip>
@@ -236,14 +236,14 @@ export default function Flights({
                           </div>
                           <Chip
                             color={
-                              flightStatuses.find(
+                              flightStatus.find(
                                 (status) => status.key === flight.status
                               )?.color || "default"
                             }
                             size="sm"
                             variant="flat"
                           >
-                            {flightStatuses.find(
+                            {flightStatus.find(
                               (status) => status.key === flight.status
                             )?.label || "-"}
                           </Chip>
