@@ -7,12 +7,13 @@ import {
   ModalFooter,
   ModalHeader,
   RadioGroup,
+  Spinner,
   Tab,
   Tabs,
   useDisclosure,
 } from "@heroui/react";
 import { MapPin, Search } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import type { Airport } from "../models/airport";
 import * as API from "../services/airports";
 import { getAirportFromUbication } from "../services/ubication";
@@ -22,23 +23,37 @@ import Stores from "./Stores";
 
 export default function Home() {
   const [airports, setAirports] = useState<Airport[]>([]);
+  const [ubicationAirports, setUbicationAirports] = useState<Airport[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadingUbication, setLoadingUbication] = useState(false);
   const [selectedAirport, setSelectedAirport] = useState(""); // Example selected airport
   const [valueInput, setValueInput] = useState(""); // Example input value
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [choiceAirport, setChoiceAirport] = useState("");
   const [selected, setSelected] = useState("flight");
 
+  const handleGetAirportFromUbication = useCallback(() => {
+    onOpen();
+    setLoadingUbication(true);
+    getAirportFromUbication()
+      .then(setUbicationAirports)
+      .catch((error) => {
+        console.error(error);
+      })
+      .finally(() => {
+        setLoadingUbication(false);
+      });
+  }, [onOpen]);
+
   useEffect(() => {
     API.getAirports()
       .then((data) => {
         setAirports(data);
-        setLoading(false);
       })
       .catch((err) => {
         console.error(err);
-        setLoading(false);
-      });
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   if (loading) {
@@ -110,10 +125,7 @@ export default function Home() {
                   startContent={<MapPin className="h-5 w-5" />}
                   variant="shadow"
                   className="text-black"
-                  onPress={() => {
-                    onOpen();
-                    getAirportFromUbication();
-                  }}
+                  onPress={handleGetAirportFromUbication}
                 >
                   Utilizar mi ubicación
                 </Button>
@@ -134,20 +146,24 @@ export default function Home() {
                           </p>
                         </ModalHeader>
                         <ModalBody>
-                          <RadioGroup
-                            value={choiceAirport}
-                            onValueChange={setChoiceAirport}
-                          >
-                            {airports.map((airport) => (
-                              <CustomRadio
-                                key={airport.iata_code}
-                                description={`Airport code: ${airport.iata_code}`}
-                                value={airport.iata_code}
-                              >
-                                {airport.name}
-                              </CustomRadio>
-                            ))}
-                          </RadioGroup>
+                          {loadingUbication ? (
+                            <Spinner color="success" />
+                          ) : (
+                            <RadioGroup
+                              value={choiceAirport}
+                              onValueChange={setChoiceAirport}
+                            >
+                              {ubicationAirports.map((airport) => (
+                                <CustomRadio
+                                  key={airport.iata_code}
+                                  description={`Airport code: ${airport.iata_code}`}
+                                  value={airport.iata_code}
+                                >
+                                  {airport.name}
+                                </CustomRadio>
+                              ))}
+                            </RadioGroup>
+                          )}
                         </ModalBody>
                         <ModalFooter>
                           <Button

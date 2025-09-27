@@ -14,6 +14,7 @@ export async function getTrackingFlights() {
     const data = await response.json();
     return data;
   } catch (error) {
+    console.log("error", error);
     console.error(error);
   }
 }
@@ -33,13 +34,14 @@ export async function addTrackingFlight(flightData: {
     body: JSON.stringify(flightData),
   };
 
-  try {
-    const response = await fetch(url, options);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
+  const response = await fetch(url, options);
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new (data.message ?? "Error adding tracking flight")();
   }
+
+  return data;
 }
 
 export async function removeTrackingFlight(trackingId: number) {
