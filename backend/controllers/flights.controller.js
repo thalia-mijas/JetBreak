@@ -32,7 +32,6 @@ exports.getArrivals = async (req, res) => {
         flights = flights.filter(
           (flight) => flight.flight && flight.flight.iataNumber !== ""
         );
-        flights = flights.filter((flight) => flight.arrival.gate !== null);
         await redisClient.set(cachedKey, JSON.stringify(flights), {
           EX: CACHE_TIME,
         });

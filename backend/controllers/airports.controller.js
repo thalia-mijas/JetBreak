@@ -23,6 +23,7 @@ async function seedAirports() {
           name: data.name,
           latitude: data.latitude,
           longitude: data.longitude,
+          country: data.country,
         },
       });
     } catch (error) {

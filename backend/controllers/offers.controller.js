@@ -48,6 +48,7 @@ exports.getOffers = async (req, res) => {
       }));
 
       filteredOffers = newOffers.filter((offer) => offer.origin === origin);
+      filteredOffers.sort((a, b) => (a.departure >= b.departure ? 1 : -1));
 
       await redisClient.set(cachedKey, JSON.stringify(filteredOffers), {
         EX: CACHE_TIME,
