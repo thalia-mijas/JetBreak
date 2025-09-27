@@ -6,6 +6,7 @@ import * as authService from "../services/authentication";
 
 export type AuthContextType = {
   isAuthenticated: boolean;
+  isLoadingAuth: boolean;
   login: (username: string, password: string) => Promise<void>;
   logout: () => void;
 };
@@ -14,6 +15,7 @@ import { AuthContext } from "./AuthContextInstance";
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoadingAuth, setIsLoadingAuth] = useState(true);
 
   // Verificar si hay sesión al cargar la app
   useEffect(() => {
@@ -22,6 +24,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       .find((row) => row.startsWith("token="))
       ?.split("=")[1];
     setIsAuthenticated(!!token);
+    setIsLoadingAuth(false);
   }, []);
 
   const login = async (email: string, password: string) => {
@@ -127,7 +130,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider
+      value={{ isAuthenticated, isLoadingAuth, login, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );

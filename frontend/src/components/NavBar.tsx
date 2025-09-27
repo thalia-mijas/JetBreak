@@ -33,12 +33,9 @@ export default function NavBar() {
   const menuItems = [
     { label: "Aeropuerto", href: "/" },
     { label: "Ofertas", href: "/offers" },
+    { label: "Reclamos", href: "/claims" },
+    { label: "Seguimiento", href: "/tracking" },
   ];
-
-  if (isAuthenticated) {
-    menuItems.push({ label: "Reclamos", href: "/claims" });
-    menuItems.push({ label: "Seguimiento", href: "/tracking" });
-  }
 
   return (
     <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>

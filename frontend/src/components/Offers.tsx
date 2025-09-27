@@ -11,7 +11,6 @@ import type { trackingFlight } from "../models/tracking";
 import * as AirlinesAPI from "../services/airlines";
 import * as AirportsAPI from "../services/airports";
 import * as API from "../services/offers";
-import * as TrackingAPI from "../services/tracking";
 import TrackButton from "./TrackButton";
 
 export default function Offers() {
@@ -38,7 +37,7 @@ export default function Offers() {
   useEffect(() => {
     AirportsAPI.getAirports().then(setAirports);
     AirlinesAPI.getAirlines().then(setAirlines);
-    TrackingAPI.getTrackingFlights().then(setTrackingFlights);
+    // TrackingAPI.getTrackingFlights().then(setTrackingFlights);
   }, []);
 
   // Airport name
@@ -503,7 +502,7 @@ export default function Offers() {
                 <Input
                   placeholder="(ej: Madrid, MAD, Barajas)"
                   value={valueInput}
-                  onChange={(e) => setValueInput(e.target.value)}
+                  onChange={(e) => setValueInput(e.target.value.toUpperCase())}
                   list="airport-suggestions"
                 />
                 <datalist id="airport-suggestions">

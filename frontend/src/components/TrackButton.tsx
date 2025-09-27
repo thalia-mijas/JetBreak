@@ -75,6 +75,7 @@ export default function TrackButton({
     ) => {
       if (!isAuthenticated) {
         navigate("/login");
+        return;
       }
       const outboundDateFormatted = outboundDate.split("T")[0];
       const returnDateFormatted = returnDate.split("T")[0];

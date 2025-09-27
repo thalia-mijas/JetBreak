@@ -95,7 +95,7 @@ export default function Flights({
               <Input
                 placeholder="(ej: LA3144)"
                 value={valueSearch}
-                onChange={(e) => setValueSearch(e.target.value)}
+                onChange={(e) => setValueSearch(e.target.value.toUpperCase())}
                 startContent={<Search className="h-5 w-5" />}
               />
             </div>

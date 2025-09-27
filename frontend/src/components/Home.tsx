@@ -84,7 +84,9 @@ export default function Home() {
                     <Input
                       placeholder="(ej: Madrid, MAD, Barajas)"
                       value={valueInput}
-                      onChange={(e) => setValueInput(e.target.value)}
+                      onChange={(e) =>
+                        setValueInput(e.target.value.toUpperCase())
+                      }
                       list="airport-suggestions"
                     />
                     <datalist id="airport-suggestions">

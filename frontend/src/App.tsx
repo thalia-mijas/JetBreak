@@ -10,6 +10,7 @@ import RecoverPassword from "./components/RecoverPassword";
 import ResetPassword from "./components/ResetPassword";
 import Tracking from "./components/Tracking";
 import { useAuth } from "./context/useAuth";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   const { isAuthenticated } = useAuth();
@@ -20,8 +21,22 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/offers" element={<Offers />}></Route>
-        <Route path="/claims" element={<Claims />}></Route>
-        <Route path="/tracking" element={<Tracking />}></Route>
+        <Route
+          path="/claims"
+          element={
+            <ProtectedRoute>
+              <Claims />
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
+          path="/tracking"
+          element={
+            <ProtectedRoute>
+              <Tracking />
+            </ProtectedRoute>
+          }
+        ></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/recover-password" element={<RecoverPassword />}></Route>
         <Route

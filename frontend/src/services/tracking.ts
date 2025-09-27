@@ -38,7 +38,7 @@ export async function addTrackingFlight(flightData: {
   const data = await response.json();
 
   if (!response.ok) {
-    throw new (data.message ?? "Error adding tracking flight")();
+    throw new (data.message || "Error adding tracking flight")();
   }
 
   return data;
