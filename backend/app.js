@@ -20,10 +20,14 @@ const { seedAirlines } = require("./controllers/airlines.controller");
 const { seedAirports } = require("./controllers/airports.controller");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./swagger-output.json");
 
 app.use(cookieParser());
 
 app.use(express.json());
+
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Permitir solicitudes desde tu frontend
 app.use(
@@ -34,14 +38,14 @@ app.use(
 );
 
 // Rutas
-app.use("/api", authRoutes);
-app.use("/api/claims", claimsRoutes);
-app.use("/api/airports", airportsRoutes);
-app.use("/api/stores", storesRoutes);
-app.use("/api/airlines", airlinesRoutes);
-app.use("/api/flights", flightsRoutes);
-app.use("/api/offers", offersRoutes);
-app.use("/api/users", usersRoutes);
+app.use("/api/", authRoutes);
+app.use("/api/", claimsRoutes);
+app.use("/api/", airportsRoutes);
+app.use("/api/", storesRoutes);
+app.use("/api/", airlinesRoutes);
+app.use("/api/", flightsRoutes);
+app.use("/api/", offersRoutes);
+app.use("/api/", usersRoutes);
 
 // Define las relaciones de BD
 User.hasMany(Claim, { foreignKey: "user_id" });
