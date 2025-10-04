@@ -129,7 +129,20 @@ exports.generateEmail = async (req, res) => {
   await transporter.sendMail({
     to: email,
     subject: "Recuperación de contraseña",
-    html: `<p>Haz clic <a href="${resetLink}">aquí</a> para restablecer tu contraseña.</p>`,
+    html: `
+      <div style="font-family: Arial, sans-serif; text-align: center;">
+        <img src="cid:logo" alt="Logo" style="width: 250px; margin-bottom: 16px;" />
+        <h2>Hola ${user.name},</h2>
+        <p>Para ayudarte con el restablecimiento de tu clave haz clic <a href="${resetLink}">aquí</a>.</p>
+      </div>
+    `,
+    attachments: [
+      {
+        filename: "icon.png",
+        path: __dirname + "/../public/icon.png",
+        cid: "logo",
+      },
+    ],
   });
 
   res.status(200).json({ message: "Recovery email sent" });

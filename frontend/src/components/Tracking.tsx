@@ -210,99 +210,101 @@ export default function Tracking() {
             </Card>
 
             {/* Tracked Flights */}
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold text-gray-900">
-                  Vuelos Seguidos
-                </h3>
-              </div>
+            {trackingFlights.length > 0 && (
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    Vuelos Seguidos
+                  </h3>
+                </div>
 
-              {/* Tracked Flight Cards */}
-              {trackingFlights.map((flight) => {
-                return (
-                  <Card
-                    key={flight.id}
-                    className="hover:shadow-md transition-shadow"
-                  >
-                    <div className="p-6">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 bg-[#56DFCF]/10 rounded-lg flex items-center justify-center">
-                            <Plane className="h-6 w-6 text-[#56DFCF]" />
-                          </div>
-                          <div>
-                            <div className="flex items-center gap-2 mb-1">
-                              <h4 className="font-semibold text-lg">
-                                {flight.flight_iata}
-                              </h4>
-                              <Badge variant="outline" className="text-xs">
-                                {flight.airline.name}
-                              </Badge>
+                {/* Tracked Flight Cards */}
+                {trackingFlights.map((flight) => {
+                  return (
+                    <Card
+                      key={flight.id}
+                      className="hover:shadow-md transition-shadow"
+                    >
+                      <div className="p-6">
+                        <div className="flex items-start justify-between mb-4">
+                          <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 bg-[#56DFCF]/10 rounded-lg flex items-center justify-center">
+                              <Plane className="h-6 w-6 text-[#56DFCF]" />
                             </div>
-                            <p className="text-gray-600 font-medium">
-                              {flight.origin.name}
-                              <ArrowRight className="inline-block mx-1" />
-                              {flight.destination.name}
-                            </p>
-                            {flight.date_departure &&
-                              flight.date_arrival &&
-                              (() => {
-                                const {
-                                  formattedDate: formattedDateDep,
-                                  formattedTime: formattedTimeDep,
-                                } = formatDateTime(flight.date_departure);
-                                const {
-                                  formattedDate: formattedDateArr,
-                                  formattedTime: formattedTimeArr,
-                                } = formatDateTime(flight.date_arrival);
-                                return (
-                                  <>
-                                    <p className="text-sm text-gray-500">
-                                      {formattedDateDep} - {formattedDateArr}
-                                    </p>
-                                    <p className="text-sm text-gray-500">
-                                      {formattedTimeDep} - {formattedTimeArr}
-                                    </p>
-                                  </>
-                                );
-                              })()}
+                            <div>
+                              <div className="flex items-center gap-2 mb-1">
+                                <h4 className="font-semibold text-lg">
+                                  {flight.flight_iata}
+                                </h4>
+                                <Badge variant="outline" className="text-xs">
+                                  {flight.airline.name}
+                                </Badge>
+                              </div>
+                              <p className="text-gray-600 font-medium">
+                                {flight.origin.name}
+                                <ArrowRight className="inline-block mx-1" />
+                                {flight.destination.name}
+                              </p>
+                              {flight.date_departure &&
+                                flight.date_arrival &&
+                                (() => {
+                                  const {
+                                    formattedDate: formattedDateDep,
+                                    formattedTime: formattedTimeDep,
+                                  } = formatDateTime(flight.date_departure);
+                                  const {
+                                    formattedDate: formattedDateArr,
+                                    formattedTime: formattedTimeArr,
+                                  } = formatDateTime(flight.date_arrival);
+                                  return (
+                                    <>
+                                      <p className="text-sm text-gray-500">
+                                        {formattedDateDep} - {formattedDateArr}
+                                      </p>
+                                      <p className="text-sm text-gray-500">
+                                        {formattedTimeDep} - {formattedTimeArr}
+                                      </p>
+                                    </>
+                                  );
+                                })()}
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="text-red-600 hover:bg-red-50 bg-transparent"
+                              onPress={() => {
+                                handleDeleteFlight(flight.id);
+                              }}
+                            >
+                              <X className="h-4 w-4" />
+                            </Button>
                           </div>
                         </div>
-                        <div className="text-right">
-                          <Button
-                            variant="outline"
+
+                        {/* Status */}
+                        <div className="flex gap-2">
+                          <Chip
+                            color={
+                              flightStatus.find(
+                                (status) => status.key === flight.state
+                              )?.color || "default"
+                            }
                             size="sm"
-                            className="text-red-600 hover:bg-red-50 bg-transparent"
-                            onPress={() => {
-                              handleDeleteFlight(flight.id);
-                            }}
+                            variant="flat"
                           >
-                            <X className="h-4 w-4" />
-                          </Button>
+                            {flightStatus.find(
+                              (status) => status.key === flight.state
+                            )?.label || "-"}
+                          </Chip>
                         </div>
                       </div>
-
-                      {/* Status */}
-                      <div className="flex gap-2">
-                        <Chip
-                          color={
-                            flightStatus.find(
-                              (status) => status.key === flight.state
-                            )?.color || "default"
-                          }
-                          size="sm"
-                          variant="flat"
-                        >
-                          {flightStatus.find(
-                            (status) => status.key === flight.state
-                          )?.label || "-"}
-                        </Chip>
-                      </div>
-                    </div>
-                  </Card>
-                );
-              })}
-            </div>
+                    </Card>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       </section>

@@ -1,12 +1,13 @@
-import { Button, Card, CardBody, Input } from "@heroui/react";
+import { addToast, Button, Card, CardBody, Input } from "@heroui/react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import * as API from "../services/authentication";
 // ...existing code...
 
 export default function ResetPassword() {
   const [newPassword, setNewPassword] = useState("");
   const { token } = useParams<{ token: string }>();
+  const navigate = useNavigate();
 
   console.log("Token from URL:", token);
 
@@ -14,9 +15,65 @@ export default function ResetPassword() {
     API.resetPassword(token, newPassword)
       .then((response) => {
         console.log("Password reset successful:", response);
+        if (response.message === "Contraseña actualizada correctamente") {
+          addToast({
+            title: "Contraseña actualizada",
+            description: "La contraseña se ha actualizado correctamente",
+            color: "success",
+            icon: (
+              <svg height={24} viewBox="0 0 24 24" width={24}>
+                <g
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeMiterlimit={10}
+                  strokeWidth={1.5}
+                >
+                  <path
+                    d="M11.845 21.662C8.153 21.662 5 21.088 5 18.787s3.133-4.425 6.845-4.425c3.692 0 6.845 2.1 6.845 4.4s-3.134 2.9-6.845 2.9z"
+                    data-name="Stroke 1"
+                  />
+                  <path
+                    d="M11.837 11.174a4.372 4.372 0 10-.031 0z"
+                    data-name="Stroke 3"
+                  />
+                </g>
+              </svg>
+            ),
+          });
+          navigate("/login");
+        }
       })
+
       .catch((error) => {
         console.error("Error resetting password:", error);
+        addToast({
+          title: "Error",
+          description: "Error en el cambio de contraseña: " + error.message,
+          color: "danger",
+          icon: (
+            <svg height={24} viewBox="0 0 24 24" width={24}>
+              <g
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit={10}
+                strokeWidth={1.5}
+              >
+                <path
+                  d="M11.845 21.662C8.153 21.662 5 21.088 5 18.787s3.133-4.425 6.845-4.425c3.692 0 6.845 2.1 6.845 4.4s-3.134 2.9-6.845 2.9z"
+                  data-name="Stroke 1"
+                />
+                <path
+                  d="M11.837 11.174a4.372 4.372 0 10-.031 0z"
+                  data-name="Stroke 3"
+                />
+              </g>
+            </svg>
+          ),
+        });
       });
   };
   return (
