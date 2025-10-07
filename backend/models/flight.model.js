@@ -1,8 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/db");
-const User = require("./user.model");
 const Airline = require("./airline.model");
-const Airport = require("./airport.model");
 
 const Flight = sequelize.define("Flight", {
   id: {
@@ -10,16 +8,16 @@ const Flight = sequelize.define("Flight", {
     primaryKey: true,
     autoIncrement: true,
   },
-  user_id: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: User,
-      key: "id",
-    },
-  },
   flight_iata: {
     type: DataTypes.STRING,
     allowNull: false,
+    validate: {
+      len: [3, 6],
+      is: {
+        args: /^[A-Z]{2}[0-9]{1,4}$/,
+        msg: "El código IATA del vuelo debe tener 2 letras seguidas de 1 a 4 números (ej: AA123)",
+      },
+    },
   },
   airline_id: {
     type: DataTypes.INTEGER,
@@ -29,25 +27,9 @@ const Flight = sequelize.define("Flight", {
       key: "id",
     },
   },
-  origin_iata: {
-    type: DataTypes.STRING,
-    allowNull: true,
-    references: {
-      model: Airport,
-      key: "id",
-    },
-  },
   date_departure: {
     type: DataTypes.DATE,
     allowNull: true,
-  },
-  destination_iata: {
-    type: DataTypes.STRING,
-    allowNull: true,
-    references: {
-      model: Airport,
-      key: "id",
-    },
   },
   date_arrival: {
     type: DataTypes.DATE,

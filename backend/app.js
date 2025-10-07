@@ -22,6 +22,8 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./swagger-output.json");
+const UserFlight = require("./models/userFlight.model");
+const FlightAirport = require("./models/flightAirport.model");
 
 app.use(cookieParser());
 
@@ -48,27 +50,30 @@ app.use("/api/", offersRoutes);
 app.use("/api/", usersRoutes);
 
 // Define las relaciones de BD
+//  User ↔ Claim
 User.hasMany(Claim, { foreignKey: "user_id" });
 Claim.belongsTo(User, { foreignKey: "user_id" });
 
+// Airline ↔ Claim
 Airline.hasMany(Claim, { foreignKey: "airline_id" });
 Claim.belongsTo(Airline, { foreignKey: "airline_id" });
 
-User.hasMany(Flight, { foreignKey: "user_id" });
-Flight.belongsTo(User, { foreignKey: "user_id" });
+// User ↔ Flight
+User.belongsToMany(Flight, { through: UserFlight, foreignKey: "user_id" });
+Flight.belongsToMany(User, { through: UserFlight, foreignKey: "flight_id" });
 
+// Airline ↔ Flight
 Airline.hasMany(Flight, { foreignKey: "airline_id", as: "flights" });
 Flight.belongsTo(Airline, { foreignKey: "airline_id", as: "airline" });
 
-Airport.hasMany(Flight, { foreignKey: "origin_iata", as: "departingFlights" });
-Airport.hasMany(Flight, {
-  foreignKey: "destination_iata",
-  as: "arrivingFlights",
+// Flight ↔ Airport
+Flight.belongsToMany(Airport, {
+  through: FlightAirport,
+  foreignKey: "flight_id",
 });
-Flight.belongsTo(Airport, { foreignKey: "origin_iata", as: "origin" });
-Flight.belongsTo(Airport, {
-  foreignKey: "destination_iata",
-  as: "destination",
+Airport.belongsToMany(Flight, {
+  through: FlightAirport,
+  foreignKey: "airport_id",
 });
 
 // Sincroniza

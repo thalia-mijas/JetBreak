@@ -17,8 +17,6 @@ export async function register(userData: {
     const response = await fetch(url, options);
     const data = await response.json();
 
-    console.log("Register response: ", data);
-
     return data;
   } catch (error) {
     console.error(error);
@@ -39,8 +37,6 @@ export async function login(email: string, password: string) {
   try {
     const response = await fetch(url, options);
     const data = await response.json();
-
-    console.log("Login response: ", data);
 
     return data;
   } catch (error) {
@@ -63,8 +59,6 @@ export async function logout() {
     const response = await fetch(url, options);
     const data = await response.json();
 
-    console.log("Logout response: ", data);
-
     return data;
   } catch (error) {
     console.error(error);
@@ -86,8 +80,6 @@ export async function recoverPassword(email: string) {
     const response = await fetch(url, options);
     const data = await response.json();
 
-    console.log("Recover password response: ", data);
-
     return data;
   } catch (error) {
     console.error(error);
@@ -108,8 +100,6 @@ export async function resetPassword(token: string, newPassword: string) {
   try {
     const response = await fetch(url, options);
     const data = await response.json();
-
-    console.log("Reset password response: ", data);
 
     return data;
   } catch (error) {

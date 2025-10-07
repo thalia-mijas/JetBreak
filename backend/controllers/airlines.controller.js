@@ -9,7 +9,7 @@ async function seedAirlines() {
 
   // Extraer solo codigo iata y nombre
   const minimalAirlines = fullAirlines.map((a) => ({
-    iata_code: a.codeIataAirline,
+    iata_code: (a.codeIataAirline || "").replace(/\*$/, ""),
     name: a.nameAirline,
   }));
 

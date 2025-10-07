@@ -11,7 +11,7 @@ router.get(
   flightTrackingController.getUserFlightTrackings
 );
 router.delete(
-  "/flights/tracking/:id",
+  "/flights/tracking/:user_id/:flight_id",
   flightTrackingController.deleteFlightTracking
 );
 

@@ -10,7 +10,8 @@ const Airline = sequelize.define("Airline", {
   iata_code: {
     type: DataTypes.STRING,
     validate: {
-      len: [2],
+      len: [2, 2], // Exactamente 2 caracteres
+      isUppercase: true, // Fuerza mayúsculas
     },
   },
   name: {

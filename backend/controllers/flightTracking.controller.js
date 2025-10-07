@@ -2,6 +2,8 @@ const Airport = require("../models/airport.model");
 const User = require("../models/user.model");
 const Airline = require("../models/airline.model");
 const Flight = require("../models/flight.model");
+const UserFlight = require("../models/userFlight.model");
+const FlightAirport = require("../models/flightAirport.model");
 const redisClient = require("../redis");
 const API_KEY = process.env.AVIATION_STACK_API_KEY;
 const CACHE_TIME = process.env.CACHE_TIME;
@@ -30,8 +32,80 @@ exports.createFlightTracking = async (req, res) => {
       return res.status(400).json({ message: "Date cannot be in the past" });
     }
 
-    const existingTracking = await Flight.findOne({
-      where: { user_id, flight_iata },
+    const cachedKey = `flight:${flight_iata}:${date}`;
+    let flightData = await redisClient.get(cachedKey);
+
+    let flight = flightData ? JSON.parse(flightData) : null;
+
+    if (!flight) {
+      const amadeusResponse = await amadeus.schedule.flights.get({
+        carrierCode: flight_iata.slice(0, 2),
+        flightNumber: flight_iata.slice(2),
+        scheduledDepartureDate: date,
+      });
+
+      flight = amadeusResponse.data;
+      await redisClient.set(cachedKey, JSON.stringify(flight), {
+        EX: CACHE_TIME,
+      });
+    }
+
+    if (!flight || flight.length === 0) {
+      return res.status(404).json({ message: "Flight not found" });
+    }
+
+    const airline = await Airline.findOne({
+      where: { iata_code: flight[0].flightDesignator.carrierCode },
+    });
+
+    const originAirport = await Airport.findOne({
+      where: { iata_code: flight[0].flightPoints[0].iataCode },
+    });
+
+    const destinationAirport = await Airport.findOne({
+      where: { iata_code: flight[0].flightPoints[1].iataCode },
+    });
+
+    // Verifica si el vuelo ya existe
+    let flightRecord = await Flight.findOne({
+      where: {
+        flight_iata,
+        date_departure: flight[0].flightPoints[0].departure.timings[0].value,
+      },
+    });
+
+    if (!flightRecord) {
+      flightRecord = await Flight.create({
+        flight_iata,
+        airline_id: airline?.id || null,
+        date_departure:
+          flight[0].flightPoints[0].departure.timings[0].value || null,
+        date_arrival:
+          flight[0].flightPoints[1].arrival.timings[0].value || null,
+        state: "scheduled",
+      });
+
+      // Relación con aeropuertos
+      await FlightAirport.bulkCreate([
+        {
+          flight_id: flightRecord.id,
+          airport_id: originAirport?.id || null,
+          type: "origen",
+        },
+        {
+          flight_id: flightRecord.id,
+          airport_id: destinationAirport?.id || null,
+          type: "destino",
+        },
+      ]);
+    }
+
+    // Verifica si el usuario ya está vinculado al vuelo
+    const existingTracking = await UserFlight.findOne({
+      where: {
+        user_id,
+        flight_id: flightRecord.id,
+      },
     });
 
     if (existingTracking) {
@@ -40,70 +114,18 @@ exports.createFlightTracking = async (req, res) => {
         .json({ message: "Flight tracking already exists for this user" });
     }
 
-    let flight = [];
-
-    const cachedKey = `flight:${flight_iata}:${date}`;
-    const cachedData = await redisClient.get(cachedKey);
-    if (cachedData) {
-      console.log("Cache flight from Redis");
-      flight = JSON.parse(cachedData);
-    } else {
-      console.log("Cache miss, fetching from API");
-
-      const amadeusResponse = await amadeus.schedule.flights.get({
-        carrierCode: flight_iata.slice(0, 2),
-        flightNumber: flight_iata.slice(2),
-        scheduledDepartureDate: date,
-      });
-
-      flight = amadeusResponse.data;
-
-      await redisClient.set(cachedKey, JSON.stringify(flight), {
-        EX: CACHE_TIME,
-      });
-    }
-
-    if (flight.length === 0) {
-      return res.status(404).json({ message: "Flight not found" });
-    }
-
-    const airline = await Airline.findOne({
-      where: { iata_code: flight[0].flightDesignator.carrierCode },
+    // Crea la relación en la tabla intermedia
+    await UserFlight.create({
+      user_id,
+      flight_id: flightRecord.id,
     });
 
-    if (flight && flight.length > 0) {
-      const flightTracking = await Flight.create({
-        user_id,
-        flight_iata,
-        airline_id: airline?.id || null,
-        origin_iata:
-          (
-            await Airport.findOne({
-              where: { iata_code: flight[0].flightPoints[0].iataCode },
-            })
-          ).id || null,
-        date_departure:
-          flight[0].flightPoints[0].departure.timings[0].value || null,
-        destination_iata:
-          (
-            await Airport.findOne({
-              where: { iata_code: flight[0].flightPoints[1].iataCode },
-            })
-          ).id || null,
-        date_arrival:
-          flight[0].flightPoints[1].arrival.timings[0].value || null,
-        state: "scheduled",
-      });
-
-      res.status(201).json({
-        message: "FlightTracking created successfully",
-        flight: flightTracking,
-      });
-    } else {
-      return res.status(404).json({ message: "No matches found" });
-    }
+    res.status(201).json({
+      message: "FlightTracking created successfully",
+      flight: flightRecord,
+    });
   } catch (error) {
-    console.error("Error fetching flightTracking:", error);
+    console.error("Error creating flight tracking:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -115,72 +137,58 @@ exports.getUserFlightTrackings = async (req, res) => {
     return res.status(400).json({ message: "User ID is required" });
   }
 
-  const user = await User.findByPk(user_id);
-  if (!user) {
-    return res.status(404).json({ message: "User not found" });
-  }
-
   try {
-    const flightTrackings = await Flight.findAll({
-      where: { user_id },
-      include: [
-        { model: Airline, as: "airline" },
-        { model: Airport, as: "origin" },
-        { model: Airport, as: "destination" },
-      ],
+    const user = await User.findByPk(user_id, {
+      include: {
+        model: Flight,
+        through: { attributes: [] }, // oculta campos de UserFlight
+        include: [
+          { model: Airline, as: "airline" },
+          {
+            model: Airport,
+            through: {
+              model: FlightAirport,
+              attributes: ["type"],
+            },
+          },
+        ],
+      },
     });
 
-    //Actualizar estado de los vuelos
-    if (flightTrackings.length === 0) {
+    if (!user || user.Flights.length === 0) {
       return res.status(404).json({ message: "No flight trackings found" });
-    } else {
-      flightTrackings.map((flight) => {
-        if (flight.date >= new Date().toISOString().split("T")[0]) {
-          const statusURL = `http://api.aviationstack.com/v1/flights?access_key=${API_KEY}&flight_iata=${flight.flight_iata}`;
-          const options = { method: "GET" };
-          fetch(statusURL, options)
-            .then((response) => response.json())
-            .then((data) => {
-              if (data && data.data && data.data.length > 0) {
-                const flightData = data.data.filter((flight) => {
-                  return flight.flight_date === flight.date;
-                });
-                if (flightData.length > 0) {
-                  if (flightData[0].flight_status === "active") {
-                    flight.state = "en route";
-                    flight.save();
-                  } else if (flightData[0].flight_status === "landed") {
-                    flight.state = "landed";
-                    flight.save();
-                  } else if (flightData[0].flight_status === "scheduled") {
-                    flight.state = "scheduled";
-                    flight.save();
-                  } else if (flightData[0].flight_status === "cancelled") {
-                    flight.state = "cancelled";
-                    flight.save();
-                  } else if (flightData[0].flight_status === "incident") {
-                    flight.state = "incident";
-                    flight.save();
-                  } else if (flightData[0].flight_status === "diverted") {
-                    flight.state = "diverted";
-                    flight.save();
-                  }
-                }
-              }
-            })
-            .catch((error) =>
-              console.error("Error fetching flight status:", error)
-            );
-        } else {
-          if (flight.state === null) {
-            flight.state = "landed";
-            flight.save();
-          }
-        }
-      });
     }
 
-    res.status(200).json(flightTrackings);
+    // Actualizar estado de los vuelos
+    await Promise.all(
+      user.Flights.map(async (flight) => {
+        const flightDate = flight.date_departure?.toISOString().split("T")[0];
+
+        if (flightDate >= new Date().toISOString().split("T")[0]) {
+          try {
+            const statusURL = `http://api.aviationstack.com/v1/flights?access_key=${API_KEY}&flight_iata=${flight.flight_iata}`;
+            const response = await fetch(statusURL);
+            const data = await response.json();
+
+            const match = data?.data?.find((f) => f.flight_date === flightDate);
+
+            if (match?.flight_status) {
+              flight.state = match.flight_status;
+              await flight.save();
+            }
+          } catch (error) {
+            console.error("Error fetching flight status:", error);
+          }
+        } else {
+          if (!flight.state) {
+            flight.state = "landed";
+            await flight.save();
+          }
+        }
+      })
+    );
+
+    res.status(200).json(user.Flights);
   } catch (error) {
     console.error("Error fetching user flight trackings:", error);
     res.status(500).json({ message: "Internal server error" });
@@ -188,20 +196,47 @@ exports.getUserFlightTrackings = async (req, res) => {
 };
 
 exports.deleteFlightTracking = async (req, res) => {
-  const { id } = req.params;
+  const { user_id, flight_id } = req.params;
 
-  if (!id) {
-    return res.status(400).json({ message: "FlightTracking ID is required" });
+  if (!user_id || !flight_id) {
+    return res
+      .status(400)
+      .json({ message: "User ID and Flight ID are required" });
   }
 
   try {
-    const flightTracking = await Flight.findByPk(id);
-    if (!flightTracking) {
-      return res.status(404).json({ message: "FlightTracking not found" });
+    const user = await User.findByPk(user_id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
     }
 
-    await flightTracking.destroy();
-    res.status(200).json({ message: "FlightTracking deleted successfully" });
+    const flight = await Flight.findByPk(flight_id);
+    if (!flight) {
+      return res.status(404).json({ message: "Flight not found" });
+    }
+
+    const tracking = await UserFlight.findOne({
+      where: { user_id, flight_id },
+    });
+
+    if (!tracking) {
+      return res
+        .status(404)
+        .json({ message: "Tracking not found for this user and flight" });
+    }
+
+    await tracking.destroy();
+
+    // Verifica si el vuelo está vinculado a otros usuarios
+    const remainingLinks = await UserFlight.count({
+      where: { flight_id },
+    });
+
+    if (remainingLinks === 0) {
+      await Flight.destroy({ where: { id: flight_id } });
+    }
+
+    res.status(200).json({ message: "Flight tracking deleted successfully" });
   } catch (error) {
     console.error("Error deleting flight tracking:", error);
     res.status(500).json({ message: "Internal server error" });

@@ -32,8 +32,11 @@ const Claim = sequelize.define("Claim", {
     type: DataTypes.STRING,
     allowNull: false,
     validate: {
-      len: [3, 6], // mínimo 3 (ej: AA1), máximo 6 (ej: AA1234)
-      is: /^[A-Z]{2}[0-9]{1,4}$/, // 2 letras + 1 a 4 números
+      len: [3, 6],
+      is: {
+        args: /^[A-Z]{2}[0-9]{1,4}$/,
+        msg: "El código IATA del vuelo debe tener 2 letras seguidas de 1 a 4 números (ej: AA123)",
+      },
     },
   },
   date: {

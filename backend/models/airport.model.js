@@ -8,9 +8,10 @@ const Airport = sequelize.define("Airport", {
     autoIncrement: true,
   },
   iata_code: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(3),
     validate: {
-      len: [2],
+      len: [3, 3], // Exactamente 3 caracteres
+      isUppercase: true, // Fuerza mayúsculas
     },
   },
   latitude: {

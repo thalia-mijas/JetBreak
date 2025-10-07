@@ -7,6 +7,7 @@ import {
   Chip,
   DateInput,
   Input,
+  type DateValue,
 } from "@heroui/react";
 import { I18nProvider } from "@react-aria/i18n";
 import { ArrowRight, Plane, Search, X } from "lucide-react";
@@ -26,7 +27,7 @@ export default function Tracking() {
     { key: "unknown", label: "Desconocido", color: "default" }, // gris
   ];
   const [trackingFlights, setTrackingFlights] = useState<trackingFlight[]>([]);
-  const [dateValue, setDateValue] = useState<any>("");
+  const [dateValue, setDateValue] = useState<DateValue | null>(null);
   const [flightValue, setFlightValue] = useState<string>("");
 
   useEffect(() => {
@@ -99,7 +100,7 @@ export default function Tracking() {
             icon: <Plane />,
           });
           // Clear input fields
-          setDateValue("");
+          setDateValue(null);
           setFlightValue("");
           // Refetch tracking flights to include the newly added flight
           API.getTrackingFlights()
@@ -128,7 +129,7 @@ export default function Tracking() {
     API.removeTrackingFlight(trackingId)
       .then((data) => {
         console.log("Flight removed from tracking: ", data);
-        if (data.message === "FlightTracking deleted successfully") {
+        if (data.message === "Flight tracking deleted successfully") {
           addToast({
             title: "Seguimiento eliminado",
             description: "El seguimiento se ha eliminado con éxito",
@@ -181,6 +182,7 @@ export default function Tracking() {
                       Número de Vuelo
                     </label>
                     <Input
+                      value={flightValue}
                       placeholder="Ingresa el número de vuelo (ej: IB6254, BA1234)"
                       className="text-lg"
                       onChange={(e) =>
@@ -193,7 +195,7 @@ export default function Tracking() {
                       Fecha de Vuelo
                     </label>
                     <I18nProvider locale="es-ES">
-                      <DateInput onChange={setDateValue} />
+                      <DateInput onChange={setDateValue} value={dateValue} />
                     </I18nProvider>
                   </div>
                   <Button
@@ -241,9 +243,9 @@ export default function Tracking() {
                                 </Badge>
                               </div>
                               <p className="text-gray-600 font-medium">
-                                {flight.origin.name}
+                                {flight.Airports[1].name}
                                 <ArrowRight className="inline-block mx-1" />
-                                {flight.destination.name}
+                                {flight.Airports[0].name}
                               </p>
                               {flight.date_departure &&
                                 flight.date_arrival &&

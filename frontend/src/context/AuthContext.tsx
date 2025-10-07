@@ -31,7 +31,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     authService
       .login(email, password)
       .then((data) => {
-        console.log("Respuesta del login:", data);
         if (data.message === "Login successful") {
           if (data.token) {
             document.cookie = `token=${data.token}; path=/;`;
