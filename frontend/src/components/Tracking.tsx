@@ -25,7 +25,7 @@ export default function Tracking() {
     { key: "diverted", label: "Desviado", color: "warning" }, // marrón
     { key: "redirected", label: "Redirigido", color: "warning" }, // cian
     { key: "unknown", label: "Desconocido", color: "default" }, // gris
-  ];
+  ] as const;
   const [trackingFlights, setTrackingFlights] = useState<trackingFlight[]>([]);
   const [dateValue, setDateValue] = useState<DateValue | null>(null);
   const [flightValue, setFlightValue] = useState<string>("");
@@ -145,7 +145,7 @@ export default function Tracking() {
           });
         }
         setTrackingFlights((prevFlights) =>
-          prevFlights.filter((flight) => flight.id !== trackingId)
+          prevFlights.filter((flight) => flight.id !== trackingId),
         );
       })
       .catch((err) => {
@@ -238,7 +238,7 @@ export default function Tracking() {
                                 <h4 className="font-semibold text-lg">
                                   {flight.flight_iata}
                                 </h4>
-                                <Badge variant="outline" className="text-xs">
+                                <Badge variant="flat" className="text-xs">
                                   {flight.airline.name}
                                 </Badge>
                               </div>
@@ -273,7 +273,7 @@ export default function Tracking() {
                           </div>
                           <div className="text-right">
                             <Button
-                              variant="outline"
+                              variant="ghost"
                               size="sm"
                               className="text-red-600 hover:bg-red-50 bg-transparent"
                               onPress={() => {
@@ -290,14 +290,14 @@ export default function Tracking() {
                           <Chip
                             color={
                               flightStatus.find(
-                                (status) => status.key === flight.state
+                                (status) => status.key === flight.state,
                               )?.color || "default"
                             }
                             size="sm"
                             variant="flat"
                           >
                             {flightStatus.find(
-                              (status) => status.key === flight.state
+                              (status) => status.key === flight.state,
                             )?.label || "-"}
                           </Chip>
                         </div>
