@@ -20,8 +20,8 @@ const sequelize = process.env.DATABASE_URL
         port: process.env.PORT_DB,
         dialect: "postgres",
         logging: false,
-        dialectOptions: { ssl: sslOptions },
-      }
+        // dialectOptions: { ssl: sslOptions },
+      },
     );
 
 module.exports = sequelize;
