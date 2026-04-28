@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "seed:user": "node scripts/seed-test-user.js",
     "test": "jest"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "keywords": [],
   "author": "",

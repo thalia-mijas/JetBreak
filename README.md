@@ -28,6 +28,8 @@
 - [Documentación Swagger](#documentación-swagger)
 - [Scripts disponibles](#scripts-disponibles)
 - [Testing](#testing)
+- [Despliegue en Railway](#despliegue-en-railway)
+- [Usuario de prueba](#usuario-de-prueba)
 
 ---
 
@@ -175,19 +177,29 @@ Crear un archivo `.env` dentro de `backend/` con las siguientes variables:
 
 | Variable | Descripción |
 |---|---|
-| `PORT` | Puerto del servidor backend (por defecto `3000`) |
+| `PORT` | Puerto del servidor backend (por defecto `3000`, Railway lo inyecta) |
 | `JWT_SECRET` | Secreto para firmar los JSON Web Tokens |
 | `CACHE_TIME` | TTL del caché Redis en segundos (ej. `86400`) |
+| `FRONTEND_URL` | Origen permitido por CORS. Acepta varios separados por coma (ej. `http://localhost:5173,https://jetbreak.vercel.app`) |
 
 ### Base de datos PostgreSQL
 
+Se admiten dos modos de configuración (se prioriza `DATABASE_URL` si está presente):
+
 | Variable | Descripción |
 |---|---|
-| `NAME_DB` | Nombre de la base de datos |
-| `USER_DB` | Usuario de la base de datos |
-| `PASSWORD_DB` | Contraseña del usuario |
-| `HOST_DB` | Host del servidor PostgreSQL |
+| `DATABASE_URL` | Cadena de conexión completa (la inyecta Railway al añadir el plugin PostgreSQL) |
+| `NAME_DB` | Nombre de la base de datos (modo local) |
+| `USER_DB` | Usuario de la base de datos (modo local) |
+| `PASSWORD_DB` | Contraseña del usuario (modo local) |
+| `HOST_DB` | Host del servidor PostgreSQL (modo local) |
 | `PORT_DB` | Puerto de PostgreSQL (típicamente `5432`) |
+
+### Redis (opcional)
+
+| Variable | Descripción |
+|---|---|
+| `REDIS_URL` | Cadena de conexión Redis. Si no se define, la app arranca sin caché. |
 
 ### APIs externas
 
@@ -362,8 +374,9 @@ La definición persiste en `backend/swagger-output.json` y se configura desde `b
 ### Backend
 
 ```bash
-npm start    # Inicia el servidor
-npm test     # Ejecuta la suite de tests con Jest
+npm start         # Inicia el servidor (node server.js)
+npm run seed:user # Crea/actualiza el usuario de prueba en la BD
+npm test          # Ejecuta la suite de tests con Jest
 ```
 
 ### Frontend
@@ -387,6 +400,87 @@ npm test
 ```
 
 Los archivos de prueba viven en `backend/tests/`.
+
+---
+
+## Despliegue en Railway
+
+El backend está preparado para desplegarse en [Railway](https://railway.app/) con la base de datos PostgreSQL gestionada por la propia plataforma.
+
+### 1. Crear el proyecto
+
+1. Inicia sesión en Railway y crea un **New Project → Deploy from GitHub repo**.
+2. Selecciona este repositorio.
+3. Tras crear el servicio del backend, abre **Settings → Source** y establece **Root Directory** en `backend`. Railway detectará el `railway.json` y usará Nixpacks para construir el proyecto Node.js.
+
+### 2. Añadir la base de datos PostgreSQL
+
+1. Dentro del mismo proyecto: **+ New → Database → Add PostgreSQL**.
+2. Una vez aprovisionada, ve al servicio del backend, pestaña **Variables**, y conéctala con **Add Reference → Postgres → `DATABASE_URL`**. Railway expondrá la URL completa de conexión.
+
+> El archivo `backend/config/db.js` detecta automáticamente `DATABASE_URL`. En desarrollo local puedes seguir usando las variables individuales (`NAME_DB`, `USER_DB`, etc.).
+
+### 3. Variables de entorno en Railway
+
+En la pestaña **Variables** del servicio backend define como mínimo:
+
+| Variable | Valor |
+|---|---|
+| `JWT_SECRET` | un secreto seguro (ej. `openssl rand -hex 32`) |
+| `CACHE_TIME` | `86400` |
+| `FRONTEND_URL` | URL pública del frontend (ej. `https://jetbreak.vercel.app`) |
+| `DATABASE_URL` | referencia a Postgres (paso anterior) |
+| `AMADEUS_API_KEY`, `AMADEUS_API_SECRET` | credenciales Amadeus |
+| `AVIATION_STACK_API_KEY` | clave Aviation Stack |
+| `AVIATION_EDGE_API_KEY` | clave Aviation Edge |
+| `FOURSQUARE_API_KEY` | clave Foursquare |
+| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | configuración de correo |
+| `TEST_USER_EMAIL`, `TEST_USER_PASSWORD`, `TEST_USER_NAME` | (opcional) sobrescriben las credenciales del usuario de prueba |
+
+> `PORT` lo inyecta Railway automáticamente.
+>
+> `REDIS_URL` es opcional. Puedes añadir un plugin Redis con **+ New → Database → Add Redis** y referenciar `REDIS_URL` igual que con Postgres. Si lo omites, la app arranca sin caché.
+
+### 4. Despliegue y verificación
+
+1. Tras configurar las variables, Railway redeployará automáticamente.
+2. Genera un dominio público desde **Settings → Networking → Generate Domain**.
+3. Comprueba que la API responde en `https://<tu-dominio>.up.railway.app/docs` (Swagger).
+
+### 5. Crear el usuario de prueba en producción
+
+Desde el dashboard del servicio backend en Railway, abre **⋮ → One-off command** (o usa la [Railway CLI](https://docs.railway.app/develop/cli)) y ejecuta:
+
+```bash
+npm run seed:user
+```
+
+Esto crea (o actualiza si ya existe) el usuario de prueba documentado abajo. Con la **Railway CLI** sería:
+
+```bash
+railway run npm run seed:user
+```
+
+---
+
+## Usuario de prueba
+
+Para evaluar la aplicación sin tener que registrar una cuenta nueva, el script `npm run seed:user` provisiona el siguiente usuario:
+
+| Campo | Valor |
+|---|---|
+| **Email** | `demo@jetbreak.com` |
+| **Contraseña** | `JetBreak2026!` |
+| **Nombre** | `Usuario Demo` |
+
+> Estas credenciales pueden sobrescribirse mediante las variables `TEST_USER_EMAIL`, `TEST_USER_PASSWORD` y `TEST_USER_NAME`.
+
+Para crearlo en local:
+
+```bash
+cd backend
+npm run seed:user
+```
 
 ---
 
