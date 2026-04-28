@@ -6,6 +6,13 @@ const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 const { Op } = require("sequelize");
 
+const isProduction = process.env.NODE_ENV === "production";
+const cookieOptions = {
+  httpOnly: true,
+  secure: isProduction,
+  sameSite: isProduction ? "None" : "Lax",
+};
+
 // Register a new user
 exports.register = async (req, res) => {
   const { name, email, password } = req.body;
@@ -64,11 +71,7 @@ exports.login = async (req, res) => {
     const token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: "1h" });
 
     //Almacenar el token en una cookie httpOnly
-    res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,
-      sameSite: "Strict",
-    });
+    res.cookie("token", token, cookieOptions);
 
     res.status(200).json({
       message: "Login successful",
@@ -88,11 +91,7 @@ exports.logout = (req, res) => {
     return res.status(401).json({ error: "No active session exists" });
   }
 
-  res.clearCookie("token", {
-    httpOnly: true,
-    secure: true,
-    sameSite: "Strict",
-  });
+  res.clearCookie("token", cookieOptions);
 
   res.status(200).json({ message: "Logout successful" });
 };
