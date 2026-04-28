@@ -1,13 +1,34 @@
 const { createClient } = require("redis");
 
-const redisClient = createClient(
-  process.env.REDIS_URL ? { url: process.env.REDIS_URL } : undefined
-);
+let redisClient = null;
 
-redisClient.on("error", (err) => console.error("Redis Client Error", err));
+const initRedis = async () => {
+  const redisUrl = process.env.REDIS_URL;
 
-redisClient.connect().catch((err) => {
-  console.error("Redis no disponible, continuando sin caché:", err.message);
-});
+  if (
+    !redisUrl ||
+    (!redisUrl.startsWith("redis://") && !redisUrl.startsWith("rediss://"))
+  ) {
+    console.log("Redis no configurado, continuando sin caché");
+    return;
+  }
 
-module.exports = redisClient;
+  try {
+    redisClient = createClient({ url: redisUrl });
+    redisClient.on("error", (err) =>
+      console.error("Redis Error:", err.message),
+    );
+    await redisClient.connect();
+    console.log("✓ Redis conectado");
+  } catch (err) {
+    console.error("Redis no disponible:", err.message);
+    redisClient = null;
+  }
+};
+
+initRedis();
+
+module.exports = {
+  getClient: () => redisClient,
+  isAvailable: () => redisClient !== null && redisClient.isReady,
+};

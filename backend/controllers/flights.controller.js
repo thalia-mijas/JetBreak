@@ -20,7 +20,9 @@ exports.getArrivals = async (req, res) => {
     let flights = [];
 
     const cachedKey = `arrivals:${iataCode}`;
-    const cachedData = await redisClient.get(cachedKey);
+    if (redis.isAvailable()) {
+      const cachedData = await redisClient.get(cachedKey);
+    }
     if (cachedData) {
       console.log("Cache arrivals from Redis");
       flights = JSON.parse(cachedData);
@@ -30,7 +32,7 @@ exports.getArrivals = async (req, res) => {
       flights = await response.json();
       if (flights.length > 0) {
         flights = flights.filter(
-          (flight) => flight.flight && flight.flight.iataNumber !== ""
+          (flight) => flight.flight && flight.flight.iataNumber !== "",
         );
         await redisClient.set(cachedKey, JSON.stringify(flights), {
           EX: CACHE_TIME,
@@ -70,7 +72,7 @@ exports.getDepartures = async (req, res) => {
       flights = await response.json();
       if (flights.length > 0) {
         flights = flights.filter(
-          (flight) => flight.flight && flight.flight.iataNumber !== ""
+          (flight) => flight.flight && flight.flight.iataNumber !== "",
         );
         flights = flights.filter((flight) => flight.departure.gate !== null);
         await redisClient.set(cachedKey, JSON.stringify(flights), {

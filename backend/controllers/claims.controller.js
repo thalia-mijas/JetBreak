@@ -29,7 +29,9 @@ exports.createClaim = async (req, res) => {
     let flight = [];
 
     const cachedKey = `flight:${flight_iata}`;
-    const cachedData = await redisClient.get(cachedKey);
+    if (redis.isAvailable()) {
+      const cachedData = await redisClient.get(cachedKey);
+    }
     if (cachedData) {
       console.log("Cache flight from Redis");
       flight = JSON.parse(cachedData);

@@ -33,7 +33,9 @@ exports.createFlightTracking = async (req, res) => {
     }
 
     const cachedKey = `flight:${flight_iata}:${date}`;
-    let flightData = await redisClient.get(cachedKey);
+    if (redis.isAvailable()) {
+      let flightData = await redisClient.get(cachedKey);
+    }
 
     let flight = flightData ? JSON.parse(flightData) : null;
 
@@ -185,7 +187,7 @@ exports.getUserFlightTrackings = async (req, res) => {
             await flight.save();
           }
         }
-      })
+      }),
     );
 
     res.status(200).json(user.Flights);

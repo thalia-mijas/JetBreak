@@ -19,7 +19,9 @@ exports.getOffers = async (req, res) => {
     let filteredOffers = [];
 
     const cachedKey = `offers:${origin}`;
-    const cachedData = await redisClient.get(cachedKey);
+    if (redis.isAvailable()) {
+      const cachedData = await redisClient.get(cachedKey);
+    }
     if (cachedData) {
       console.log("Cache offers from Redis");
       filteredOffers = JSON.parse(cachedData);
@@ -43,7 +45,7 @@ exports.getOffers = async (req, res) => {
           .replace("&viewBy=DESTINATION", "")
           .replace(
             "https://test.api.amadeus.com/v2/shopping/flight-offers?",
-            ""
+            "",
           ),
       }));
 
@@ -81,11 +83,14 @@ exports.getOfferDetails = async (req, res) => {
     let filteredOfferDetails = [];
 
     const cachedKey = `offerDetails:${params.get(
-      "originLocationCode"
+      "originLocationCode",
     )}:${params.get("destinationLocationCode")}:${params.get(
-      "departureDate"
+      "departureDate",
     )}:${params.get("returnDate")}`;
-    const cachedData = await redisClient.get(cachedKey);
+
+    if (redis.isAvailable()) {
+      const cachedData = await redisClient.get(cachedKey);
+    }
     if (cachedData) {
       console.log("Cache offers from Redis");
       filteredOfferDetails = JSON.parse(cachedData);

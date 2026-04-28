@@ -25,7 +25,9 @@ exports.getStores = async (req, res) => {
     let filteredStores = [];
 
     const cachedKey = `stores/${latitude}/${longitude}`;
-    const cachedData = await redisClient.get(cachedKey);
+    if (redis.isAvailable()) {
+      const cachedData = await redisClient.get(cachedKey);
+    }
     if (cachedData) {
       console.log("Cache stores from Redis");
       filteredStores = JSON.parse(cachedData);
