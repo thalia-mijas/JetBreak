@@ -39,9 +39,9 @@ const allowedOrigins = (process.env.FRONTEND_URL || "http://localhost:5173")
 
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: ["https://jet-break.vercel.app", "http://localhost:5173"],
     credentials: true,
-  })
+  }),
 );
 
 // Rutas
