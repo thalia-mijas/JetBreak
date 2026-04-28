@@ -11,7 +11,15 @@ export default function ResetPassword() {
 
   console.log("Token from URL:", token);
 
-  const handleResetPassword = (token: string, newPassword: string) => {
+  const handleResetPassword = (newPassword: string) => {
+    if (!token) {
+      addToast({
+        title: "Error",
+        description: "Token inválido o ausente.",
+        color: "danger",
+      });
+      return;
+    }
     API.resetPassword(token, newPassword)
       .then((response) => {
         console.log("Password reset successful:", response);
@@ -105,7 +113,7 @@ export default function ResetPassword() {
                     <Button
                       fullWidth
                       color="primary"
-                      onPress={() => handleResetPassword(token, newPassword)}
+                      onPress={() => handleResetPassword(newPassword)}
                     >
                       Restablecer contraseña
                     </Button>

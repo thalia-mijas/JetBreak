@@ -20,7 +20,7 @@ export default function Flights({
     { key: "diverted", label: "Desviado", color: "warning" }, // marrón
     { key: "redirected", label: "Redirigido", color: "warning" }, // cian
     { key: "unknown", label: "Desconocido", color: "default" }, // gris
-  ];
+  ] as const;
 
   const [flights, setFlights] = useState<Flight[]>([]);
   const [allFlights, setAllFlights] = useState<Flight[]>([]);

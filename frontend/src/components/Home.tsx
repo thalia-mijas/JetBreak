@@ -24,7 +24,6 @@ import Stores from "./Stores";
 export default function Home() {
   const [airports, setAirports] = useState<Airport[]>([]);
   const [ubicationAirports, setUbicationAirports] = useState<Airport[]>([]);
-  const [loading, setLoading] = useState(true);
   const [loadingUbication, setLoadingUbication] = useState(false);
   const [selectedAirport, setSelectedAirport] = useState(""); // Example selected airport
   const [valueInput, setValueInput] = useState(""); // Example input value
@@ -52,8 +51,7 @@ export default function Home() {
       })
       .catch((err) => {
         console.error(err);
-      })
-      .finally(() => setLoading(false));
+      });
   }, []);
 
   return (

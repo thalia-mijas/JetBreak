@@ -1,8 +1,6 @@
 import { Badge, Button, Card, CardHeader, Input, Spinner } from "@heroui/react";
 import { ArrowLeft, ArrowRight, Plane, Search } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/useAuth";
 import type { Airline } from "../models/airline";
 import type { Airport } from "../models/airport";
 import type { Offer } from "../models/offer";
@@ -14,14 +12,11 @@ import * as API from "../services/offers";
 import TrackButton from "./TrackButton";
 
 export default function Offers() {
-  const navigate = useNavigate();
   const [flightOffers, setFlightOffers] = useState<Offer[]>([]);
-  const { isAuthenticated } = useAuth();
   const [viewDetails, setViewDetails] = useState<boolean>(false);
   const [offerDetails, setOfferDetails] = useState<OfferDetail[]>([]);
   const [airports, setAirports] = useState<Airport[]>([]);
   const [airlines, setAirlines] = useState<Airline[]>([]);
-  const [offerID, setOfferID] = useState<number>(0);
   const [valueInput, setValueInput] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [trackingFlights, setTrackingFlights] = useState<trackingFlight[]>([]);

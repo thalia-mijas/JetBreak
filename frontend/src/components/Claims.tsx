@@ -6,8 +6,9 @@ import {
   DateInput,
   Input,
 } from "@heroui/react";
-import { CalendarDate, getLocalTimeZone } from "@internationalized/date";
+import { getLocalTimeZone } from "@internationalized/date";
 import { I18nProvider } from "@react-aria/i18n";
+import type { DateValue } from "@react-types/datepicker";
 import { Calendar, MessageSquare, Plane, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
@@ -16,7 +17,7 @@ import type { Claim } from "../models/claim";
 import * as API from "../services/claims";
 
 export default function Claims() {
-  const [value, setValue] = useState<CalendarDate | null>(null);
+  const [value, setValue] = useState<DateValue | null>(null);
   const { isAuthenticated } = useAuth();
   const [claims, setClaims] = useState<Claim[]>([]);
   const [claimType, setClaimType] = useState<string>("Retraso de vuelo");
@@ -199,7 +200,7 @@ export default function Claims() {
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Fecha de Vuelo</label>
                   <I18nProvider locale="es-ES">
-                    <DateInput onChange={setValue} />
+                    <DateInput onChange={(newValue) => setValue(newValue)} />
                     <p className="text-default-500 text-sm">
                       Fecha seleccionada:{" "}
                       {value
@@ -296,7 +297,7 @@ export default function Claims() {
                       </div>
                       <div className="self-right">
                         <Button
-                          variant="outline"
+                          variant="bordered"
                           size="sm"
                           className="text-red-600 hover:bg-red-50 bg-transparent"
                           onPress={() => {
