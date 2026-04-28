@@ -180,7 +180,7 @@ Crear un archivo `.env` dentro de `backend/` con las siguientes variables:
 | `PORT` | Puerto del servidor backend (por defecto `3000`, Railway lo inyecta) |
 | `JWT_SECRET` | Secreto para firmar los JSON Web Tokens |
 | `CACHE_TIME` | TTL del caché Redis en segundos (ej. `86400`) |
-| `FRONTEND_URL` | Origen permitido por CORS. Acepta varios separados por coma (ej. `http://localhost:5173,https://jetbreak.vercel.app`) |
+| `FRONTEND_URL` | Origen permitido por CORS. Acepta varios separados por coma (ej. `http://localhost:5173,https://jet-break.vercel.app`) |
 
 ### Base de datos PostgreSQL
 
@@ -428,7 +428,7 @@ En la pestaña **Variables** del servicio backend define como mínimo:
 |---|---|
 | `JWT_SECRET` | un secreto seguro (ej. `openssl rand -hex 32`) |
 | `CACHE_TIME` | `86400` |
-| `FRONTEND_URL` | URL pública del frontend (ej. `https://jetbreak.vercel.app`) |
+| `FRONTEND_URL` | `https://jet-break.vercel.app` (frontend desplegado en Vercel) |
 | `DATABASE_URL` | referencia a Postgres (paso anterior) |
 | `AMADEUS_API_KEY`, `AMADEUS_API_SECRET` | credenciales Amadeus |
 | `AVIATION_STACK_API_KEY` | clave Aviation Stack |
@@ -446,6 +446,7 @@ En la pestaña **Variables** del servicio backend define como mínimo:
 1. Tras configurar las variables, Railway redeployará automáticamente.
 2. Genera un dominio público desde **Settings → Networking → Generate Domain**.
 3. Comprueba que la API responde en `https://<tu-dominio>.up.railway.app/docs` (Swagger).
+4. En el proyecto de Vercel ([jet-break.vercel.app](https://jet-break.vercel.app)), actualiza la variable de entorno que apunta al backend para que use el dominio público de Railway, y redeployea el frontend.
 
 ### 5. Crear el usuario de prueba en producción
 
