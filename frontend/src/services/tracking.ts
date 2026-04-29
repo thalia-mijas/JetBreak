@@ -5,7 +5,7 @@ export async function getTrackingFlights() {
   if (!userId) {
     throw new Error("User ID not found");
   }
-  const url = `${API_URL}/api/flights/tracking/${userId}`;
+  const url = `${API_URL}api/flights/tracking/${userId}`;
 
   const options = {
     method: "GET",
@@ -26,7 +26,7 @@ export async function addTrackingFlight(flightData: {
   flight_iata: string;
   date: string;
 }) {
-  const url = `${API_URL}/api/flights/tracking`;
+  const url = `${API_URL}api/flights/tracking`;
 
   const options = {
     method: "POST",
@@ -51,7 +51,7 @@ export async function removeTrackingFlight(trackingId: number) {
   if (!userId) {
     throw new Error("User ID not found");
   }
-  const url = `${API_URL}/api/flights/tracking/${userId}/${trackingId}`;
+  const url = `${API_URL}api/flights/tracking/${userId}/${trackingId}`;
 
   const options = {
     method: "DELETE",

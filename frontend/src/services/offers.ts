@@ -1,7 +1,7 @@
 const API_URL = import.meta.env.VITE_API_URL;
 
 export async function getOffers(airportCode: string) {
-  const url = `${API_URL}/api/offers/${airportCode}`;
+  const url = `${API_URL}api/offers/${airportCode}`;
 
   const options = {
     method: "GET",
@@ -20,7 +20,7 @@ export async function getOffers(airportCode: string) {
 }
 
 export async function getOfferDetails(conf: string) {
-  const url = `${API_URL}/api/offers/detail/${conf}`;
+  const url = `${API_URL}api/offers/detail/${conf}`;
 
   console.log("Fetching offer details from URL: ", url);
 

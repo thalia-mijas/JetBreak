@@ -5,7 +5,7 @@ export async function register(userData: {
   email: string;
   password: string;
 }) {
-  const url = `${API_URL}/api/register`;
+  const url = `${API_URL}api/register`;
 
   const options = {
     method: "POST",
@@ -26,7 +26,7 @@ export async function register(userData: {
 }
 
 export async function login(email: string, password: string) {
-  const url = `${API_URL}/api/login`;
+  const url = `${API_URL}api/login`;
 
   const options = {
     method: "POST",
@@ -47,7 +47,7 @@ export async function login(email: string, password: string) {
 }
 
 export async function logout() {
-  const url = `${API_URL}/api/logout`;
+  const url = `${API_URL}api/logout`;
 
   const options = {
     method: "POST",
@@ -68,7 +68,7 @@ export async function logout() {
 }
 
 export async function recoverPassword(email: string) {
-  const url = `${API_URL}/api/recover-password`;
+  const url = `${API_URL}api/recover-password`;
 
   const options = {
     method: "POST",
@@ -89,7 +89,7 @@ export async function recoverPassword(email: string) {
 }
 
 export async function resetPassword(token: string, newPassword: string) {
-  const url = `${API_URL}/api/reset-password`;
+  const url = `${API_URL}api/reset-password`;
 
   const options = {
     method: "POST",

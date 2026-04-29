@@ -1,7 +1,7 @@
 const API_URL = import.meta.env.VITE_API_URL;
 
 export async function getAirlines() {
-  const url = `${API_URL}/api/airlines`;
+  const url = `${API_URL}api/airlines`;
 
   const options = {
     method: "GET",

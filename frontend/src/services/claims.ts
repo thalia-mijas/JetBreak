@@ -8,7 +8,7 @@ export async function getClaimsUser() {
     throw new Error("User ID not found in local storage");
   }
 
-  const url = `${API_URL}/api/claims/byUser/${userId}`;
+  const url = `${API_URL}api/claims/byUser/${userId}`;
 
   const options = {
     method: "GET",
@@ -27,7 +27,7 @@ export async function getClaimsUser() {
 }
 
 export async function createClaim(claim: Partial<Claim>) {
-  const url = `${API_URL}/api/claims`;
+  const url = `${API_URL}api/claims`;
 
   const options = {
     method: "POST",
@@ -50,7 +50,7 @@ export async function createClaim(claim: Partial<Claim>) {
 }
 
 export async function deleteClaim(claimId: number) {
-  const url = `${API_URL}/api/claims/${claimId}`;
+  const url = `${API_URL}api/claims/${claimId}`;
 
   const options = {
     method: "DELETE",

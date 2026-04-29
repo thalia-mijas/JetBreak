@@ -23,7 +23,7 @@ export async function getUbication(): Promise<{
 export async function getAirportFromUbication() {
   const { latitude, longitude } = await getUbication();
 
-  const url = `${API_URL}/api/airports/gps/${latitude}/${longitude}`;
+  const url = `${API_URL}api/airports/gps/${latitude}/${longitude}`;
 
   const options = {
     method: "GET",
