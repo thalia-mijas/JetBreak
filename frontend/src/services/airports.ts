@@ -1,5 +1,7 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
 export async function getAirports() {
-  const url = "http://localhost:3000/api/airports";
+  const url = `${API_URL}/api/airports`;
 
   const options = {
     method: "GET",

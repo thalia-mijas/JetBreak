@@ -1,5 +1,7 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
 export async function getFlights(codeIata: string, type: string) {
-  const url = `http://localhost:3000/api/flights/${type}/${codeIata}`;
+  const url = `${API_URL}/api/flights/${type}/${codeIata}`;
 
   const options = {
     method: "GET",

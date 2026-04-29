@@ -1,9 +1,11 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
 export async function getTrackingFlights() {
   const userId = localStorage.getItem("user_id");
   if (!userId) {
     throw new Error("User ID not found");
   }
-  const url = `http://localhost:3000/api/flights/tracking/${userId}`;
+  const url = `${API_URL}/api/flights/tracking/${userId}`;
 
   const options = {
     method: "GET",
@@ -24,7 +26,7 @@ export async function addTrackingFlight(flightData: {
   flight_iata: string;
   date: string;
 }) {
-  const url = `http://localhost:3000/api/flights/tracking`;
+  const url = `${API_URL}/api/flights/tracking`;
 
   const options = {
     method: "POST",
@@ -49,7 +51,7 @@ export async function removeTrackingFlight(trackingId: number) {
   if (!userId) {
     throw new Error("User ID not found");
   }
-  const url = `http://localhost:3000/api/flights/tracking/${userId}/${trackingId}`;
+  const url = `${API_URL}/api/flights/tracking/${userId}/${trackingId}`;
 
   const options = {
     method: "DELETE",

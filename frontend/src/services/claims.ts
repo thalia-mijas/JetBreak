@@ -1,12 +1,14 @@
 import type { Claim } from "../models/claim";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export async function getClaimsUser() {
   const userId = localStorage.getItem("user_id");
   if (!userId) {
     throw new Error("User ID not found in local storage");
   }
 
-  const url = `http://localhost:3000/api/claims/byUser/${userId}`;
+  const url = `${API_URL}/api/claims/byUser/${userId}`;
 
   const options = {
     method: "GET",
@@ -25,7 +27,7 @@ export async function getClaimsUser() {
 }
 
 export async function createClaim(claim: Partial<Claim>) {
-  const url = `http://localhost:3000/api/claims`;
+  const url = `${API_URL}/api/claims`;
 
   const options = {
     method: "POST",
@@ -48,7 +50,7 @@ export async function createClaim(claim: Partial<Claim>) {
 }
 
 export async function deleteClaim(claimId: number) {
-  const url = `http://localhost:3000/api/claims/${claimId}`;
+  const url = `${API_URL}/api/claims/${claimId}`;
 
   const options = {
     method: "DELETE",

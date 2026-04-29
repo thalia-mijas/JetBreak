@@ -1,3 +1,5 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
 export async function getUbication(): Promise<{
   latitude: number;
   longitude: number;
@@ -21,7 +23,7 @@ export async function getUbication(): Promise<{
 export async function getAirportFromUbication() {
   const { latitude, longitude } = await getUbication();
 
-  const url = `http://localhost:3000/api/airports/gps/${latitude}/${longitude}`;
+  const url = `${API_URL}/api/airports/gps/${latitude}/${longitude}`;
 
   const options = {
     method: "GET",

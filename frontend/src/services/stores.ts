@@ -1,5 +1,7 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
 export async function getStores(iataCode: string) {
-  const url = `http://localhost:3000/api/airports/${iataCode}`;
+  const url = `${API_URL}/api/airports/${iataCode}`;
 
   const options = {
     method: "GET",
@@ -12,7 +14,7 @@ export async function getStores(iataCode: string) {
     const longitude = data.longitude;
     console.log("Ubicación del aeropuerto: ", { latitude, longitude });
 
-    const url2 = `http://localhost:3000/api/stores/${latitude}/${longitude}`;
+    const url2 = `${API_URL}/api/stores/${latitude}/${longitude}`;
 
     try {
       const response2 = await fetch(url2, options);
