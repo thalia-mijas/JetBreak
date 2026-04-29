@@ -30,7 +30,7 @@
 - [Scripts disponibles](#scripts-disponibles)
 - [Testing](#testing)
 - [Capturas de pantalla](#capturas-de-pantalla)
-- [Despliegue en Railway](#despliegue-en-railway)
+- [Despliegue en Render](#despliegue-en-render)
 - [Usuario de prueba](#usuario-de-prueba)
 
 ---
@@ -52,6 +52,7 @@ La aplicación está desplegada y disponible en línea:
 | Frontend | Vercel | https://jet-break.vercel.app |
 | Backend (API) | Render | https://jetbreak.onrender.com |
 | Documentación Swagger | Render | https://jetbreak.onrender.com/docs |
+| Base de datos PostgreSQL | Neon | gestionada (conexión vía `DATABASE_URL`) |
 
 > **Aviso importante sobre las APIs externas**
 >
@@ -202,7 +203,7 @@ Crear un archivo `.env` dentro de `backend/` con las siguientes variables:
 
 | Variable | Descripción |
 |---|---|
-| `PORT` | Puerto del servidor backend (por defecto `3000`, Railway lo inyecta) |
+| `PORT` | Puerto del servidor backend (por defecto `3000`; en Render se inyecta automáticamente) |
 | `JWT_SECRET` | Secreto para firmar los JSON Web Tokens |
 | `CACHE_TIME` | TTL del caché Redis en segundos (ej. `86400`) |
 | `FRONTEND_URL` | Origen permitido por CORS. Acepta varios separados por coma (ej. `http://localhost:5173,https://jet-break.vercel.app`) |
@@ -213,7 +214,7 @@ Se admiten dos modos de configuración (se prioriza `DATABASE_URL` si está pres
 
 | Variable | Descripción |
 |---|---|
-| `DATABASE_URL` | Cadena de conexión completa (la inyecta Railway al añadir el plugin PostgreSQL) |
+| `DATABASE_URL` | Cadena de conexión completa (en producción se usa la que provee **Neon**) |
 | `NAME_DB` | Nombre de la base de datos (modo local) |
 | `USER_DB` | Usuario de la base de datos (modo local) |
 | `PASSWORD_DB` | Contraseña del usuario (modo local) |
@@ -494,33 +495,42 @@ Restablecimiento de contraseña por correo electrónico.
 
 ---
 
-## Despliegue en Railway
+## Despliegue en Render
 
-El backend está preparado para desplegarse en [Railway](https://railway.app/) con la base de datos PostgreSQL gestionada por la propia plataforma.
+El backend de JetBreak está desplegado en [Render](https://render.com/) como **Web Service** y disponible en [https://jetbreak.onrender.com](https://jetbreak.onrender.com). La base de datos PostgreSQL se gestiona aparte en **Neon** y se conecta vía `DATABASE_URL`.
 
-### 1. Crear el proyecto
+### 1. Crear el Web Service en Render
 
-1. Inicia sesión en Railway y crea un **New Project → Deploy from GitHub repo**.
-2. Selecciona este repositorio.
-3. Tras crear el servicio del backend, abre **Settings → Source** y establece **Root Directory** en `backend`. Railway detectará el `railway.json` y usará Nixpacks para construir el proyecto Node.js.
+1. Inicia sesión en Render y selecciona **New + → Web Service**.
+2. Conecta tu cuenta de GitHub y elige este repositorio.
+3. En el formulario de configuración:
+   - **Name:** `jetbreak` (o el que prefieras; será parte de la URL `https://<name>.onrender.com`).
+   - **Root Directory:** `backend`.
+   - **Runtime:** `Node`.
+   - **Build Command:** `npm install`.
+   - **Start Command:** `npm start`.
+   - **Instance Type:** `Free` (o el plan que necesites).
 
-### 2. Añadir la base de datos PostgreSQL
+### 2. Provisionar la base de datos en Neon
 
-1. Dentro del mismo proyecto: **+ New → Database → Add PostgreSQL**.
-2. Una vez aprovisionada, ve al servicio del backend, pestaña **Variables**, y conéctala con **Add Reference → Postgres → `DATABASE_URL`**. Railway expondrá la URL completa de conexión.
+La base de datos PostgreSQL **no** se crea en Render, sino en [Neon](https://neon.tech/):
 
-> El archivo `backend/config/db.js` detecta automáticamente `DATABASE_URL`. En desarrollo local puedes seguir usando las variables individuales (`NAME_DB`, `USER_DB`, etc.).
+1. Crea una cuenta y un proyecto nuevo en Neon.
+2. Copia la cadena de conexión (`postgresql://user:password@host/dbname?sslmode=require`).
+3. Pégala como `DATABASE_URL` en las variables de entorno del Web Service de Render (paso siguiente).
 
-### 3. Variables de entorno en Railway
+> El archivo `backend/config/db.js` detecta automáticamente `DATABASE_URL` y habilita SSL cuando está presente, por lo que la conexión a Neon funciona sin cambios adicionales.
 
-En la pestaña **Variables** del servicio backend define como mínimo:
+### 3. Variables de entorno en Render
+
+Desde el dashboard del Web Service, abre **Environment → Add Environment Variable** y define como mínimo:
 
 | Variable | Valor |
 |---|---|
 | `JWT_SECRET` | un secreto seguro (ej. `openssl rand -hex 32`) |
 | `CACHE_TIME` | `86400` |
 | `FRONTEND_URL` | `https://jet-break.vercel.app` (frontend desplegado en Vercel) |
-| `DATABASE_URL` | referencia a Postgres (paso anterior) |
+| `DATABASE_URL` | cadena de conexión de Neon (paso anterior) |
 | `AMADEUS_API_KEY`, `AMADEUS_API_SECRET` | credenciales Amadeus |
 | `AVIATION_STACK_API_KEY` | clave Aviation Stack |
 | `AVIATION_EDGE_API_KEY` | clave Aviation Edge |
@@ -528,30 +538,28 @@ En la pestaña **Variables** del servicio backend define como mínimo:
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | configuración de correo |
 | `TEST_USER_EMAIL`, `TEST_USER_PASSWORD`, `TEST_USER_NAME` | (opcional) sobrescriben las credenciales del usuario de prueba |
 
-> `PORT` lo inyecta Railway automáticamente.
+> `PORT` lo inyecta Render automáticamente al Web Service.
 >
-> `REDIS_URL` es opcional. Puedes añadir un plugin Redis con **+ New → Database → Add Redis** y referenciar `REDIS_URL` igual que con Postgres. Si lo omites, la app arranca sin caché.
+> `REDIS_URL` es opcional. Render no ofrece Redis gestionado en el plan Free; si quieres caché puedes usar [Upstash](https://upstash.com/) o [Redis Cloud](https://redis.com/redis-enterprise-cloud/) y pegar la URL como `REDIS_URL`. Si la omites, la app arranca sin caché.
 
 ### 4. Despliegue y verificación
 
-1. Tras configurar las variables, Railway redeployará automáticamente.
-2. Genera un dominio público desde **Settings → Networking → Generate Domain**.
-3. Comprueba que la API responde en `https://<tu-dominio>.up.railway.app/docs` (Swagger).
-4. En el proyecto de Vercel ([jet-break.vercel.app](https://jet-break.vercel.app)), actualiza la variable de entorno que apunta al backend para que use el dominio público de Railway, y redeployea el frontend.
+1. Tras guardar las variables, Render redeployará el servicio automáticamente desde el último commit de la rama configurada.
+2. La URL pública queda fijada como `https://<name>.onrender.com` (en este proyecto: [https://jetbreak.onrender.com](https://jetbreak.onrender.com)).
+3. Comprueba que la API responde en [https://jetbreak.onrender.com/docs](https://jetbreak.onrender.com/docs) (Swagger UI).
+4. En el proyecto de Vercel ([jet-break.vercel.app](https://jet-break.vercel.app)), confirma que la variable `VITE_API_URL` apunta al dominio del backend en Render y redeployea el frontend si la cambias.
+
+> ⚠️ El plan **Free** de Render duerme el servicio tras 15 minutos sin tráfico. La primera petición tras un periodo de inactividad puede tardar varios segundos en responder mientras el contenedor arranca.
 
 ### 5. Crear el usuario de prueba en producción
 
-Desde el dashboard del servicio backend en Railway, abre **⋮ → One-off command** (o usa la [Railway CLI](https://docs.railway.app/develop/cli)) y ejecuta:
+Desde el dashboard del Web Service en Render, abre la pestaña **Shell** y ejecuta:
 
 ```bash
 npm run seed:user
 ```
 
-Esto crea (o actualiza si ya existe) el usuario de prueba documentado abajo. Con la **Railway CLI** sería:
-
-```bash
-railway run npm run seed:user
-```
+Esto crea (o actualiza si ya existe) el usuario de prueba documentado abajo, conectándose directamente a la base de datos de Neon mediante `DATABASE_URL`.
 
 ---
 
@@ -578,4 +586,4 @@ npm run seed:user
 
 ## Licencia
 
-Proyecto académico desarrollado en el marco del Máster en UEM.
+Proyecto académico desarrollado en el marco del Máster en Desarrollo Web y Aplicaciones en Universidad Europea de Madrid.
