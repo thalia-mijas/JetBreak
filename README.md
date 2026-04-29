@@ -14,6 +14,7 @@
 ## Tabla de contenidos
 
 - [Descripción](#descripción)
+- [Despliegue en producción](#despliegue-en-producción)
 - [Características principales](#características-principales)
 - [Arquitectura](#arquitectura)
 - [Stack tecnológico](#stack-tecnológico)
@@ -28,6 +29,7 @@
 - [Documentación Swagger](#documentación-swagger)
 - [Scripts disponibles](#scripts-disponibles)
 - [Testing](#testing)
+- [Capturas de pantalla](#capturas-de-pantalla)
 - [Despliegue en Railway](#despliegue-en-railway)
 - [Usuario de prueba](#usuario-de-prueba)
 
@@ -38,6 +40,29 @@
 **JetBreak** es una aplicación web que permite a los usuarios gestionar su experiencia de vuelo de extremo a extremo: consultar llegadas y salidas en aeropuertos, hacer seguimiento de vuelos por código IATA, descubrir ofertas, encontrar comercios cercanos y registrar reclamos formales contra aerolíneas en caso de incidencias.
 
 El sistema integra múltiples APIs aeronáuticas (Amadeus, Aviation Stack, Aviation Edge) y de geolocalización (Foursquare Places) detrás de un backend en Express con caché Redis, exponiendo una interfaz React moderna construida con Tailwind CSS y HeroUI.
+
+---
+
+## Despliegue en producción
+
+La aplicación está desplegada y disponible en línea:
+
+| Servicio | Plataforma | URL |
+|---|---|---|
+| Frontend | Vercel | https://jet-break.vercel.app |
+| Backend (API) | Render | https://jetbreak.onrender.com |
+| Documentación Swagger | Render | https://jetbreak.onrender.com/docs |
+
+> **Aviso importante sobre las APIs externas**
+>
+> JetBreak depende de varias APIs comerciales (Amadeus, Aviation Stack, Aviation Edge y Foursquare Places) que se integraron utilizando sus **planes gratuitos / periodos de prueba**. A la fecha, **dichos periodos de prueba ya han caducado**, por lo que algunas funcionalidades del sitio en producción pueden mostrar datos vacíos o mensajes de error mientras no se renueven las credenciales:
+>
+> - Listado de vuelos de llegada y salida por aeropuerto.
+> - Listado de tiendas y comercios cercanos al aeropuerto.
+> - Ofertas de vuelos y detalle de rutas (Amadeus).
+> - Estado en tiempo real del módulo de seguimiento de vuelos.
+>
+> El resto de la aplicación (registro, inicio de sesión, recuperación de contraseña, gestión de reclamos, módulos de UI y navegación) sigue plenamente operativa con datos almacenados en la base de datos.
 
 ---
 
@@ -400,6 +425,72 @@ npm test
 ```
 
 Los archivos de prueba viven en `backend/tests/`.
+
+---
+
+## Capturas de pantalla
+
+A continuación se muestran capturas de los principales módulos de la aplicación, extraídas de la memoria del TFM. Se indica con el icono ⚠️ las funcionalidades que **a la fecha no se encuentran 100 % operativas en producción** porque ya caducó el periodo de prueba de las APIs externas que las alimentan (Aviation Edge, Aviation Stack, Amadeus, Foursquare Places). El módulo y la interfaz siguen presentes; lo que falta son los datos en vivo.
+
+### Aeropuertos y vuelos
+
+Búsqueda de aeropuerto por nombre/código IATA o por geolocalización del dispositivo.
+
+![Búsqueda de aeropuerto](docs/screenshots/aeropuerto-busqueda.png)
+
+⚠️ Listado de vuelos de llegada/salida del aeropuerto seleccionado *(depende de Aviation Edge / Aviation Stack)*.
+
+![Vuelos del aeropuerto](docs/screenshots/aeropuerto-vuelos.png)
+
+⚠️ Tiendas y comercios disponibles en el aeropuerto seleccionado *(depende de Foursquare Places)*.
+
+![Tiendas del aeropuerto](docs/screenshots/aeropuerto-tiendas.png)
+
+### Ofertas de vuelos
+
+⚠️ Selección del aeropuerto de origen para inspirar destinos *(depende de Amadeus)*.
+
+![Búsqueda de ofertas](docs/screenshots/ofertas-busqueda.png)
+
+⚠️ Resultados con destinos y precios sugeridos *(depende de Amadeus)*.
+
+![Resultados de ofertas](docs/screenshots/ofertas-resultados.png)
+
+⚠️ Detalle de una ruta específica con su itinerario *(depende de Amadeus)*.
+
+![Detalle de oferta](docs/screenshots/ofertas-detalle.png)
+
+### Reclamos
+
+Formulario para registrar un reclamo formal contra una aerolínea (operativo, datos en BD propia).
+
+![Crear reclamo](docs/screenshots/reclamos-crear.png)
+
+Historial de reclamos del usuario autenticado.
+
+![Historial de reclamos](docs/screenshots/reclamos-historial.png)
+
+### Seguimiento de vuelos
+
+⚠️ Listado de vuelos seguidos por el usuario, con estado en tiempo real *(la creación y persistencia del seguimiento funciona; el estado en vivo depende de Aviation Stack)*.
+
+![Seguimiento de vuelos](docs/screenshots/seguimiento.png)
+
+### Autenticación
+
+Registro de usuario.
+
+![Registro](docs/screenshots/registro.png)
+
+Inicio de sesión.
+
+![Inicio de sesión](docs/screenshots/login.png)
+
+Restablecimiento de contraseña por correo electrónico.
+
+![Restablecer contraseña](docs/screenshots/reset-password.png)
+
+> Las imágenes proceden del documento *Memoria TFM — Aplicación web que permite aprovechar el tiempo en el aeropuerto* (Thalia Mijas, UEM, 2025).
 
 ---
 
