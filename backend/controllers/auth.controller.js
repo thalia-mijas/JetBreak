@@ -96,29 +96,6 @@ exports.logout = (req, res) => {
   res.status(200).json({ message: "Logout successful" });
 };
 
-exports.me = async (req, res) => {
-  const token = req.cookies.token;
-
-  if (!token) {
-    return res.status(401).json({ message: "Not authenticated" });
-  }
-
-  try {
-    const payload = jwt.verify(token, JWT_SECRET);
-    const user = await User.findByPk(payload.id);
-
-    if (!user) {
-      return res.status(401).json({ message: "Not authenticated" });
-    }
-
-    res
-      .status(200)
-      .json({ user: { id: user.id, name: user.name, email: user.email } });
-  } catch {
-    res.status(401).json({ message: "Not authenticated" });
-  }
-};
-
 exports.generateEmail = async (req, res) => {
   const { email } = req.body;
   const user = await User.findOne({ where: { email } });

@@ -34,7 +34,6 @@ export async function login(email: string, password: string) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-    credentials: "include" as RequestCredentials,
   };
 
   try {
@@ -44,24 +43,6 @@ export async function login(email: string, password: string) {
     return data;
   } catch (error) {
     console.error(error);
-  }
-}
-
-export async function me() {
-  const url = `${API_URL}api/me`;
-
-  const options = {
-    method: "GET",
-    credentials: "include" as RequestCredentials,
-  };
-
-  try {
-    const response = await fetch(url, options);
-    if (!response.ok) return null;
-    return await response.json();
-  } catch (error) {
-    console.error(error);
-    return null;
   }
 }
 
