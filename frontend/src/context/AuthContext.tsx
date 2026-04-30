@@ -19,12 +19,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // Verificar si hay sesión al cargar la app
   useEffect(() => {
-    const token = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("token="))
-      ?.split("=")[1];
-    setIsAuthenticated(!!token);
-    setIsLoadingAuth(false);
+    authService
+      .me()
+      .then((data) => {
+        if (data?.user) {
+          setIsAuthenticated(true);
+          localStorage.setItem("user_id", data.user.id);
+        } else {
+          setIsAuthenticated(false);
+          localStorage.removeItem("user_id");
+        }
+      })
+      .finally(() => setIsLoadingAuth(false));
   }, []);
 
   const login = async (email: string, password: string) => {
@@ -32,11 +38,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       .login(email, password)
       .then((data) => {
         if (data.message === "Login successful") {
-          if (data.token) {
-            document.cookie = `token=${data.token}; path=/;`;
-            setIsAuthenticated(true);
-            localStorage.setItem("user_id", data.user.id);
-          }
+          setIsAuthenticated(true);
+          localStorage.setItem("user_id", data.user.id);
           addToast({
             title: "Inicio de sesión",
             description: "Has iniciado sesión con éxito",
@@ -92,7 +95,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       .logout()
       .then((data) => {
         if (data.message === "Logout successful") {
-          document.cookie = "";
           setIsAuthenticated(false);
           localStorage.removeItem("user_id");
           addToast({
