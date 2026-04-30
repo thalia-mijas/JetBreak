@@ -18,6 +18,7 @@ const Airport = require("./models/airport.model");
 const Flight = require("./models/flight.model");
 const { seedAirlines } = require("./controllers/airlines.controller");
 const { seedAirports } = require("./controllers/airports.controller");
+const { seedTestUser } = require("./scripts/seed-test-user");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const swaggerUi = require("swagger-ui-express");
@@ -99,6 +100,11 @@ sequelize
     if (airportCount === 0) {
       console.log("Seeding airports...");
       await seedAirports();
+    }
+
+    if (process.env.SEED_TEST_USER === "true") {
+      console.log("Seeding test user...");
+      await seedTestUser();
     }
 
     console.log("✅ Database initialization complete");
